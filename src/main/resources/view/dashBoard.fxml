@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="774.0" prefWidth="1446.0" style="-fx-background-color: white;" stylesheets="@../style/button.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.DashBoardFormController">
+   <children>
+      <VBox layoutX="113.0" layoutY="319.0" prefHeight="410.0" prefWidth="278.0">
+         <children>
+            <JFXButton onAction="#btnAttendnceOnAction" prefHeight="136.0" prefWidth="277.0" styleClass="button5" text="Attendance" />
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#btnSalaryOnAction" prefHeight="136.0" prefWidth="277.0" styleClass="button5" text="Salary" />
+            <JFXButton layoutX="10.0" layoutY="146.0" onAction="#btnOrderOnAction" prefHeight="136.0" prefWidth="277.0" styleClass="button5" text="ORDER" />
+         </children>
+      </VBox>
+      <HBox layoutX="194.0" layoutY="52.0" prefHeight="222.0" prefWidth="1062.0">
+         <children>
+            <JFXButton onAction="#btnEmployeeOnAction" prefHeight="222.0" prefWidth="258.0" styleClass="button2" stylesheets="@../style/button.css" text="Employee">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onAction="#btnCustomerOnAction" prefHeight="227.0" prefWidth="289.0" styleClass="button2" stylesheets="@../style/button.css" text="Customer">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#btnSupplierOnAction" prefHeight="225.0" prefWidth="289.0" styleClass="button2" stylesheets="@../style/button.css" text="Supplier">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton onAction="#btnVehicleOnAction" prefHeight="222.0" prefWidth="251.0" styleClass="button2" stylesheets="@../style/button.css" text="Vehicle">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <ImageView fitHeight="95.0" fitWidth="99.0" layoutX="1309.0" layoutY="71.0" onDragDetected="#btnUserSettings" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icon/user_setting_settings_icon_148607.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
