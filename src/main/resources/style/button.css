@@ -27,7 +27,7 @@
     -fx-border-color: #001c83;
     -fx-border-radius: 30;
     -fx-background-radius: 30;
-    -fx-font-size: 20;
+    -fx-font-size: 15;
     -fx-pref-width: 178;
     -fx-pref-height: 38;
     -fx-alignment: center;
@@ -53,6 +53,14 @@
     -fx-pref-width: 250;
     -fx-pref-height: 50;
     -fx-alignment: center;
+}
+.closeBtn{
+    -fx-pref-width: 40.0;
+    -fx-pref-height: 54.0;
+}
+.closeBtn:hover{
+    -fx-background-color: #f84f02; /* Change the color to your desired hover color */
+    -fx-text-fill: white; /* Change the text color on hover if needed */
 }
 .btn2:hover {
     -fx-background-color: #ca03f6; /* Change the color to your desired hover color */
@@ -81,10 +89,10 @@
 }
 
 .button {
-    -fx-background-color: #f84f02;
+
     -fx-text-fill: black;
     -fx-padding: 10px 20px;
-    -fx-font-size: 24px;
+    -fx-font-size: 20px;
 }
 
 .button1 {

@@ -2,6 +2,8 @@ package lk.penguin.rentalWheelzAI.controller;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -31,12 +33,6 @@ public class BackgroundFormController implements Initializable {
     }
     public void startClock() {
         Timeline clockTimeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
-            // Update time label
-            //SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
-            //String currentTime = timeFormat.format(new Date());
-            //lblDateShow.setText(currentTime);
-
-            // Update date-time label
             SimpleDateFormat dateTimeFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
             String currentDateTime = dateTimeFormat.format(new Date());
             lblDateAndTime.setText(currentDateTime);
@@ -58,5 +54,15 @@ public class BackgroundFormController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    void dashCloseButtonOnAction(ActionEvent event) {
+        Platform.exit();
+        System.exit(0);
+    }
+
+    @FXML
+    void navigateLoginButtonOnAction(ActionEvent event) throws IOException {
+        Navigation.switchNavigation("welcomeForm.fxml",event);
     }
 }

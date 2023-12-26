@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.image.Image?>
@@ -9,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="759.0" prefWidth="515.0" stylesheets="@../style/button.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.WelcomeFormController">
+<AnchorPane prefHeight="759.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.WelcomeFormController">
    <children>
-      <ImageView fitHeight="774.0" fitWidth="519.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="774.0" fitWidth="519.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: 20;">
          <image>
             <Image url="@../assests/img/collage1.png" />
          </image>
@@ -22,7 +23,7 @@
          </image>
       </ImageView>
       <Pane fx:id="weclcomeNicFxId" layoutX="133.0" layoutY="265.0" prefHeight="187.0" prefWidth="249.0" style="-fx-background-color: white; -fx-background-radius: 20;" />
-      <Button layoutX="145.0" layoutY="701.0" mnemonicParsing="false" onAction="#AdminLoginOnAction" prefHeight="45.0" prefWidth="194.0" styleClass="btn2" text="ADMIN LOGIN" />
+      <Button layoutX="145.0" layoutY="701.0" mnemonicParsing="false" onAction="#AdminLoginOnAction" prefHeight="45.0" prefWidth="194.0" styleClass="btn2" stylesheets="@../style/button.css" text="ADMIN LOGIN" />
       <VBox layoutX="202.0" layoutY="531.0" prefHeight="124.0" prefWidth="123.0" style="-fx-background-color: white;">
          <children>
             <Hyperlink onAction="#changeToRussianNIC" text="русский" textFill="#f84f02">
@@ -57,5 +58,14 @@
             </Hyperlink>
          </children>
       </VBox>
+      <JFXButton buttonType="RAISED" layoutX="434.0" layoutY="21.0" onAction="#btnCloseOnAction" prefHeight="54.0" prefWidth="40.0" styleClass="closeBtn" stylesheets="@../style/button.css" text="">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/cross.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

@@ -1,9 +1,12 @@
 package lk.penguin.rentalWheelzAI.controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import lk.penguin.rentalWheelzAI.util.Navigation;
 
 import java.io.IOException;
@@ -15,6 +18,11 @@ public class WelcomeFormController implements Initializable {
     @FXML
     private Pane weclcomeNicFxId;
 
+    @FXML
+    void btnCloseOnAction(ActionEvent event) {
+        Platform.exit();
+        System.exit(0);
+    }
     @FXML
     void AdminLoginOnAction(ActionEvent event) throws IOException {
         Navigation.switchNavigation("backgroundForm.fxml",event);
