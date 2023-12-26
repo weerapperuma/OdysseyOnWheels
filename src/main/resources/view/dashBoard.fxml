@@ -35,11 +35,11 @@
       </ImageView>
       <VBox layoutX="150.0" layoutY="618.0" prefHeight="105.0" prefWidth="251.0">
          <children>
-            <JFXButton prefHeight="98.0" prefWidth="330.0" styleClass="btn2" text="Employee" />
-            <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="288.0" styleClass="btn2" text="Customer" />
+            <JFXButton onAction="#btnEmployeeOnAction" prefHeight="98.0" prefWidth="330.0" styleClass="btn2" text="Employee" />
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#btnCustomerOnAction" prefHeight="49.0" prefWidth="288.0" styleClass="btn2" text="Customer" />
          </children>
       </VBox>
-      <JFXButton layoutX="610.0" layoutY="668.0" prefHeight="0.0" prefWidth="208.0" styleClass="btn2" text="Supplier" />
-      <JFXButton layoutX="1056.0" layoutY="664.0" prefHeight="213.0" prefWidth="135.0" styleClass="btn2" text="Rent" />
+      <JFXButton layoutX="610.0" layoutY="668.0" onAction="#btnSupplierOnAction" prefHeight="0.0" prefWidth="208.0" styleClass="btn2" text="Supplier" />
+      <JFXButton layoutX="1056.0" layoutY="664.0" onAction="#btnRentOnAction" prefHeight="213.0" prefWidth="135.0" styleClass="btn2" text="Rent" />
    </children>
 </AnchorPane>

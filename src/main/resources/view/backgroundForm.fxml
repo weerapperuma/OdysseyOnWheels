@@ -15,7 +15,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXButton layoutX="1479.0" layoutY="4.0" onAction="#dashCloseButtonOnAction" prefHeight="30.0" prefWidth="36.0" text="">
+      <JFXButton layoutX="1481.0" layoutY="4.0" onAction="#dashCloseButtonOnAction" prefHeight="20.0" prefWidth="29.0" text="">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>

@@ -3,17 +3,21 @@ package lk.penguin.rentalWheelzAI.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import lk.penguin.rentalWheelzAI.util.Navigation;
+
+import java.io.IOException;
 
 public class DashBoardFormController {
 
+
     @FXML
-    void btnAttendnceOnAction(ActionEvent event) {
+    void btnUserSettings(MouseEvent event) {
 
     }
 
     @FXML
-    void btnCustomerOnAction(ActionEvent event) {
-
+    void btnCustomerOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "customerManageForm.fxml");
     }
 
     @FXML
@@ -22,27 +26,12 @@ public class DashBoardFormController {
     }
 
     @FXML
-    void btnOrderOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnSalaryOnAction(ActionEvent event) {
+    void btnRentOnAction(ActionEvent event) {
 
     }
 
     @FXML
     void btnSupplierOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnUserSettings(MouseEvent event) {
-
-    }
-
-    @FXML
-    void btnVehicleOnAction(ActionEvent event) {
 
     }
 

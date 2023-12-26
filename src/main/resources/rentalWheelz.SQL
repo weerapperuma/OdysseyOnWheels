@@ -7,7 +7,8 @@ CREATE TABLE user(
     userName VARCHAR(50) NOT NULL ,
     userNIC VARCHAR(15) NOT NULL ,
     userMobile INT(20) NOT NULL,
-    userEmail VARCHAR(200) NOT NULL
+    userEmail VARCHAR(200) NOT NULL,
+    userPassword VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE employee(
@@ -92,3 +93,7 @@ CREATE TABLE sup_order_detail (
     CONSTRAINT FOREIGN KEY (order_id) REFERENCES sup_order(order_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT FOREIGN KEY (sup_id) REFERENCES supplier(sup_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES
+    ('U001','PENGUIN','960036789v','0764532478','penguingotham@gmail.com','123'),
+    ('U002','RIDDLER','960089769v','0767834971','RIDDLER34gotham@gmail.com','456');

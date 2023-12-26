@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="774.0" prefWidth="1442.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.EmployeeManageFormController">
+   <children>
+      <Text layoutX="560.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manaage Employee" wrappingWidth="388.53680419921875">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
