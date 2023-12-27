@@ -40,7 +40,7 @@ CREATE TABLE customer(
     customerEmail VARCHAR(200)
 );
 CREATE TABLE customer_contact (
-    contactId INT PRIMARY KEY AUTO_INCREMENT,
+    contactId VARCHAR(10) PRIMARY KEY ,
     customerId VARCHAR(20),
     customerContact VARCHAR(20),
     FOREIGN KEY (customerId) REFERENCES customer(customerId)
@@ -97,3 +97,9 @@ CREATE TABLE sup_order_detail (
 INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES
     ('U001','PENGUIN','960036789v','0764532478','penguingotham@gmail.com','123'),
     ('U002','RIDDLER','960089769v','0767834971','RIDDLER34gotham@gmail.com','456');
+
+INSERT INTO employee (employeeId,employeeName,empEmail,empNIC,empPosition,empAddress,empContact)
+VALUES
+    ('E001', 'Oswald Cobblepot', 'oswaldCobbepolt@gmail.com','953428902v', 'Manager', 'baddegama,galle', '0771456789'),
+    ('E002', 'Babara Kean', '888sasmithmanawadu@gmail.com','783456723v', 'Manager', 'wathugedara,ambalangoda', '0778263491'),
+    ('E003', 'Bob Johnson', 'bobjohnson@Ggmail.com','893427845v','Mechanic', 'weligama,matara', '0775092846');

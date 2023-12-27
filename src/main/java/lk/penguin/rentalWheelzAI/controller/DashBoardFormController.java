@@ -21,8 +21,8 @@ public class DashBoardFormController {
     }
 
     @FXML
-    void btnEmployeeOnAction(ActionEvent event) {
-
+    void btnEmployeeOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "employeeManageForm.fxml");
     }
 
     @FXML
