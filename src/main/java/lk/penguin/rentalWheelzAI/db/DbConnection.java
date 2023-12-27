@@ -6,13 +6,13 @@ import java.sql.SQLException;
 
 public class DbConnection {
     private static DbConnection dbConnection;
-    private Connection connection;
+    private final Connection connection;
 
     private DbConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cjxjc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
         connection=DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/rental_wheelz",
+                "jdbc:mysql://localhost:3306/rentalWheelz",
                 "penguinDB",
                 "pax_penguina"
         );

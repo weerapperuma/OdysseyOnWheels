@@ -22,7 +22,6 @@ public class LoginFormController {
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         if(userBO.checkCredentials(txtUserName.getText(),txtPassword.getText())){
-            System.out.println("AWa");
             Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "dashBoard.fxml");
         }
         else {
