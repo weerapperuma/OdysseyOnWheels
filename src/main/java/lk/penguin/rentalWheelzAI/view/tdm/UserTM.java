@@ -1,4 +1,4 @@
-package lk.penguin.rentalWheelzAI.tm;
+package lk.penguin.rentalWheelzAI.view.tdm;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

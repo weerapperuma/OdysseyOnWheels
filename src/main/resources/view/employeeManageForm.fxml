@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -17,36 +19,35 @@
       </Text>
       <ScrollPane layoutX="65.0" layoutY="232.0" prefHeight="491.0" prefWidth="1307.0">
          <content>
-            <HBox fx:id="employeeTableRawFxId" prefHeight="39.0" prefWidth="1302.0" style="-fx-border-color: black;">
+            <VBox fx:id="mainContainer" prefHeight="488.0" prefWidth="1305.0">
                <children>
-                  <VBox fx:id="employeeIDFxId" prefHeight="485.0" prefWidth="79.0" style="-fx-border-color: black;" />
-                  <VBox fx:id="employeeNameFxId" prefHeight="485.0" prefWidth="152.0" style="-fx-border-color: black;" />
-                  <VBox fx:id="employeeEmailFxId" prefHeight="38.0" prefWidth="174.0" style="-fx-border-color: black;" />
-                  <VBox fx:id="employeeNICFxId" prefHeight="38.0" prefWidth="177.0" style="-fx-border-color: black;" />
-                  <VBox fx:id="employeePositionFxId" prefHeight="253.0" prefWidth="100.0" style="-fx-border-color: black;" />
-                  <VBox fx:id="employeeAddressFxId" prefHeight="38.0" prefWidth="281.0" style="-fx-border-color: black;" />
-                  <VBox fx:id="employeeContactFxId" layoutX="878.0" layoutY="11.0" prefHeight="38.0" prefWidth="239.0" style="-fx-border-color: black;" />
-                  <VBox layoutX="828.0" layoutY="11.0" prefHeight="38.0" prefWidth="88.0" style="-fx-border-color: black;">
+                  <Pane fx:id="employeeRawLoadPane" prefHeight="70.0" prefWidth="1304.0" style="-fx-background-color: yellow;">
                      <children>
-                        <HBox prefHeight="38.0" prefWidth="127.0">
-                           <children>
-                              <JFXButton onAction="#employeeUpdateOnAction" prefHeight="37.0" prefWidth="88.0" text="Update" />
-                           </children>
-                        </HBox>
+                        <Label fx:id="employeeidFxId" layoutX="7.0" layoutY="9.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
+                        <Label fx:id="employeeNameFxId" layoutX="101.0" layoutY="7.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
+                        <Label fx:id="employeeEmailFxId" layoutX="280.0" layoutY="6.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
+                        <Label fx:id="employeeNicFxId" layoutX="501.0" layoutY="7.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
+                        <Label fx:id="employeePositionFxId" layoutX="656.0" layoutY="7.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
+                        <Label fx:id="employeeAddressFxId" layoutX="789.0" layoutY="10.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
+                        <Label fx:id="employeeContactFxId" layoutX="946.0" layoutY="10.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
+                        <JFXButton layoutX="1116.0" layoutY="23.0" onAction="#employeeDeleteOnAction" text="Delete" />
+                        <JFXButton layoutX="1223.0" layoutY="28.0" onAction="#employeeUpdateOnAction" text="Update" />
                      </children>
-                  </VBox>
-                  <VBox layoutX="1057.0" layoutY="11.0" prefHeight="38.0" prefWidth="74.0" style="-fx-border-color: black;">
-                     <children>
-                        <HBox prefHeight="38.0" prefWidth="109.0">
-                           <children>
-                              <JFXButton onAction="#employeeDeleteOnAction" prefHeight="36.0" prefWidth="127.0" text="Delete" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
+                  </Pane>
                </children>
-            </HBox>
+            </VBox>
          </content>
       </ScrollPane>
+      <HBox layoutX="66.0" layoutY="168.0" prefHeight="57.0" prefWidth="1306.0">
+         <children>
+            <Label prefHeight="62.0" prefWidth="126.0" text="Id" />
+            <Label prefHeight="61.0" prefWidth="170.0" text="name" />
+            <Label prefHeight="62.0" prefWidth="220.0" text="email" />
+            <Label prefHeight="59.0" prefWidth="151.0" text="nic" />
+            <Label prefHeight="58.0" prefWidth="130.0" text="position" />
+            <Label prefHeight="58.0" prefWidth="175.0" text="address" />
+            <Label prefHeight="59.0" prefWidth="135.0" text="contact" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
