@@ -98,8 +98,20 @@ INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword)
     ('U001','PENGUIN','960036789v','0764532478','penguingotham@gmail.com','123'),
     ('U002','RIDDLER','960089769v','0767834971','RIDDLER34gotham@gmail.com','456');
 
-INSERT INTO employee (employeeId,employeeName,empEmail,empNIC,empPosition,empAddress,empContact)
+INSERT INTO employee (employeeId, employeeName, empEmail, empNIC, empPosition, empAddress, empContact)
 VALUES
-    ('E001', 'Oswald Cobblepot', 'oswaldCobbepolt@gmail.com','953428902v', 'Manager', 'baddegama,galle', '0771456789'),
-    ('E002', 'Babara Kean', '888sasmithmanawadu@gmail.com','783456723v', 'Manager', 'wathugedara,ambalangoda', '0778263491'),
-    ('E003', 'Bob Johnson', 'bobjohnson@Ggmail.com','893427845v','Mechanic', 'weligama,matara', '0775092846');
+    ('E004', 'John Doe', 'johndoe@gmail.com', '923456789v', 'Technician', 'colombo', '0712345678'),
+    ('E005', 'Jane Smith', 'janesmith@gmail.com', '823456789v', 'Engineer', 'kandy', '0723456789'),
+    ('E006', 'Alice Johnson', 'alicejohnson@gmail.com', '713456789v', 'Supervisor', 'negombo', '0734567890'),
+    ('E007', 'Bob Williams', 'bobwilliams@gmail.com', '603456789v', 'Driver', 'jaffna', '0745678901'),
+    ('E008', 'Eva Davis', 'evadavis@gmail.com', '503456789v', 'Security', 'anuradhapura', '0756789012'),
+    ('E009', 'Charlie Brown', 'charliebrown@gmail.com', '403456789v', 'Clerk', 'batticaloa', '0767890123'),
+    ('E010', 'Lucy Johnson', 'lucyjohnson@gmail.com', '303456789v', 'Accountant', 'trincomalee', '0778901234'),
+    ('E011', 'Michael Smith', 'michaelsmith@gmail.com', '203456789v', 'Cleaner', 'ratnapura', '0789012345'),
+    ('E012', 'Sophia Davis', 'sophiadavis@gmail.com', '103456789v', 'Assistant', 'kurunegala', '0790123456'),
+    ('E013', 'David Wilson', 'davidwilson@gmail.com', '903456789v', 'Coordinator', 'gampaha', '0711223344'),
+    ('E014', 'Olivia Anderson', 'oliviaanderson@gmail.com', '803456789v', 'Manager', 'nuwaraeliya', '0712345678'),
+    ('E015', 'Henry Taylor', 'henrytaylor@gmail.com', '703456789v', 'Technician', 'colombo', '0723456789'),
+    ('E016', 'Grace Miller', 'gracemiller@gmail.com', '603456789v', 'Engineer', 'kandy', '0734567890'),
+    ('E017', 'Samuel Brown', 'samuelbrown@gmail.com', '503456789v', 'Supervisor', 'negombo', '0745678901'),
+    ('E018', 'Isabella Wilson', 'isabellawilson@gmail.com', '403456789v', 'Driver', 'jaffna', '0756789012');

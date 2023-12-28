@@ -5,9 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import lk.penguin.rentalWheelzAI.dto.EmployeeDTO;
+import lk.penguin.rentalWheelzAI.util.SQLUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.sql.SQLException;
 
 
 public class EmployeeRawFormController {
@@ -37,8 +40,9 @@ public class EmployeeRawFormController {
     private Label lblEmpPosition;
 
     @FXML
-    void btnEmpDeleteOnAction(ActionEvent event) {
-
+    void btnEmpDeleteOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String empId=lblEmpId.getText();
+        SQLUtil.execute("DELETE FROM employee WHERE employeeId=?",empId);
     }
 
     @FXML

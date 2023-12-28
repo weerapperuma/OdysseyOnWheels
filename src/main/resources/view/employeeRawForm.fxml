@@ -2,19 +2,56 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="employeerawFxId" prefHeight="51.0" prefWidth="1306.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.EmployeeRawFormController">
+<AnchorPane fx:id="employeerawFxId" prefHeight="51.0" prefWidth="1306.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.EmployeeRawFormController">
    <children>
-      <Label fx:id="lblEmpId" layoutX="1.0" layoutY="1.0" prefHeight="48.0" prefWidth="70.0" style="-fx-border-color: black;" text="Employee id" />
-      <Label fx:id="lblEmpName" layoutX="72.0" layoutY="1.0" prefHeight="48.0" prefWidth="190.0" style="-fx-border-color: black;" text="name" />
-      <Label fx:id="lblEmpEmail" layoutX="263.0" layoutY="1.0" prefHeight="48.0" prefWidth="250.0" style="-fx-border-color: black;" text="email" />
-      <Label fx:id="lblEmpNic" layoutX="514.0" layoutY="1.0" prefHeight="48.0" prefWidth="155.0" style="-fx-border-color: black;" text="nic" />
-      <Label fx:id="lblEmpPosition" layoutX="670.0" layoutY="1.0" prefHeight="48.0" prefWidth="125.0" style="-fx-border-color: black;" text="position" />
-      <Label fx:id="lblEmpAddress" layoutX="796.0" layoutY="1.0" prefHeight="48.0" prefWidth="242.0" style="-fx-border-color: black;" text="Address" />
-      <Label fx:id="lblEmpContact" layoutX="1040.0" layoutY="1.0" prefHeight="48.0" prefWidth="144.0" style="-fx-border-color: black;" text="Contact" />
-      <JFXButton layoutX="1189.0" layoutY="12.0" onAction="#btnEmpDeleteOnAction" style="-fx-border-color: blue;" text="Delete" />
-      <JFXButton layoutX="1246.0" layoutY="12.0" onAction="#btnEmpUpdateOnAction" style="-fx-border-color: blue;" text="Update" />
+      <Label fx:id="lblEmpId" layoutX="7.0" layoutY="1.0" prefHeight="48.0" prefWidth="64.0" text="ID">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblEmpName" layoutX="72.0" layoutY="1.0" prefHeight="48.0" prefWidth="190.0" text="name">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblEmpEmail" layoutX="263.0" layoutY="1.0" prefHeight="48.0" prefWidth="250.0" text="email">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblEmpNic" layoutX="514.0" layoutY="1.0" prefHeight="48.0" prefWidth="155.0" text="nic">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblEmpPosition" layoutX="670.0" layoutY="1.0" prefHeight="48.0" prefWidth="125.0" text="position">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblEmpAddress" layoutX="796.0" layoutY="1.0" prefHeight="48.0" prefWidth="242.0" text="Address">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblEmpContact" layoutX="1040.0" layoutY="1.0" prefHeight="48.0" prefWidth="144.0" text="Contact">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <JFXButton layoutX="1192.0" layoutY="5.0" onAction="#btnEmpDeleteOnAction" prefHeight="38.0" prefWidth="46.0" styleClass="btndelete" text="">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/delete.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
+      <JFXButton layoutX="1249.0" layoutY="6.0" onAction="#btnEmpUpdateOnAction" prefHeight="30.0" prefWidth="46.0" styleClass="btn" text="">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/icons8-update-64.png" />
+               </image>
+            </ImageView>
+         </graphic></JFXButton>
    </children>
 </AnchorPane>
