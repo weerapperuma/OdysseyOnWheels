@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,37 +16,46 @@
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Text>
-      <ScrollPane layoutX="65.0" layoutY="232.0" prefHeight="491.0" prefWidth="1307.0">
-         <content>
-            <VBox fx:id="mainContainer" prefHeight="488.0" prefWidth="1305.0">
-               <children>
-                  <Pane fx:id="employeeRawLoadPane" prefHeight="70.0" prefWidth="1304.0" style="-fx-background-color: yellow;">
-                     <children>
-                        <Label fx:id="employeeidFxId" layoutX="7.0" layoutY="9.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
-                        <Label fx:id="employeeNameFxId" layoutX="101.0" layoutY="7.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
-                        <Label fx:id="employeeEmailFxId" layoutX="280.0" layoutY="6.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
-                        <Label fx:id="employeeNicFxId" layoutX="501.0" layoutY="7.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
-                        <Label fx:id="employeePositionFxId" layoutX="656.0" layoutY="7.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
-                        <Label fx:id="employeeAddressFxId" layoutX="789.0" layoutY="10.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
-                        <Label fx:id="employeeContactFxId" layoutX="946.0" layoutY="10.0" prefHeight="51.0" prefWidth="85.0" text="Label" />
-                        <JFXButton layoutX="1116.0" layoutY="23.0" onAction="#employeeDeleteOnAction" text="Delete" />
-                        <JFXButton layoutX="1223.0" layoutY="28.0" onAction="#employeeUpdateOnAction" text="Update" />
-                     </children>
-                  </Pane>
-               </children>
-            </VBox>
-         </content>
-      </ScrollPane>
       <HBox layoutX="66.0" layoutY="168.0" prefHeight="57.0" prefWidth="1306.0">
          <children>
-            <Label prefHeight="62.0" prefWidth="126.0" text="Id" />
-            <Label prefHeight="61.0" prefWidth="170.0" text="name" />
-            <Label prefHeight="62.0" prefWidth="220.0" text="email" />
-            <Label prefHeight="59.0" prefWidth="151.0" text="nic" />
-            <Label prefHeight="58.0" prefWidth="130.0" text="position" />
-            <Label prefHeight="58.0" prefWidth="175.0" text="address" />
-            <Label prefHeight="59.0" prefWidth="135.0" text="contact" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="70.0" style="-fx-border-color: black;" text="Id" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="189.0" style="-fx-border-color: black;" text="name">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="264.0" style="-fx-border-color: black;" text="email">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="59.0" prefWidth="151.0" style="-fx-border-color: black;" text="nic">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="58.0" prefWidth="130.0" style="-fx-border-color: black;" text="position">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="58.0" prefWidth="251.0" style="-fx-border-color: black;" text="address">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label alignment="CENTER" prefHeight="59.0" prefWidth="135.0" style="-fx-border-color: black;" text="contact">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
          </children>
       </HBox>
+      <Pane fx:id="managePane" layoutX="65.0" layoutY="232.0" prefHeight="491.0" prefWidth="1306.0">
+         <children>
+            <ScrollPane fx:id="scrolePane" prefHeight="491.0" prefWidth="1307.0">
+               <content>
+                  <VBox fx:id="mainContainer" prefHeight="488.0" prefWidth="1305.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
