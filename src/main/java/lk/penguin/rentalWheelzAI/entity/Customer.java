@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class Customer {
    private String customerId;
    private String customerNIC;
+   private String customerName;
    private String customerCountry;
    private String customerEmail;
 }

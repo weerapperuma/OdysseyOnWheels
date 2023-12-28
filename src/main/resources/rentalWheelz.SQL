@@ -36,6 +36,7 @@ CREATE TABLE employee_salary(
 CREATE TABLE customer(
     customerId VARCHAR(20) PRIMARY KEY NOT NULL ,
     customerNIC VARCHAR(30) NOT NULL ,
+    customerName VARCHAR(100) DEFAULT NULL,
     customerCountry VARCHAR(30) ,
     customerEmail VARCHAR(200)
 );
