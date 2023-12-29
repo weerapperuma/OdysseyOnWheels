@@ -7,6 +7,7 @@ import lk.penguin.rentalWheelzAI.controller.EmployeeRawFormController;
 import lk.penguin.rentalWheelzAI.dao.EmployeeDAO;
 import lk.penguin.rentalWheelzAI.dao.impl.EmployeeDAOImpl;
 import lk.penguin.rentalWheelzAI.dto.EmployeeDTO;
+import lk.penguin.rentalWheelzAI.entity.Employee;
 import lk.penguin.rentalWheelzAI.util.SQLUtil;
 
 import java.io.IOException;
@@ -100,5 +101,16 @@ public class EmployeeBOImpl implements EmployeeBO{
     @Override
     public String generateNewId() throws SQLException, ClassNotFoundException {
         return employeeDAO.generateNewId();
+    }
+
+    @Override
+    public boolean save(EmployeeDTO employeeDTO) throws SQLException, ClassNotFoundException {
+        return employeeDAO.save(new Employee(employeeDTO.getEmployeeId(),
+                employeeDTO.getEmployeeName(),
+                employeeDTO.getEmpEmail(),
+                employeeDTO.getEmpNIC(),
+                employeeDTO.getEmpPosition(),
+                employeeDTO.getEmpAddress(),
+                employeeDTO.getEmpContact()));
     }
 }

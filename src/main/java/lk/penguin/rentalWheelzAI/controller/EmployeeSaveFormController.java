@@ -6,7 +6,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import lk.penguin.rentalWheelzAI.bo.EmployeeBO;
 import lk.penguin.rentalWheelzAI.bo.EmployeeBOImpl;
+import lk.penguin.rentalWheelzAI.dto.EmployeeDTO;
+import lk.penguin.rentalWheelzAI.util.Navigation;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class EmployeeSaveFormController {
@@ -33,8 +36,14 @@ public class EmployeeSaveFormController {
 
     @FXML
     private TextField txtEmpPosition;
+    String empID="";
+
+//    public void EmployeeSaveFormController(){
+//        this.txtEmpName=txtEmpName;
+//    }
     public void initialize() throws SQLException, ClassNotFoundException {
-        this.lblEmpId.setText(generateId());
+        empID=generateId();
+        this.lblEmpId.setText(empID);
 
     }
 
@@ -43,9 +52,7 @@ public class EmployeeSaveFormController {
         if(lastId!=null){
             String lastNumber=trimFirstLetter(lastId);
             int newLastNumber=Integer.parseInt(lastNumber)+1;
-            System.out.println("alut eka "+newLastNumber);
             String out=String.format("E%03d",newLastNumber);
-            System.out.println(out);
             return out;
         }
         else {
@@ -57,8 +64,21 @@ public class EmployeeSaveFormController {
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
+    void btnSaveOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+        EmployeeDTO employeeDTO=new EmployeeDTO();
+        employeeDTO.setEmployeeId(empID);
+        employeeDTO.setEmployeeName(txtEmpName.getText());
+        employeeDTO.setEmpEmail(txtEmpEmail.getText());
+        employeeDTO.setEmpNIC(txtEmpINic.getText());
+        employeeDTO.setEmpPosition(txtEmpPosition.getText());
+        employeeDTO.setEmpAddress(txtEmpAddress.getText());
+        employeeDTO.setEmpContact(txtEmpContact.getText());
 
+        boolean isSaved=employeeBO.save(employeeDTO);
+        if(isSaved){
+            Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "employeeManageForm.fxml");
+            Navigation.closePopup();
+        }
     }
 
 }

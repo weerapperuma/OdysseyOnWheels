@@ -18,4 +18,6 @@ public interface EmployeeBO {
     ArrayList<EmployeeDTO> showAll(String id) throws SQLException, ClassNotFoundException;
 
     String generateNewId() throws SQLException, ClassNotFoundException;
+
+    boolean save(EmployeeDTO employeeDTO) throws SQLException, ClassNotFoundException;
 }
