@@ -25,6 +25,10 @@ public class EmployeeManageFormController {
     private Pane managePane;
     @FXML
     private ScrollPane scrolePane;
+    @FXML
+    void btnHomeOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "dashBoard.fxml");
+    }
 
     EmployeeBO employeeBO= new EmployeeBOImpl(this);
     public VBox getMainContainer() {

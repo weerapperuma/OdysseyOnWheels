@@ -14,9 +14,9 @@
 
 <AnchorPane prefHeight="774.0" prefWidth="1442.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.EmployeeManageFormController">
    <children>
-      <Text layoutX="560.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Employee" wrappingWidth="388.53680419921875">
+      <Text fill="#ff2e16" layoutX="438.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Employee" textAlignment="CENTER" wrappingWidth="474.53680419921875">
          <font>
-            <Font name="System Bold Italic" size="36.0" />
+            <Font name="System Bold Italic" size="48.0" />
          </font>
       </Text>
       <Pane fx:id="managePane" layoutX="51.0" layoutY="227.0" prefHeight="496.0" prefWidth="1324.0">
@@ -74,5 +74,14 @@
             <Image url="@../assests/icon/user.png" />
          </image>
       </ImageView>
+      <JFXButton layoutX="73.0" layoutY="57.0" onAction="#btnHomeOnAction" prefHeight="80.0" prefWidth="88.0" styleClass="btn" text="">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" styleClass="btn">
+               <image>
+                  <Image url="@../assests/icon/home.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>
