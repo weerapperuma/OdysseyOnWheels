@@ -12,5 +12,8 @@ public interface EmployeeBO {
 
     ArrayList<EmployeeDTO> loadALl(String query) throws SQLException, ClassNotFoundException;
 
+    boolean update(EmployeeDTO dto) throws SQLException, ClassNotFoundException;
+
+
     ArrayList<EmployeeDTO> showAll(String id) throws SQLException, ClassNotFoundException;
 }

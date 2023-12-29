@@ -47,10 +47,24 @@ public class Navigation {
 
         Scene scene1=new Scene(root);
         popupStage.setScene(scene1);
+        Navigation.setPopupStage(popupStage);
 
         popupStage.centerOnScreen();
 
         popupStage.showAndWait();
     }
+    private static Stage popupStage;
 
+    private static void setPopupStage(Stage stage) {
+        popupStage=stage;
+
+    }
+
+
+    public static void closePopup() {
+        if (popupStage != null) {
+            popupStage.close();
+            popupStage = null; // Set to null to avoid potential memory leaks
+        }
+    }
 }

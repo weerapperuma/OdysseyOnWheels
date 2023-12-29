@@ -60,9 +60,19 @@ public class EmployeeBOImpl implements EmployeeBO{
         employeeManageFormController.getMainContainer().getChildren().add(root);
 
     }
-    public void updateEmployee(String id) throws SQLException, ClassNotFoundException {
-        String query="SELECT * FROM employee WHERE employeeId="+id;
-        //ArrayList<EmployeeDTO>dtos=
+    @Override
+    public boolean update(EmployeeDTO dto) throws SQLException, ClassNotFoundException {
+        System.out.println(dto.getEmployeeName());
+        System.out.println(dto.getEmployeeId());
+        return SQLUtil.execute("UPDATE employee SET employeeName=?,empEmail=?,empNIC=?,empPosition=?, empAddress=?,empContact=? WHERE employeeId=?",
+                dto.getEmployeeName(),
+                dto.getEmpEmail(),
+                dto.getEmpNIC(),
+                dto.getEmpPosition(),
+                dto.getEmpAddress(),
+                dto.getEmpContact(),
+                dto.getEmployeeId()
+                );
     }
     @Override
     public ArrayList<EmployeeDTO> showAll(String id) throws SQLException, ClassNotFoundException {

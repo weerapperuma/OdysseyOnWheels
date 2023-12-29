@@ -7,10 +7,18 @@ import javafx.scene.control.TextField;
 import lk.penguin.rentalWheelzAI.bo.EmployeeBO;
 import lk.penguin.rentalWheelzAI.bo.EmployeeBOImpl;
 import lk.penguin.rentalWheelzAI.dto.EmployeeDTO;
+import lk.penguin.rentalWheelzAI.util.Navigation;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class EmployeeUpdateFormController {
     EmployeeManageFormController employeeManageFormController=new EmployeeManageFormController();
     EmployeeBO employeeBO = new EmployeeBOImpl(employeeManageFormController);
@@ -37,6 +45,22 @@ public class EmployeeUpdateFormController {
     private TextField txtEmpPosition;
 
 
+    public EmployeeDTO loadIds(){
+
+        this.txtEmpName=txtEmpName;
+        EmployeeDTO dto=new EmployeeDTO();
+        dto.setEmployeeId(EmployeeRawFormController.empId);
+        dto.setEmployeeName(txtEmpName.getText());
+        dto.setEmpEmail(txtEmpEmail.getText());
+        dto.setEmpNIC(txtEmpINic.getText());
+        dto.setEmpPosition(txtEmpPosition.getText());
+        dto.setEmpAddress(txtEmpAddress.getText());
+        dto.setEmpContact(txtEmpContact.getText());
+
+        return dto;
+    }
+
+
     public void initialize() throws SQLException, ClassNotFoundException {
         lblEmpId.setText(EmployeeRawFormController.empId);
         ArrayList<EmployeeDTO> dtos=employeeBO.showAll(EmployeeRawFormController.empId);
@@ -50,8 +74,15 @@ public class EmployeeUpdateFormController {
 
 
     @FXML
-    void btnUpdateOnAction(ActionEvent event) {
-
+    void btnUpdateOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+        EmployeeDTO dto=loadIds();
+        boolean isUpdated=employeeBO.update(dto);
+        System.out.println(dto.getEmployeeName());
+        System.out.println(isUpdated);
+        if(isUpdated){
+            Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane,"employeeManageForm.fxml");
+            Navigation.closePopup();
+        }
     }
 
 }
