@@ -49,7 +49,7 @@ public class BackgroundFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         startClock();
         try {
-            Navigation.switchPaging(pagingPane,"loginForm.fxml");
+            Navigation.switchPaging(pagingPane,"dashBoard.fxml");
 
         } catch (IOException e) {
             throw new RuntimeException(e);

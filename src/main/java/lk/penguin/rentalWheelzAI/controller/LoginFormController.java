@@ -22,12 +22,19 @@ public class LoginFormController {
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         if(userBO.checkCredentials(txtUserName.getText(),txtPassword.getText())){
-            Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "dashBoard.fxml");
+            Navigation.closePopup();
+            Navigation.closeCurrentWindow(event);
+            Navigation.switchNavigation( "backgroundForm.fxml",event);
+
         }
         else {
             new Alert(Alert.AlertType.ERROR,"Invalid Login Details");
         }
 
+    }
+    @FXML
+    void backOnAction(ActionEvent event) throws IOException {
+        Navigation.switchNavigation("welcomeForm.fxml",event);
     }
 
     @FXML

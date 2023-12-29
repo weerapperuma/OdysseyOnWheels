@@ -67,4 +67,10 @@ public class Navigation {
             popupStage = null; // Set to null to avoid potential memory leaks
         }
     }
+
+    public static void closeCurrentWindow(ActionEvent event) {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        currentStage.close();
+    }
+
 }

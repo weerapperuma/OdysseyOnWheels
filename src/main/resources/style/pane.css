@@ -1,0 +1,9 @@
+/* styles.css */
+
+.hover-pane {
+    -fx-background-color: #ffffff; /* Default color */
+}
+
+.hover-pane:hover {
+    -fx-background-color: #da2525; /* Color when hovered */
+}

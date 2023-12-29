@@ -48,6 +48,11 @@ public class EmployeeUpdateFormController {
     public EmployeeDTO loadIds(){
 
         this.txtEmpName=txtEmpName;
+        this.txtEmpEmail=txtEmpEmail;
+        this.txtEmpAddress=txtEmpAddress;
+        this.txtEmpINic=txtEmpINic;
+        this.txtEmpPosition=txtEmpPosition;
+        this.txtEmpContact=txtEmpContact;
         EmployeeDTO dto=new EmployeeDTO();
         dto.setEmployeeId(EmployeeRawFormController.empId);
         dto.setEmployeeName(txtEmpName.getText());

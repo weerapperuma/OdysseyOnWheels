@@ -4,6 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import lk.penguin.rentalWheelzAI.controller.EmployeeManageFormController;
 import lk.penguin.rentalWheelzAI.controller.EmployeeRawFormController;
+import lk.penguin.rentalWheelzAI.dao.EmployeeDAO;
+import lk.penguin.rentalWheelzAI.dao.impl.EmployeeDAOImpl;
 import lk.penguin.rentalWheelzAI.dto.EmployeeDTO;
 import lk.penguin.rentalWheelzAI.util.SQLUtil;
 
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 
 public class EmployeeBOImpl implements EmployeeBO{
     private EmployeeManageFormController employeeManageFormController;
+    EmployeeDAO employeeDAO=new EmployeeDAOImpl();
 
 
     public EmployeeBOImpl(EmployeeManageFormController employeeManageFormController) {
@@ -93,5 +96,9 @@ public class EmployeeBOImpl implements EmployeeBO{
 
         }
         return dtos;
+    }
+    @Override
+    public String generateNewId() throws SQLException, ClassNotFoundException {
+        return employeeDAO.generateNewId();
     }
 }

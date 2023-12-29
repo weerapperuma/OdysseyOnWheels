@@ -18,6 +18,15 @@ public class WelcomeFormController implements Initializable {
     @FXML
     private Pane weclcomeNicFxId;
 
+//    private static WelcomeFormController controller;
+//
+//    public WelcomeFormController(){
+//        controller=this;
+//    }
+//    public static WelcomeFormController getInstance(){
+//        return controller;
+//    }
+
     @FXML
     void btnCloseOnAction(ActionEvent event) {
         Platform.exit();
@@ -25,7 +34,7 @@ public class WelcomeFormController implements Initializable {
     }
     @FXML
     void AdminLoginOnAction(ActionEvent event) throws IOException {
-        Navigation.switchNavigation("backgroundForm.fxml",event);
+        Navigation.switchNavigation("loginForm.fxml",event);
     }
 
     @FXML

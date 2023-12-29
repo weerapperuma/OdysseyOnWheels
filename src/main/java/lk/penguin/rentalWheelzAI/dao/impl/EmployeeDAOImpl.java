@@ -1,11 +1,10 @@
 package lk.penguin.rentalWheelzAI.dao.impl;
 
 import lk.penguin.rentalWheelzAI.dao.EmployeeDAO;
-import lk.penguin.rentalWheelzAI.dto.EmployeeDTO;
-import lk.penguin.rentalWheelzAI.entity.Customer;
 import lk.penguin.rentalWheelzAI.entity.Employee;
 import lk.penguin.rentalWheelzAI.util.SQLUtil;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -19,5 +18,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 employee.getEmpAddress(),
                 employee.getEmpContact()
                 );
+    }
+    @Override
+    public  String generateNewId() throws SQLException, ClassNotFoundException {
+        ResultSet rst=SQLUtil.execute("SELECT employeeId FROM employee ORDER BY employeeId DESC LIMIT 1;");
+        if(rst.next()){
+            System.out.println(rst.getString(1)+"hutto");
+            return rst.getString(1);
+
+        }
+        return null;
     }
 }

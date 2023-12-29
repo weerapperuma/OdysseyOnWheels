@@ -1,5 +1,9 @@
-.font{
-    -fx-font-family: "Noto Sans";
+.font {
+    -fx-font-family: "System Bold";
+}
+
+.bold-font {
+    -fx-font-family: "System Bold";
 }
 
 .image-view {
@@ -15,7 +19,8 @@
 
 .btn {
     -fx-background-color: transparent;
-    -fx-border-color: #001c83;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent;
     -fx-border-radius: 20;
     -fx-background-radius: 20;
     -fx-font-size: 15;
@@ -30,7 +35,7 @@
 }
 .btndelete {
     -fx-background-color: transparent;
-    -fx-border-color: #da2525;
+    -fx-border-color: transparent;
     -fx-border-radius: 20;
     -fx-background-radius: 20;
     -fx-font-size: 15;
