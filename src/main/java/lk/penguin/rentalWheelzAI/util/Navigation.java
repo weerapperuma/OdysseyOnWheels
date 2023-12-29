@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -32,6 +33,24 @@ public class Navigation {
 
         Parent root=loader.load();
         pane.getChildren().add(root);
+    }
+
+    public static void popupPaging(Pane pane,String path) throws IOException {
+        FXMLLoader loader=new FXMLLoader(Navigation.class.getResource("/view/"+path));
+        Parent root=loader.load();
+
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.initOwner(pane.getScene().getWindow());
+
+        popupStage.setTitle("Update");
+
+        Scene scene1=new Scene(root);
+        popupStage.setScene(scene1);
+
+        popupStage.centerOnScreen();
+
+        popupStage.showAndWait();
     }
 
 }

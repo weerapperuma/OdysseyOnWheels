@@ -42,6 +42,8 @@ public class EmployeeRawFormController {
 
     @FXML
     private Label lblEmpPosition;
+
+    public static String empId;
     EmployeeManageFormController employeeManageFormController;
 
     EmployeeBO employeeBO=new EmployeeBOImpl(employeeManageFormController);
@@ -54,8 +56,11 @@ public class EmployeeRawFormController {
     }
 
     @FXML
-    void btnEmpUpdateOnAction(ActionEvent event) {
-
+    void btnEmpUpdateOnAction(ActionEvent event) throws IOException {
+        String empId2=lblEmpId.getText();
+        empId = empId2;
+        System.out.println(empId);
+        Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, "employeeUpdateForm.fxml");
     }
 
     public void setData(EmployeeDTO dto) {

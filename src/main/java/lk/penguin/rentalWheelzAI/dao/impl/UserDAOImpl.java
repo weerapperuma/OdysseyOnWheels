@@ -3,6 +3,7 @@ package lk.penguin.rentalWheelzAI.dao.impl;
 import javafx.scene.control.Alert;
 import lk.penguin.rentalWheelzAI.dao.UserDAO;
 import lk.penguin.rentalWheelzAI.dto.UserDTO;
+import lk.penguin.rentalWheelzAI.entity.User;
 import lk.penguin.rentalWheelzAI.util.CrudUtil;
 import lk.penguin.rentalWheelzAI.util.SQLUtil;
 
@@ -30,4 +31,9 @@ public class UserDAOImpl implements UserDAO {
         return false;
     }
 
+
+    @Override
+    public boolean update(User dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
 }

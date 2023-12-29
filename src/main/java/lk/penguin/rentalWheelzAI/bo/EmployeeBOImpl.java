@@ -15,13 +15,24 @@ import java.util.ArrayList;
 public class EmployeeBOImpl implements EmployeeBO{
     private EmployeeManageFormController employeeManageFormController;
 
+
     public EmployeeBOImpl(EmployeeManageFormController employeeManageFormController) {
         this.employeeManageFormController = employeeManageFormController;
     }
     @Override
     public void loadTableView() throws SQLException, ClassNotFoundException, IOException {
+        String query="SELECT * FROM employee";
+        ArrayList<EmployeeDTO>dtos=loadALl(query);
+
+        for(EmployeeDTO dto:dtos){
+            createEmployeeRawLoadPane(dto);
+        }
+    }
+    @Override
+    public ArrayList<EmployeeDTO> loadALl(String query) throws SQLException, ClassNotFoundException {
+
+        ResultSet rst= SQLUtil.execute(query);
         ArrayList<EmployeeDTO> dtos=new ArrayList<>();
-        ResultSet rst= SQLUtil.execute("SELECT * FROM employee");
         while (rst.next()){
             EmployeeDTO dto=new EmployeeDTO();
 
@@ -36,9 +47,7 @@ public class EmployeeBOImpl implements EmployeeBO{
             dtos.add(dto);
 
         }
-        for(EmployeeDTO dto:dtos){
-            createEmployeeRawLoadPane(dto);
-        }
+        return dtos;
     }
 
     private void createEmployeeRawLoadPane(EmployeeDTO dto) throws IOException {
@@ -50,5 +59,29 @@ public class EmployeeBOImpl implements EmployeeBO{
 
         employeeManageFormController.getMainContainer().getChildren().add(root);
 
+    }
+    public void updateEmployee(String id) throws SQLException, ClassNotFoundException {
+        String query="SELECT * FROM employee WHERE employeeId="+id;
+        //ArrayList<EmployeeDTO>dtos=
+    }
+    @Override
+    public ArrayList<EmployeeDTO> showAll(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst= SQLUtil.execute("SELECT * FROM employee WHERE employeeId=?",id);
+        ArrayList<EmployeeDTO> dtos=new ArrayList<>();
+        while (rst.next()){
+            EmployeeDTO dto=new EmployeeDTO();
+
+            dto.setEmployeeId(rst.getString("employeeId"));
+            dto.setEmployeeName(rst.getString("employeeName"));
+            dto.setEmpEmail(rst.getString("empEmail"));
+            dto.setEmpNIC(rst.getString("empNIC"));
+            dto.setEmpPosition(rst.getString("empPosition"));
+            dto.setEmpAddress(rst.getString("empAddress"));
+            dto.setEmpContact(rst.getString("empContact"));
+
+            dtos.add(dto);
+
+        }
+        return dtos;
     }
 }
