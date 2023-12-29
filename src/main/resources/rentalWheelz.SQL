@@ -34,28 +34,27 @@ CREATE TABLE employee_salary(
 );
 
 CREATE TABLE customer(
-    customerId VARCHAR(20) PRIMARY KEY NOT NULL ,
-    customerNIC VARCHAR(30) NOT NULL ,
+    customerNIC VARCHAR(30) PRIMARY KEY NOT NULL ,
     customerName VARCHAR(100) DEFAULT NULL,
     customerCountry VARCHAR(30) ,
     customerEmail VARCHAR(200)
 );
 CREATE TABLE customer_contact (
     contactId VARCHAR(10) PRIMARY KEY ,
-    customerId VARCHAR(20),
+    customerNIC VARCHAR(20),
     customerContact VARCHAR(20),
-    FOREIGN KEY (customerId) REFERENCES customer(customerId)
+    FOREIGN KEY (customerNIC) REFERENCES customer(customerNIC)
 );
 
 CREATE TABLE rent(
     rentId VARCHAR(20) PRIMARY KEY NOT NULL ,
-    customerId VARCHAR(20),
+    customerNIC VARCHAR(20),
     rent_first_amount DECIMAL(10,2),
     rent_second_amount DECIMAL(10,2),
     total_amount DECIMAL(10,2) GENERATED ALWAYS AS (rent_first_amount + rent_second_amount) STORED,
     rent_starting DATE,
     rent_ending DATE,
-    CONSTRAINT FOREIGN KEY (customerId) REFERENCES customer(customerId) ON DELETE CASCADE ON UPDATE  CASCADE
+    CONSTRAINT FOREIGN KEY (customerNIC) REFERENCES customer(customerNIC) ON DELETE CASCADE ON UPDATE  CASCADE
 );
 
 CREATE TABLE vehicle (

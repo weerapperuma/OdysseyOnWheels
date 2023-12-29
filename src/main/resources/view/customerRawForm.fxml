@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="customerrawFxId" prefHeight="51.0" prefWidth="1324.0" styleClass="hover-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.CustomerRawFormController">
+    <children>
+        <Label fx:id="lblCustNic" layoutX="18.0" layoutY="1.0" prefHeight="48.0" prefWidth="227.0" text="NIC">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Label>
+        <Label fx:id="lblCustName" layoutX="286.0" layoutY="1.0" prefHeight="48.0" prefWidth="242.0" text="Name">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Label>
+        <Label fx:id="lblEmpPositiolblCustCountryn" layoutX="560.0" layoutY="1.0" prefHeight="48.0" prefWidth="273.0" text="Country">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Label>
+        <Label fx:id="lblCustEmail" layoutX="876.0" layoutY="1.0" prefHeight="48.0" prefWidth="273.0" text="Email">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Label>
+        <JFXButton layoutX="1197.0" layoutY="5.0" onAction="#btnCustDeleteOnAction" prefHeight="38.0" prefWidth="46.0" styleClass="btndelete" text="">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/icon/delete.png" />
+                    </image>
+                </ImageView>
+            </graphic></JFXButton>
+        <JFXButton layoutX="1261.0" layoutY="6.0" onAction="#btnCustUpdateOnAction" prefHeight="30.0" prefWidth="46.0" styleClass="btn" text="">
+            <graphic>
+                <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assests/icon/icons8-update-64.png" />
+                    </image>
+                </ImageView>
+            </graphic></JFXButton>
+    </children>
+    <stylesheets>
+        <URL value="@../style/iconButton.css" />
+        <URL value="@../style/pane.css" />
+    </stylesheets>
+</AnchorPane>

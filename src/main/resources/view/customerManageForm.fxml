@@ -1,8 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="774.0" prefWidth="1442.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.CustomerManageFormController">
-
+<AnchorPane prefHeight="774.0" prefWidth="1442.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.rentalWheelzAI.controller.CustomerManageFormController">
+    <children>
+        <Text fill="#ff2e16" layoutX="438.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Customer" textAlignment="CENTER" wrappingWidth="474.53680419921875">
+            <font>
+                <Font name="System Bold Italic" size="48.0" />
+            </font>
+        </Text>
+        <Pane fx:id="managePane" layoutX="51.0" layoutY="227.0" prefHeight="496.0" prefWidth="1324.0">
+            <children>
+                <ScrollPane fx:id="scrolePane" prefHeight="496.0" prefWidth="1324.0">
+                    <content>
+                        <VBox fx:id="mainContainer" prefHeight="488.0" prefWidth="1305.0" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </Pane>
+        <Pane layoutX="52.0" layoutY="173.0" prefHeight="48.0" prefWidth="1247.0" style="-fx-background-color: E3E8FF;">
+            <Label layoutX="18.0" layoutY="1.0" prefHeight="48.0" prefWidth="227.0" text="NIC">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font></Label>
+            <Label layoutX="286.0" layoutY="1.0" prefHeight="48.0" prefWidth="242.0" text="Name">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font></Label>
+            <Label layoutX="560.0" layoutY="1.0" prefHeight="48.0" prefWidth="273.0" text="Country">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font></Label>
+            <Label layoutX="876.0" layoutY="1.0" prefHeight="48.0" prefWidth="273.0" text="Email">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font></Label>
+            </Pane>
+        <JFXButton layoutX="1198.0" layoutY="49.0" onAction="#saveCustomerOnAction" prefHeight="100.0" prefWidth="190.0" text="             Customer">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <styleClass>
+                <String fx:value="btn" />
+                <String fx:value="bold-font" />
+                <String fx:value="font" />
+            </styleClass>
+        </JFXButton>
+        <ImageView fitHeight="56.0" fitWidth="155.0" layoutX="1221.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assests/icon/user.png" />
+            </image>
+        </ImageView>
+        <JFXButton layoutX="73.0" layoutY="57.0" onAction="#btnHomeOnAction" prefHeight="80.0" prefWidth="88.0" styleClass="btn" text="">
+            <graphic>
+                <ImageView fitHeight="56.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" styleClass="btn">
+                    <image>
+                        <Image url="@../assests/icon/home.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+    </children>
 </AnchorPane>
