@@ -2,6 +2,8 @@ package lk.penguin.OdysseyOnWheels.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -12,6 +14,7 @@ import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CustomerManageFormController {
 
@@ -43,8 +46,22 @@ public class CustomerManageFormController {
     void saveCustomerOnAction(ActionEvent event) {
 
     }
-    public void initialize() throws SQLException, ClassNotFoundException {
-        customerBO.loadTableView(customerDTO);
+    public void initialize() throws SQLException, ClassNotFoundException, IOException {
+        ArrayList<CustomerDTO> dtos=customerBO.loadTableView();
+
+        for (CustomerDTO customerDTO1:dtos){
+            createCustomerRawLoadPane(customerDTO1);
+        }
+    }
+
+    private void createCustomerRawLoadPane(CustomerDTO dto) throws IOException {
+        FXMLLoader loader=new FXMLLoader(EmployeeManageFormController.class.getResource("/view/customerRawForm.fxml"));
+        Parent root=loader.load();
+        CustomerRawFormController controller=loader.getController();
+
+        controller.setData(dto);
+
+        this.getMainContainer().getChildren().add(root);
     }
 
 

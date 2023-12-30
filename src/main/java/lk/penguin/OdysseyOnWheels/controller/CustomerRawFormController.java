@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
 
 public class CustomerRawFormController {
 
@@ -23,7 +24,7 @@ public class CustomerRawFormController {
     private Label lblCustNic;
 
     @FXML
-    private Label lblEmpPositiolblCustCountryn;
+    private Label lblCustCountry;
 
     @FXML
     void btnCustDeleteOnAction(ActionEvent event) {
@@ -35,4 +36,10 @@ public class CustomerRawFormController {
 
     }
 
+    public void setData(CustomerDTO dto) {
+        this.lblCustNic.setText(dto.getCustomerNIC());
+        this.lblCustName.setText(dto.getCustomerName());
+        this.lblCustCountry.setText(dto.getCustomerCountry());
+        this.lblCustEmail.setText(dto.getCustomerEmail());
+    }
 }

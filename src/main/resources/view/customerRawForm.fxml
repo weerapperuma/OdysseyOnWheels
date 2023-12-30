@@ -18,7 +18,7 @@
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></Label>
-        <Label fx:id="lblEmpPositiolblCustCountryn" layoutX="560.0" layoutY="1.0" prefHeight="48.0" prefWidth="273.0" text="Country">
+        <Label fx:id="lblCustCountry" layoutX="560.0" layoutY="1.0" prefHeight="48.0" prefWidth="273.0" text="Country">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></Label>
