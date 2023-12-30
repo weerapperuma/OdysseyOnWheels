@@ -2,9 +2,16 @@ package lk.penguin.OdysseyOnWheels.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
+import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
+import lk.penguin.OdysseyOnWheels.util.Navigation;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class CustomerRawFormController {
 
@@ -14,8 +21,7 @@ public class CustomerRawFormController {
     @FXML
     private Label lblCustEmail;
 
-    @FXML
-    private Label lblCustId;
+
 
     @FXML
     private Label lblCustName;
@@ -26,9 +32,17 @@ public class CustomerRawFormController {
     @FXML
     private Label lblCustCountry;
 
-    @FXML
-    void btnCustDeleteOnAction(ActionEvent event) {
+    CustomerBO customerBO=new CustomerBOImpl();
 
+    @FXML
+    void btnCustDeleteOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+        boolean isDeleted=customerBO.deleteCustomer(lblCustNic.getText());
+        if(isDeleted){
+            Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane,"customerManageForm.fxml");
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR,"Delete uncessful");
+        }
     }
 
     @FXML

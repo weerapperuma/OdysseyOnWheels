@@ -27,4 +27,9 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         return dtos;
     }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("DELETE FROM Customer WHERE customerNIC=?",id);
+    }
 }
