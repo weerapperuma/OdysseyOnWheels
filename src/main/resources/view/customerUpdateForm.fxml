@@ -16,7 +16,7 @@
                 <Image url="@../assests/icon/updated.png" />
             </image>
         </ImageView>
-        <Label fx:id="lblEmpId" layoutX="220.0" layoutY="14.0" prefHeight="24.0" prefWidth="86.0" text="Label">
+        <Label fx:id="lblCustId" layoutX="220.0" layoutY="14.0" prefHeight="24.0" prefWidth="86.0" text="Label">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
@@ -26,22 +26,22 @@
         <TextField fx:id="txtCustINic" alignment="CENTER" layoutX="50.0" layoutY="145.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee NIC" style="-fx-background-radius: 20;" />
         <JFXButton layoutX="70.0" layoutY="414.0" onAction="#btnUpdateOnAction" styleClass="btn" text="Update" />
       <JFXComboBox fx:id="cmbCustCountry" layoutX="53.0" layoutY="336.0" prefHeight="31.0" prefWidth="200.0" />
-      <Label fx:id="lblNic" layoutX="56.0" layoutY="127.0" prefHeight="18.0" prefWidth="139.0" text="NIC">
+      <Label fx:id="lblNicTitle" layoutX="56.0" layoutY="127.0" prefHeight="18.0" prefWidth="139.0" text="NIC">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblEmail" layoutX="56.0" layoutY="190.0" prefHeight="18.0" prefWidth="146.0" text="Email">
+      <Label fx:id="lblEmaillabel" layoutX="56.0" layoutY="190.0" prefHeight="18.0" prefWidth="146.0" text="Email">
           <font>
               <Font name="System Bold" size="12.0" />
           </font>
       </Label>
-      <Label fx:id="lblCustName" layoutX="56.0" layoutY="247.0" prefHeight="18.0" prefWidth="146.0" text="Name">
+      <Label fx:id="lblCustNamelabel" layoutX="56.0" layoutY="247.0" prefHeight="18.0" prefWidth="146.0" text="Name">
           <font>
               <Font name="System Bold" size="12.0" />
           </font>
       </Label>
-      <Label fx:id="lblCustCountry" layoutX="56.0" layoutY="319.0" prefHeight="18.0" prefWidth="139.0" text="Country">
+      <Label fx:id="lblCustCountrylabel" layoutX="56.0" layoutY="319.0" prefHeight="18.0" prefWidth="139.0" text="Country">
           <font>
               <Font name="System Bold" size="12.0" />
           </font>

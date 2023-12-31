@@ -1,6 +1,7 @@
 package lk.penguin.OdysseyOnWheels.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -10,26 +11,27 @@ import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class CustomerUpdateFormController{
 
     @FXML
-    private JFXComboBox<?> cmbCustCountry;
+    private JFXComboBox<String> cmbCustCountry;
 
     @FXML
-    private Label lblCustCountry;
+    private Label lblCustCountrylabel;
 
     @FXML
-    private Label lblCustName;
+    private Label lblCustId;
 
     @FXML
-    private Label lblEmail;
+    private Label lblCustNamelabel;
 
     @FXML
-    private Label lblEmpId;
+    private Label lblEmaillabel;
 
     @FXML
-    private Label lblNic;
+    private Label lblNicTitle;
 
     @FXML
     private TextField txtCustEmail;
@@ -43,12 +45,24 @@ public class CustomerUpdateFormController{
     CustomerBO customerBO=new CustomerBOImpl();
     CustomerDTO customerDTO=new CustomerDTO();
 
-    public void initialize(){
+    public void initialize() throws SQLException, ClassNotFoundException {
+        customerDTO=customerBO.get(CustomerRawFormController.custId);
+        lblCustId.setText(CustomerRawFormController.custId);
+        txtCustINic.setText(customerDTO.getCustomerNIC());
+        txtCustName.setText(customerDTO.getCustomerName());
+        txtCustEmail.setText(customerDTO.getCustomerEmail());
+
+        ObservableList countryList=CustomerBOImpl.countryList();
+        cmbCustCountry.setItems(countryList);
+        if (countryList.contains(customerDTO.getCustomerCountry())) {
+            cmbCustCountry.setValue(customerDTO.getCustomerCountry());
+        }
 
     }
     @FXML
     boolean btnUpdateOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        return customerBO.updateCustomer(customerDTO);
+        CustomerDTO customerDTO1=new CustomerDTO(txtCustINic.getText(),txtCustName.getText(),cmbCustCountry.getValue(),txtCustEmail.getText());
+        return customerBO.updateCustomer(customerDTO1);
     }
 
 }

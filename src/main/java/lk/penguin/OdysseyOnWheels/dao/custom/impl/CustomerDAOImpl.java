@@ -35,12 +35,29 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean update(Customer customer) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("UPDATE customer SET customerNIC=?,customerName=?,customerCountry=?, customerEmail=?",
+        return SQLUtil.execute("UPDATE customer SET customerNIC=?,customerName=?,customerCountry=?, customerEmail=? WHERE customerNIC=?",
                 customer.getCustomerNIC(),
                 customer.getCustomerName(),
                 customer.getCustomerCountry(),
-                customer.getCustomerEmail()
+                customer.getCustomerEmail(),
+                customer.getCustomerNIC()
 
         );
+    }
+
+    @Override
+    public CustomerDTO get(String custId) throws SQLException, ClassNotFoundException {
+        ResultSet rst=SQLUtil.execute("Select * from customer Where customerNIC=?",custId);
+        CustomerDTO customerDTO = null;
+        while (rst.next()){
+            customerDTO=new CustomerDTO(
+                rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(3)
+
+            );
+        }
+        return customerDTO;
     }
 }

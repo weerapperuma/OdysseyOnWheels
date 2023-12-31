@@ -34,6 +34,7 @@ public class CustomerRawFormController {
     private Label lblCustCountry;
 
     CustomerBO customerBO=new CustomerBOImpl();
+    public static String custId;
 
     @FXML
     void btnCustDeleteOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
@@ -48,6 +49,7 @@ public class CustomerRawFormController {
 
     @FXML
     void btnCustUpdateOnAction(ActionEvent event) throws IOException {
+        custId=lblCustNic.getText();
         Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, "customerUpdateForm.fxml");
     }
 
