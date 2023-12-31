@@ -9,7 +9,9 @@ import javafx.scene.control.TextField;
 import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
+import lk.penguin.OdysseyOnWheels.util.Navigation;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -60,9 +62,13 @@ public class CustomerUpdateFormController{
 
     }
     @FXML
-    boolean btnUpdateOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void btnUpdateOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
         CustomerDTO customerDTO1=new CustomerDTO(txtCustINic.getText(),txtCustName.getText(),cmbCustCountry.getValue(),txtCustEmail.getText());
-        return customerBO.updateCustomer(customerDTO1);
+        boolean isUpdated=customerBO.updateCustomer(customerDTO1);
+        if(isUpdated){
+            Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "customerManageForm.fxml");
+            Navigation.closePopup();
+        }
     }
 
 }
