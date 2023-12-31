@@ -39,6 +39,12 @@ public class CustomerBOImpl implements CustomerBO {
     public CustomerDTO get(String custId) throws SQLException, ClassNotFoundException {
         return  customerDAO.get(custId);
     }
+
+    @Override
+    public boolean save(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException {
+        return customerDAO.save(new Customer(customerDTO.getCustomerNIC(),customerDTO.getCustomerName(),customerDTO.getCustomerCountry(),customerDTO.getCustomerEmail()));
+    }
+
     public static ObservableList countryList(){
         ObservableList<String> countries= FXCollections.observableArrayList(
                 "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",

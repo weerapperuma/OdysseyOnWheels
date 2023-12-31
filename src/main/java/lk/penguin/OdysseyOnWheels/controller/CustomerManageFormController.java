@@ -45,6 +45,7 @@ public class CustomerManageFormController {
     @FXML
     void saveCustomerOnAction(ActionEvent event) throws IOException {
         Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, "customerSaveForm.fxml");
+
     }
     public void initialize() throws SQLException, ClassNotFoundException, IOException {
         ArrayList<CustomerDTO> dtos=customerBO.loadTableView();

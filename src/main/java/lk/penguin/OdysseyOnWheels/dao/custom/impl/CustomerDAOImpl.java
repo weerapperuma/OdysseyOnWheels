@@ -3,6 +3,7 @@ package lk.penguin.OdysseyOnWheels.dao.custom.impl;
 import lk.penguin.OdysseyOnWheels.dao.custom.CustomerDAO;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
 import lk.penguin.OdysseyOnWheels.entity.Customer;
+import lk.penguin.OdysseyOnWheels.entity.Employee;
 import lk.penguin.OdysseyOnWheels.util.SQLUtil;
 
 import java.sql.ResultSet;
@@ -59,5 +60,15 @@ public class CustomerDAOImpl implements CustomerDAO {
             );
         }
         return customerDTO;
+    }
+
+    @Override
+    public boolean save(Customer customer) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("INSERT INTO customer VALUES (?,?,?,?)",
+                customer.getCustomerNIC(),
+                customer.getCustomerName(),
+                customer.getCustomerCountry(),
+                customer.getCustomerEmail()
+        );
     }
 }
