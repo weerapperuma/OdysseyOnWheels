@@ -48,17 +48,20 @@ public class CustomerUpdateFormController{
     CustomerDTO customerDTO=new CustomerDTO();
 
     public void initialize() throws SQLException, ClassNotFoundException {
+        ObservableList countryList=CustomerBOImpl.countryList();
         customerDTO=customerBO.get(CustomerRawFormController.custId);
+        System.out.println("Email:"+customerDTO.getCustomerEmail());
         lblCustId.setText(CustomerRawFormController.custId);
         txtCustINic.setText(customerDTO.getCustomerNIC());
         txtCustName.setText(customerDTO.getCustomerName());
-        txtCustEmail.setText(customerDTO.getCustomerEmail());
-
-        ObservableList countryList=CustomerBOImpl.countryList();
         cmbCustCountry.setItems(countryList);
         if (countryList.contains(customerDTO.getCustomerCountry())) {
             cmbCustCountry.setValue(customerDTO.getCustomerCountry());
         }
+        txtCustEmail.setText(customerDTO.getCustomerEmail());
+
+
+
 
     }
     @FXML

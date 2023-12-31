@@ -21,9 +21,9 @@
                 <Font name="System Bold" size="14.0" />
             </font>
         </Label>
-        <TextField fx:id="txtCustName" alignment="CENTER" layoutX="52.0" layoutY="264.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee Name" style="-fx-background-radius: 20;" />
-        <TextField fx:id="txtCustEmail" alignment="CENTER" layoutX="50.0" layoutY="207.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee Email" style="-fx-background-radius: 20;" />
-        <TextField fx:id="txtCustINic" alignment="CENTER" layoutX="50.0" layoutY="145.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee NIC" style="-fx-background-radius: 20;" />
+        <TextField fx:id="txtCustName" alignment="CENTER" layoutX="52.0" layoutY="264.0" prefHeight="39.0" prefWidth="265.0" promptText="Customer Name" style="-fx-background-radius: 20;" />
+        <TextField fx:id="txtCustEmail" alignment="CENTER" layoutX="50.0" layoutY="207.0" prefHeight="39.0" prefWidth="265.0" promptText="Customer Email" style="-fx-background-radius: 20;" />
+        <TextField fx:id="txtCustINic" alignment="CENTER" layoutX="50.0" layoutY="145.0" prefHeight="39.0" prefWidth="265.0" promptText="Customer NIC" style="-fx-background-radius: 20;" />
         <JFXButton layoutX="70.0" layoutY="414.0" onAction="#btnUpdateOnAction" styleClass="btn" text="Update" />
       <JFXComboBox fx:id="cmbCustCountry" layoutX="53.0" layoutY="336.0" prefHeight="31.0" prefWidth="200.0" />
       <Label fx:id="lblNicTitle" layoutX="56.0" layoutY="127.0" prefHeight="18.0" prefWidth="139.0" text="NIC">

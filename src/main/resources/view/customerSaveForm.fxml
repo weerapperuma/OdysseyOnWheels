@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="549.0" prefWidth="319.0" stylesheets="@../style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.CustomerSaveFormController">
+    <children>
+        <ImageView fitHeight="72.0" fitWidth="68.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assests/icon/user.png" />
+            </image>
+        </ImageView>
+        <TextField fx:id="txtCustName" alignment="CENTER" layoutX="52.0" layoutY="264.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee Name" style="-fx-background-radius: 20;" />
+        <TextField fx:id="txtCustEmail" alignment="CENTER" layoutX="50.0" layoutY="207.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee Email" style="-fx-background-radius: 20;" />
+        <TextField fx:id="txtCustINic" alignment="CENTER" layoutX="50.0" layoutY="145.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee NIC" style="-fx-background-radius: 20;" />
+        <JFXButton layoutX="70.0" layoutY="414.0" onAction="#btnSaveOnAction" styleClass="btn" text="Save" />
+        <JFXComboBox fx:id="cmbCustCountry" layoutX="53.0" layoutY="336.0" prefHeight="31.0" prefWidth="200.0" />
+        <Label fx:id="lblNicTitle" layoutX="56.0" layoutY="127.0" prefHeight="18.0" prefWidth="139.0" text="NIC">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblEmaillabel" layoutX="56.0" layoutY="190.0" prefHeight="18.0" prefWidth="146.0" text="Email">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblCustNamelabel" layoutX="56.0" layoutY="247.0" prefHeight="18.0" prefWidth="146.0" text="Name">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblCustCountrylabel" layoutX="56.0" layoutY="319.0" prefHeight="18.0" prefWidth="139.0" text="Country">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
