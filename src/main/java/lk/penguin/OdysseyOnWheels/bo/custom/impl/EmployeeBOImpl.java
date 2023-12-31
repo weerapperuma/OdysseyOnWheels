@@ -67,8 +67,6 @@ public class EmployeeBOImpl implements EmployeeBO {
     }
     @Override
     public boolean update(EmployeeDTO dto) throws SQLException, ClassNotFoundException {
-        System.out.println(dto.getEmployeeName());
-        System.out.println(dto.getEmployeeId());
         return SQLUtil.execute("UPDATE employee SET employeeName=?,empEmail=?,empNIC=?,empPosition=?, empAddress=?,empContact=? WHERE employeeId=?",
                 dto.getEmployeeName(),
                 dto.getEmpEmail(),

@@ -32,4 +32,15 @@ public class CustomerDAOImpl implements CustomerDAO {
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("DELETE FROM Customer WHERE customerNIC=?",id);
     }
+
+    @Override
+    public boolean update(Customer customer) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("UPDATE customer SET customerNIC=?,customerName=?,customerCountry=?, customerEmail=?",
+                customer.getCustomerNIC(),
+                customer.getCustomerName(),
+                customer.getCustomerCountry(),
+                customer.getCustomerEmail()
+
+        );
+    }
 }

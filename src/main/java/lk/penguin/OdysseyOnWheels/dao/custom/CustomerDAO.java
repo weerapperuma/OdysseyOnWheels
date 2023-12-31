@@ -11,4 +11,6 @@ public interface CustomerDAO {
     ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException;
 
     boolean delete(String id) throws SQLException, ClassNotFoundException;
+
+    boolean update(Customer customer) throws SQLException, ClassNotFoundException;
 }

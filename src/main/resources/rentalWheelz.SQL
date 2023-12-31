@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS rentalWheelz;
-CREATE DATABASE rentalWheelz;
+DROP DATABASE IF EXISTS odysseyonwheelz;
+CREATE DATABASE odysseyonwheelz;
 
-USE rentalWheelz;
+USE odysseyonwheelz;
 CREATE TABLE user(
     userId VARCHAR(20) PRIMARY KEY NOT NULL ,
     userName VARCHAR(50) NOT NULL ,
@@ -37,7 +37,7 @@ CREATE TABLE customer(
     customerNIC VARCHAR(30) PRIMARY KEY NOT NULL ,
     customerName VARCHAR(100) DEFAULT NULL,
     customerCountry VARCHAR(30) ,
-    customerEmail VARCHAR(200)
+    customerEmail VARCHAR(200) DEFAULT NULL
 );
 CREATE TABLE customer_contact (
     contactId VARCHAR(10) PRIMARY KEY ,

@@ -12,7 +12,7 @@ public class DbConnection {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         connection=DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/rentalWheelz",
+                "jdbc:mysql://localhost:3306/odysseyonwheelz",
                 "penguinDB",
                 "pax_penguina"
         );

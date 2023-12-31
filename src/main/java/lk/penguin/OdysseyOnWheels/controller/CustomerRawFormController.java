@@ -8,6 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
+import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
@@ -46,8 +47,8 @@ public class CustomerRawFormController {
     }
 
     @FXML
-    void btnCustUpdateOnAction(ActionEvent event) {
-
+    void btnCustUpdateOnAction(ActionEvent event) throws IOException {
+        Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, "customerUpdateForm.fxml");
     }
 
     public void setData(CustomerDTO dto) {

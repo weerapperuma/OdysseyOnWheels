@@ -10,4 +10,6 @@ public interface CustomerBO extends SuperBO {
     ArrayList<CustomerDTO> loadTableView() throws SQLException, ClassNotFoundException;
 
     boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException;
+
+    boolean updateCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException;
 }
