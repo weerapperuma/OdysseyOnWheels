@@ -27,6 +27,7 @@ public class WelcomeFormController implements Initializable {
 
     @FXML
     private TextField txtPassportId;
+    public static language=
 
 
     @FXML

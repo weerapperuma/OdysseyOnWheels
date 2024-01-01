@@ -93,6 +93,9 @@ CREATE TABLE sup_order_detail (
     CONSTRAINT FOREIGN KEY (order_id) REFERENCES sup_order(order_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT FOREIGN KEY (sup_id) REFERENCES supplier(sup_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+CREATE TABLE language(
+
+)
 
 INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES
     ('U001','PENGUIN','960036789v','0764532478','penguingotham@gmail.com','123'),
@@ -175,3 +178,4 @@ INSERT INTO vehicle(vehicle_id, vehicle_type, status) VALUES
     ('CDE-9876', 'golf cart', 'available'),
     ('FGH-1234', 'limousine', 'available'),
     ('IJK-5678', 'monster truck', 'available');
+
