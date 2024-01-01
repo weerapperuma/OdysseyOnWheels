@@ -23,7 +23,7 @@ public class RentalDashBoardFormController {
     private AnchorPane rentalDashBoardAnchorPane;
 
     @FXML
-    private Pane rentalDashBoardPane;
+    private AnchorPane rentalDashBoardPane;
 
     @FXML
     private ScrollPane rentalDashBoardScroll;
