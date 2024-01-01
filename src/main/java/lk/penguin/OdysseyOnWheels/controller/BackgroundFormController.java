@@ -24,6 +24,7 @@ public class BackgroundFormController implements Initializable {
     @FXML
     private Label lblDateAndTime;
     private static BackgroundFormController controller;
+    public static int transfer=0;
 
     public BackgroundFormController(){
         controller=this;
@@ -49,11 +50,22 @@ public class BackgroundFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         startClock();
         try {
-            Navigation.switchPaging(pagingPane,"dashBoard.fxml");
+            if(BackgroundFormController.transfer==1){
+                goToRent();
+            }else{
+                goTOAdmin();
+            }
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void goTOAdmin() throws IOException {
+        Navigation.switchPaging(pagingPane,"dashBoard.fxml");
+    }
+    public void goToRent() throws IOException {
+        Navigation.switchPaging(pagingPane,"rentalDashBoardForm.fxml");
     }
     @FXML
     void dashCloseButtonOnAction(ActionEvent event) {

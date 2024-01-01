@@ -27,11 +27,15 @@ public class WelcomeFormController implements Initializable {
 
     @FXML
     private TextField txtPassportId;
-    public static language=
 
 
     @FXML
-    void btnRentFormOnAction(ActionEvent event) {
+    void btnRentOnAction(ActionEvent event) throws IOException {
+        if(txtPassportId.getLength()>9){
+            System.out.println(txtPassportId.getLength());
+            BackgroundFormController.transfer=1;
+            Navigation.switchNavigation( "backgroundForm.fxml",event);
+        }
 
     }
     @FXML

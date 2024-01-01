@@ -94,8 +94,14 @@ CREATE TABLE sup_order_detail (
     CONSTRAINT FOREIGN KEY (sup_id) REFERENCES supplier(sup_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE language(
-
-)
+    wordSetNb int AUTO_INCREMENT PRIMARY KEY ,
+    russian VARCHAR(500),
+    sinhala VARCHAR(500),
+    german VARCHAR(500),
+    hindi VARCHAR(500),
+    french VARCHAR(500),
+    english VARCHAR(500)
+);
 
 INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES
     ('U001','PENGUIN','960036789v','0764532478','penguingotham@gmail.com','123'),
@@ -179,3 +185,5 @@ INSERT INTO vehicle(vehicle_id, vehicle_type, status) VALUES
     ('FGH-1234', 'limousine', 'available'),
     ('IJK-5678', 'monster truck', 'available');
 
+INSERT INTO language(russian,sinhala,german,hindi,french,english) VALUES
+                                                                      ('номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport');
