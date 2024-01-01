@@ -9,8 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public abstract class LanguageBO implements SuperBO {
+public interface LanguageBO extends SuperBO {
 
 
-    public abstract ArrayList get(String language, int nb) throws SQLException, ClassNotFoundException;
+    public String get(String language,int nb) throws SQLException, ClassNotFoundException;
 }

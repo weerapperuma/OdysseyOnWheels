@@ -75,8 +75,9 @@ public class WelcomeFormController implements Initializable {
     }
 
     @FXML
-    void changeToRussianNIC(ActionEvent event) throws IOException {
-        language="russian";
+    void changeToRussianNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        this.language="russian";
+        setValues();
     }
 
     @FXML
@@ -93,15 +94,19 @@ public class WelcomeFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<String> arrayList= null;
+
         try {
-            arrayList = languageBO.get(language,1);
+            lblTitle.setText(languageBO.get(language,1));
+            btntxtRent.setText(languageBO.get(language,2));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        lblTitle.setText(arrayList.get(0));
 
+    }
+    public void setValues() throws SQLException, ClassNotFoundException {
+        lblTitle.setText(languageBO.get(language,1));
+        btntxtRent.setText(languageBO.get(language,2));
     }
 }
