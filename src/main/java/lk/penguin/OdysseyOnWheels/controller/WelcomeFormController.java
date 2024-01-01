@@ -8,10 +8,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import lk.penguin.OdysseyOnWheels.bo.custom.LanguageBO;
+import lk.penguin.OdysseyOnWheels.bo.custom.impl.LanguageBOImpl;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class WelcomeFormController implements Initializable {
@@ -27,7 +31,8 @@ public class WelcomeFormController implements Initializable {
 
     @FXML
     private TextField txtPassportId;
-    Lan
+
+    LanguageBO languageBO=new LanguageBOImpl();
 
     public static String language="english";
 
@@ -88,6 +93,15 @@ public class WelcomeFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lblTitle.setText();
+        ArrayList<String> arrayList= null;
+        try {
+            arrayList = languageBO.get(language,1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        lblTitle.setText(arrayList.get(0));
+
     }
 }

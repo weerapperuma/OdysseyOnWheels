@@ -187,5 +187,5 @@ INSERT INTO vehicle(vehicle_id, vehicle_type, status) VALUES
 
 INSERT INTO language(russian,sinhala,german,hindi,french,english) VALUES
     ('номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport'),
-    ('Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent',
-     );
+    ('Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent')
+    ;
