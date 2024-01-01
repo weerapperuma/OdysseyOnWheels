@@ -57,21 +57,21 @@ public class WelcomeFormController implements Initializable {
     }
 
     @FXML
-    void changeToFrenchNIC(ActionEvent event) throws IOException {
-        lblTitle.setText("numéro de passeport");
-        btntxtRent.setText("Faire un loyer");
+    void changeToFrenchNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        this.language="french";
+        setValues();
     }
 
     @FXML
-    void changeToGermanNIC(ActionEvent event) throws IOException {
-        lblTitle.setText("Nummer des Reisepasses");
-        btntxtRent.setText("Miete machen");
+    void changeToGermanNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        this.language="german";
+        setValues();
     }
 
     @FXML
-    void changeToHindiNIC(ActionEvent event) throws IOException {
-        lblTitle.setText("पासपोर्ट नंबर");
-        btntxtRent.setText("किराया लगाओ");
+    void changeToHindiNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        this.language="hindi";
+        setValues();
     }
 
     @FXML
@@ -81,14 +81,14 @@ public class WelcomeFormController implements Initializable {
     }
 
     @FXML
-    void changeToSinhalaNIC(ActionEvent event) throws IOException {
-        lblTitle.setText("ජාතික හැඳුනුම්පත් අංකය");
-        btntxtRent.setText("කුලියට ගන්න");
+    void changeToSinhalaNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        this.language="sinhala";
+        setValues();
     }
     @FXML
-    void changeToEnglishNIC(ActionEvent event) throws IOException {
-        lblTitle.setText("ID / Passport");
-        btntxtRent.setText("Make a Rent");
+    void changeToEnglishNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        this.language="english";
+        setValues();
     }
 
 
@@ -96,8 +96,7 @@ public class WelcomeFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         try {
-            lblTitle.setText(languageBO.get(language,1));
-            btntxtRent.setText(languageBO.get(language,2));
+            setValues();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
