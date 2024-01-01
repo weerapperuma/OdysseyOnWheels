@@ -1,5 +1,9 @@
 package lk.penguin.OdysseyOnWheels.bo.custom.impl;
 
-public class LanguageBOImpl {
+import lk.penguin.OdysseyOnWheels.bo.custom.LanguageBO;
 
+public class LanguageBOImpl extends LanguageBO {
+    public String get(){
+        Lan
+    }
 }

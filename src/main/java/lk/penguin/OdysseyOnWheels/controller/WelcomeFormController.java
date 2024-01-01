@@ -27,6 +27,9 @@ public class WelcomeFormController implements Initializable {
 
     @FXML
     private TextField txtPassportId;
+    Lan
+
+    public static String language="english";
 
 
     @FXML
@@ -68,8 +71,7 @@ public class WelcomeFormController implements Initializable {
 
     @FXML
     void changeToRussianNIC(ActionEvent event) throws IOException {
-        lblTitle.setText("номер паспорта");
-        btntxtRent.setText("Оформить аренду");
+        language="russian";
     }
 
     @FXML
@@ -86,7 +88,6 @@ public class WelcomeFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lblTitle.setText("ID / Passport");
-        btntxtRent.setText("Make a Rent");
+        lblTitle.setText();
     }
 }
