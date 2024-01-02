@@ -91,6 +91,22 @@ public class WelcomeFormController implements Initializable {
         setValues();
     }
 
+    @FXML
+    void changeToTamilNIC(ActionEvent event) throws SQLException, ClassNotFoundException {
+        this.language="tamil";
+        setValues();
+    }
+    @FXML
+    void changeToChineseNIC(ActionEvent event) throws SQLException, ClassNotFoundException {
+        this.language="chinese";
+        setValues();
+    }
+    @FXML
+    void changeToJapaneseNIC(ActionEvent event) throws SQLException, ClassNotFoundException {
+        this.language="japan";
+        setValues();
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

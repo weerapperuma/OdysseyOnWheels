@@ -95,12 +95,16 @@ CREATE TABLE sup_order_detail (
 );
 CREATE TABLE language(
     wordSetNb int AUTO_INCREMENT PRIMARY KEY ,
-    russian VARCHAR(500),
-    sinhala VARCHAR(500),
-    german VARCHAR(500),
-    hindi VARCHAR(500),
-    french VARCHAR(500),
-    english VARCHAR(500)
+    russian VARCHAR(1000) DEFAULT NULL,
+    sinhala VARCHAR(1000) DEFAULT NULL,
+    german VARCHAR(1000) DEFAULT NULL,
+    hindi VARCHAR(1000) DEFAULT NULL,
+    french VARCHAR(1000) DEFAULT NULL,
+    english VARCHAR(1000) DEFAULT NULL,
+    tamil VARCHAR(1000) DEFAULT NULL,
+    chinese VARCHAR(1000) DEFAULT NULL,
+    japan VARCHAR(1000) DEFAULT NULL
+
 );
 
 INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES
@@ -185,7 +189,7 @@ INSERT INTO vehicle(vehicle_id, vehicle_type, status) VALUES
     ('FGH-1234', 'limousine', 'available'),
     ('IJK-5678', 'monster truck', 'available');
 
-INSERT INTO language(russian,sinhala,german,hindi,french,english) VALUES
-    ('номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport'),
-    ('Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent')
+INSERT INTO language(russian,sinhala,german,hindi,french,english,tamil,chinese,japan) VALUES
+    ('номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
+    ('Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent','கடவுச்சீட்டு எண்','护照号','パスポート番号');
     ;

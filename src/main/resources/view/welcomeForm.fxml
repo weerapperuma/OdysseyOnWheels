@@ -34,8 +34,8 @@
             <TextField fx:id="txtPassportId" alignment="CENTER" layoutX="16.0" layoutY="61.0" prefHeight="46.0" prefWidth="271.0" promptText="ID" style="-fx-background-radius: 20;" />
             <JFXButton fx:id="btntxtRent" layoutX="48.0" layoutY="115.0" onAction="#btnRentOnAction" prefHeight="46.0" prefWidth="202.0" styleClass="btn" text="Button" />
          </children></Pane>
-      <Button layoutX="145.0" layoutY="701.0" mnemonicParsing="false" onAction="#AdminLoginOnAction" prefHeight="45.0" prefWidth="194.0" styleClass="btn2" stylesheets="@../style/button.css" text="ADMIN LOGIN" />
-      <VBox layoutX="202.0" layoutY="531.0" prefHeight="124.0" prefWidth="123.0" style="-fx-background-color: white;">
+      <Button layoutX="145.0" layoutY="701.0" mnemonicParsing="false" onAction="#AdminLoginOnAction" prefHeight="45.0" prefWidth="194.0" styleClass="btnLogin" stylesheets="@../style/button.css" text="ADMIN LOGIN" />
+      <VBox layoutX="13.0" layoutY="528.0" prefHeight="164.0" prefWidth="123.0">
          <children>
             <Hyperlink onAction="#changeToRussianNIC" text="русский" textFill="#f84f02">
                <font>
@@ -63,6 +63,21 @@
                </font>
             </Hyperlink>
             <Hyperlink layoutX="10.0" layoutY="10.0" onAction="#changeToEnglishNIC" text="English" textFill="#f84f02">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="10.0" layoutY="142.0" onAction="#changeToTamilNIC" text="Tamil" textFill="#f84f02">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="10.0" layoutY="168.0" onAction="#changeToChineseNIC" text="Chinese" textFill="#f84f02">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="10.0" layoutY="195.0" onAction="#changeToJapaneseNIC" text="Japanese" textFill="#f84f02">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font>
