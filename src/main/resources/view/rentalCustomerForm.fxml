@@ -85,7 +85,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXButton layoutX="15.0" layoutY="495.0" prefHeight="38.0" prefWidth="465.0" style="-fx-background-color: #07BF51;" text="SEARCH">
+            <JFXButton layoutX="15.0" layoutY="495.0" prefHeight="38.0" prefWidth="465.0" style="-fx-background-color: #07BF51;" text="  SEARCH">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -93,6 +93,56 @@
             <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="175.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/icon/magnifying-glass.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="502.0" layoutY="105.0" prefHeight="552.0" prefWidth="922.0" />
+      <Pane layoutX="6.0" layoutY="657.0" prefHeight="583.0" prefWidth="1418.0">
+         <children>
+            <ImageView fitHeight="388.0" fitWidth="521.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/pexels-mike-bird-120049.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="293.0" fitWidth="479.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/pexels-erik-mclean-9598106.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="293.0" fitWidth="197.0" layoutX="440.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/cars_450_680_cinematic_shot_dy.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="303.0" fitWidth="195.0" layoutX="519.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/erik-mclean-7260949.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="293.0" fitWidth="515.0" layoutX="633.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/pexels-mike-bird-244206.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="290.0" fitWidth="515.0" layoutX="905.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/pexels-mike-bird-116675.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="293.0" fitWidth="230.0" layoutX="711.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/pexels-zsolt-joo-2882234.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="186.0" fitWidth="270.0" layoutX="1148.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/pexels-kendall-hoopes-1015555.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="170.0" fitWidth="270.0" layoutX="1148.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/img/pexels-mike-bird-794435.jpg" />
                </image>
             </ImageView>
          </children>
