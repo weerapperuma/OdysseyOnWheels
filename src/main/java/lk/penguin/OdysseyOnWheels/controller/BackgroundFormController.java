@@ -24,6 +24,7 @@ public class BackgroundFormController implements Initializable {
     @FXML
     private Label lblDateAndTime;
     private static BackgroundFormController controller;
+
     public static int transfer=0;
 
     public BackgroundFormController(){

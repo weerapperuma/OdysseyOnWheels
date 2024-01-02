@@ -4,7 +4,6 @@ import lk.penguin.OdysseyOnWheels.bo.custom.LanguageBO;
 import lk.penguin.OdysseyOnWheels.dao.custom.LanguageDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.LanguageDAOImpl;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
-import lk.penguin.OdysseyOnWheels.dto.LanguageDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

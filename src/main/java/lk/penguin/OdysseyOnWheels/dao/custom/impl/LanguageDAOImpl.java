@@ -2,7 +2,6 @@ package lk.penguin.OdysseyOnWheels.dao.custom.impl;
 
 import lk.penguin.OdysseyOnWheels.dao.custom.LanguageDAO;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
-import lk.penguin.OdysseyOnWheels.dto.LanguageDTO;
 import lk.penguin.OdysseyOnWheels.util.SQLUtil;
 
 import java.sql.ResultSet;

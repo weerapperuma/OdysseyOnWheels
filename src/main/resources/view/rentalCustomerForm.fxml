@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="rentCustomerAnchorPane" prefHeight="1600.0" prefWidth="1423.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.RentalCustomerFormController">
    <children>
-      <Pane layoutY="-1.0" prefHeight="105.0" prefWidth="1423.0">
+      <Pane layoutY="-1.0" prefHeight="105.0" prefWidth="1423.0" style="-fx-border-color: black;">
          <children>
             <ImageView fitHeight="83.0" fitWidth="821.0" layoutX="217.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/icon/odysseyonwheels-high-resolution-logo-transparent.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="1313.0" layoutY="1.0" prefHeight="105.0" prefWidth="109.0" style="-fx-background-color: #D63400;" text="">
+            <JFXButton layoutX="1319.0" layoutY="1.0" prefHeight="103.0" prefWidth="103.0" style="-fx-background-color: #D63400; -fx-border-color: black;" text="">
                <graphic>
                   <ImageView fitHeight="109.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -24,7 +26,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <Pane layoutY="1.0" prefHeight="105.0" prefWidth="102.0" style="-fx-background-color: #0DC92F;">
+            <Pane layoutX="1.0" layoutY="1.0" prefHeight="103.0" prefWidth="103.0" style="-fx-background-color: #0DC92F; -fx-border-color: black;">
                <children>
                   <ImageView fitHeight="83.0" fitWidth="100.0" layoutX="10.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -33,6 +35,21 @@
                   </ImageView>
                </children>
             </Pane>
+            <JFXButton alignment="CENTER_RIGHT" layoutX="1216.0" layoutY="1.0" onAction="#menuButtonOnAction" prefHeight="103.0" prefWidth="103.0" style="-fx-border-color: black;" text="" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="38.0" fitWidth="45.0" layoutX="1252.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/menu-button-of-three-horizontal-lines.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="1234.0" layoutY="62.0" prefHeight="20.0" prefWidth="76.0" text="MENU">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
