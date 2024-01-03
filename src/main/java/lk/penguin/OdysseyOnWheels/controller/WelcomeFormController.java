@@ -34,7 +34,7 @@ public class WelcomeFormController implements Initializable {
 
     LanguageBO languageBO=new LanguageBOImpl();
 
-    public static String language="english";
+
 
 
     @FXML
@@ -58,52 +58,52 @@ public class WelcomeFormController implements Initializable {
 
     @FXML
     void changeToFrenchNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-        this.language="french";
+        LanguageBOImpl.language="french";
         setValues();
     }
 
     @FXML
     void changeToGermanNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-        this.language="german";
+        LanguageBOImpl.language="german";
         setValues();
     }
 
     @FXML
     void changeToHindiNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-        this.language="hindi";
+        LanguageBOImpl.language="hindi";
         setValues();
     }
 
     @FXML
     void changeToRussianNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-        this.language="russian";
+        LanguageBOImpl.language="russian";
         setValues();
     }
 
     @FXML
     void changeToSinhalaNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-        this.language="sinhala";
+        LanguageBOImpl.language="sinhala";
         setValues();
     }
     @FXML
     void changeToEnglishNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-        this.language="english";
+        LanguageBOImpl.language="english";
         setValues();
     }
 
     @FXML
     void changeToTamilNIC(ActionEvent event) throws SQLException, ClassNotFoundException {
-        this.language="tamil";
+        LanguageBOImpl.language="tamil";
         setValues();
     }
     @FXML
     void changeToChineseNIC(ActionEvent event) throws SQLException, ClassNotFoundException {
-        this.language="chinese";
+        LanguageBOImpl.language="chinese";
         setValues();
     }
     @FXML
     void changeToJapaneseNIC(ActionEvent event) throws SQLException, ClassNotFoundException {
-        this.language="japan";
+        LanguageBOImpl.language="japan";
         setValues();
     }
 
@@ -121,7 +121,7 @@ public class WelcomeFormController implements Initializable {
 
     }
     public void setValues() throws SQLException, ClassNotFoundException {
-        lblTitle.setText(languageBO.get(language,1));
-        btntxtRent.setText(languageBO.get(language,2));
+        lblTitle.setText(languageBO.get(LanguageBOImpl.language,1));
+        btntxtRent.setText(languageBO.get(LanguageBOImpl.language,2));
     }
 }

@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class LanguageBOImpl implements LanguageBO {
+    public static String language="english";
     LanguageDAO languageDAO=new LanguageDAOImpl();
     @Override
     public String get(String language,int nb) throws SQLException, ClassNotFoundException {

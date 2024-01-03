@@ -189,7 +189,10 @@ INSERT INTO vehicle(vehicle_id, vehicle_type, status) VALUES
     ('FGH-1234', 'limousine', 'available'),
     ('IJK-5678', 'monster truck', 'available');
 
-INSERT INTO language(russian,sinhala,german,hindi,french,english,tamil,chinese,japan) VALUES
-    ('номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
-    ('Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent','கடவுச்சீட்டு எண்','护照号','パスポート番号');
-    ;
+INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil,chinese,japan) VALUES
+    (1,'номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
+    (2,'Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
+    (3,'Начальный день','ආරම්භක දිනය','Starttag','शुरुआती दिन','Jour de départ','Starting day','தொடக்க நாள்','开始日','開始日'),
+    (3,'дата окончания','අවසන් දිනය','Endtag','समाप्त होने की तारीख','Jour de fin','Ending day','கடைசி நாள்','结束日','結束日')
+
+;
