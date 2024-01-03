@@ -11,6 +11,8 @@ import javafx.scene.layout.Pane;
 import lk.penguin.OdysseyOnWheels.bo.custom.LanguageBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.LanguageBOImpl;
 
+import java.sql.SQLException;
+
 public class RentalCustomerFormController {
 
     @FXML
@@ -62,8 +64,9 @@ public class RentalCustomerFormController {
     void searchBtnOnAction(ActionEvent event) {
 
     }
-    public void initialize(){
+    public void initialize() throws SQLException, ClassNotFoundException {
 
+        lblRentalId.setText(languageBO.get(LanguageBOImpl.language,3));
     }
 
 }
