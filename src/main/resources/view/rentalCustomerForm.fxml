@@ -54,98 +54,77 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutY="105.0" prefHeight="552.0" prefWidth="498.0" style="-fx-background-color: white;">
+      <Pane layoutY="105.0" prefHeight="518.0" prefWidth="500.0" style="-fx-background-color: white;">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="498.0" style="-fx-background-color: FF3005;" text="BOOK NOW" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="500.0" style="-fx-background-color: FF3005;" text="BOOK NOW" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <JFXComboBox layoutX="12.0" layoutY="127.0" prefHeight="31.0" prefWidth="455.0" />
-            <Label layoutX="9.0" layoutY="106.0" prefHeight="17.0" prefWidth="210.0" text="Pickup Location">
+            <JFXComboBox layoutX="12.0" layoutY="257.0" prefHeight="31.0" prefWidth="455.0" style="-fx-border-color: black;" />
+            <Label layoutX="13.0" layoutY="235.0" prefHeight="17.0" prefWidth="210.0" text="Pickup Location">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="173.0" prefHeight="17.0" prefWidth="210.0" text="Drop off Location">
+            <Label layoutX="12.0" layoutY="306.0" prefHeight="17.0" prefWidth="210.0" text="Drop off Location">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXComboBox layoutX="13.0" layoutY="192.0" prefHeight="31.0" prefWidth="455.0" />
-            <DatePicker layoutX="14.0" layoutY="302.0" />
-            <DatePicker layoutX="291.0" layoutY="302.0" />
-            <Label layoutX="14.0" layoutY="276.0" prefHeight="20.0" prefWidth="175.0" text="From">
+            <JFXComboBox layoutX="13.0" layoutY="327.0" prefHeight="31.0" prefWidth="455.0" style="-fx-border-color: black;" />
+            <DatePicker layoutX="14.0" layoutY="405.0" />
+            <DatePicker layoutX="291.0" layoutY="404.0" />
+            <Label layoutX="14.0" layoutY="383.0" prefHeight="20.0" prefWidth="175.0" text="From">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="291.0" layoutY="276.0" prefHeight="20.0" prefWidth="175.0" text="To">
+            <Label layoutX="291.0" layoutY="383.0" prefHeight="20.0" prefWidth="175.0" text="To">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <JFXButton layoutX="15.0" layoutY="495.0" prefHeight="38.0" prefWidth="465.0" style="-fx-background-color: #07BF51;" text="  SEARCH">
+            <JFXButton layoutX="15.0" layoutY="460.0" prefHeight="38.0" prefWidth="465.0" style="-fx-background-color: #07BF51;" text="  SEARCH">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXButton>
-            <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="175.0" layoutY="501.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="31.0" fitWidth="28.0" layoutX="175.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/icon/magnifying-glass.png" />
                </image>
             </ImageView>
+            <Label layoutX="14.0" layoutY="175.0" prefHeight="40.0" prefWidth="440.0" style="-fx-border-color: black;" text="Label">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="108.0" prefHeight="40.0" prefWidth="440.0" style="-fx-border-color: black;" text="Label">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="87.0" prefHeight="20.0" prefWidth="155.0" text="Label">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="155.0" prefHeight="20.0" prefWidth="155.0" text="Label">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <Pane layoutX="502.0" layoutY="105.0" prefHeight="552.0" prefWidth="922.0" />
-      <Pane layoutX="6.0" layoutY="657.0" prefHeight="583.0" prefWidth="1418.0">
+      <Pane layoutX="502.0" layoutY="105.0" prefHeight="552.0" prefWidth="922.0">
          <children>
-            <ImageView fitHeight="388.0" fitWidth="521.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/img/pexels-mike-bird-120049.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="293.0" fitWidth="479.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/img/pexels-erik-mclean-9598106.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="293.0" fitWidth="197.0" layoutX="440.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/img/cars_450_680_cinematic_shot_dy.jpeg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="303.0" fitWidth="195.0" layoutX="519.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/img/erik-mclean-7260949.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="293.0" fitWidth="515.0" layoutX="633.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/img/pexels-mike-bird-244206.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="290.0" fitWidth="515.0" layoutX="905.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/img/pexels-mike-bird-116675.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="293.0" fitWidth="230.0" layoutX="711.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/img/pexels-zsolt-joo-2882234.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="186.0" fitWidth="270.0" layoutX="1148.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assests/img/pexels-kendall-hoopes-1015555.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="170.0" fitWidth="270.0" layoutX="1148.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="542.0" fitWidth="922.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assests/img/pexels-mike-bird-794435.jpg" />
                </image>
             </ImageView>
-         </children>
-      </Pane>
+         </children></Pane>
+      <Pane layoutY="623.0" prefHeight="518.0" prefWidth="1424.0" />
    </children>
 </AnchorPane>
