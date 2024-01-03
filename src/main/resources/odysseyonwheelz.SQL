@@ -60,7 +60,9 @@ CREATE TABLE rent(
 CREATE TABLE vehicle (
     vehicle_id VARCHAR(10) PRIMARY KEY,
     vehicle_type VARCHAR(50),
-    status VARCHAR(10)
+    vehicle_name VARCHAR(100),
+    per_day_80km DOUBLE,
+    excess_mileage DOUBLE
 );
 CREATE TABLE rent_detail (
     rent_id VARCHAR(10) NOT NULL ,
@@ -162,32 +164,32 @@ VALUES
     ('PP901234', 'Samuel Kofi', 'Ghana', 'samuel.kofi@example.com'),
     ('QQ567890', 'Sophie Abimbola', 'Kenya', 'sophie.abimbola@example.com');
 
-INSERT INTO vehicle(vehicle_id, vehicle_type, status) VALUES
-    ('QA-5678', 'double-cab', 'available'),
-    ('AAI-5678', 'three-wheeler', 'available'),
-    ('BAY-3489', 'Scooter bike', 'available'),
-    ('ABC-1234', 'sedan', 'available'),
-    ('XYZ-5678', 'Scooter bike', 'available'),
-    ('DEF-9876', 'pickup truck', 'available'),
-    ('GHI-5432', 'mini van', 'available'),
-    ('JKL-9876', 'compact car', 'available'),
-    ('MNO-1234', 'electric scooter', 'available'),
-    ('PQR-5678', 'van', 'available'),
-    ('STU-9876', 'motorbike', 'available'),
-    ('VWX-1234', 'luxury car', 'available'),
-    ('YZA-5678', 'moped', 'available'),
-    ('BCD-9876', 'ATV', 'available'),
-    ('EFG-1234', 'minivan', 'available'),
-    ('HIJ-5678', 'hybrid car', 'available'),
-    ('KLM-9876', 'touring motorcycle', 'available'),
-    ('NOP-1234', 'sports car', 'available'),
-    ('QRS-5678', 'cargo van', 'available'),
-    ('TUV-9876', 'scooter', 'available'),
-    ('WXY-1234', 'crossover SUV', 'available'),
-    ('ZAB-5678', 'delivery truck', 'available'),
-    ('CDE-9876', 'golf cart', 'available'),
-    ('FGH-1234', 'limousine', 'available'),
-    ('IJK-5678', 'monster truck', 'available');
+INSERT INTO vehicle(vehicle_id, vehicle_type,vehicle_name, per_day_80km,excess_mileage) VALUES
+    ('QA-5678', 'normal','Suzuki Alto',12000,120 ),
+    ('AAI-5678', 'normal','Suzuki Celerio', 13500,135),
+    ('BAY-3489', 'normal','Perodua Axia',13500,135),
+    ('ABC-1234', 'normal','Perodua Bezza Prime Sedan(2017)',13500,135),
+    ('XYZ-5678', 'normal','Toyota Vitz',13500,135),
+    ('DEF-9876', 'luxury','Mercedes Benz S-Class AMG (Long Wheel Base)', 65000,650),
+    ('GHI-5432', 'luxury','BMW 320-White', 29500,295),
+    ('JKL-9876', 'luxury','CHRYSLER 300 C - White (Rolls Royce Facelift)', 34500,345),
+    ('MNO-1234', 'luxury','Mercedes Benz C 350 - 2017', 34500,345),
+    ('PQR-5678', 'luxury','Jaguar XF 3.0 V6', 39500,395),
+    ('STU-9876', 'luxury','Toyota Camry', 24500,245),
+    ('VWX-1234', 'MVP','Toyota Alphard 6 Passenger',34500,345),
+    ('YZA-5678', 'MVP','Mercedes Vito Luxury 5 + 2 Passenger',29500,295),
+    ('BCD-9876', 'luxury van', 'Toyota Regius 9 Seater - Dual A/C New Petrol',17500,175),
+    ('EFG-1234', 'luxury van', 'Toyota Regius 9 Seater - Dual A/c',16500,165),
+    ('HIJ-5678', 'luxury van', 'Toyota Hiace Commuter 09 Seater - Line A/c',17500,175),
+    ('KLM-9876', 'luxury van', 'Toyota Hiace Commuter 15 Seater - Line A/c',17500,175),
+    ('NOP-1234', 'luxury van', 'Toyota Grand Cabin 13 Seater - Line A/c',18500,185),
+    ('QRS-5678', 'SUV','Toyota Land Cruiser Prado TRJ 150', 34500,345),
+    ('TUV-9876', 'SUV','Mitsubishi Montero Sport 2018', 29500,295),
+    ('WXY-1234', 'SUV','Nissan X Trail (diesel)', 26000,265),
+    ('ZAB-5678', 'SUV','Toyota Rush 2018', 26500,265),
+    ('CDE-9876', 'SUV','Suzuki Vitara', 22500,225),
+    ('FGH-1234', 'SUV','Toyata Hilux 4wd Double Cab', 22500,225),
+    ('IJK-5678', 'SUV','Terios 4wd', 22500,225);
 
 INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil,chinese,japan) VALUES
     (1,'номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport','கடவுச்சீட்டு எண்','护照号','パスポート番号'),

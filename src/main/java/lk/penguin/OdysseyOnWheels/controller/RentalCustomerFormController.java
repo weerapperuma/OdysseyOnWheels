@@ -66,7 +66,10 @@ public class RentalCustomerFormController {
     }
     public void initialize() throws SQLException, ClassNotFoundException {
 
-        lblRentalId.setText(languageBO.get(LanguageBOImpl.language,3));
+        lblRentalId.setText(languageBO.get(LanguageBOImpl.language,5));
+        lblCustId.setText(languageBO.get(LanguageBOImpl.language,1));
+        lblPickUpLocation.setText(languageBO.get(LanguageBOImpl.language,3));
+        lblDropOffLocation.setText(languageBO.get(LanguageBOImpl.language,4));
     }
 
 }
