@@ -7,7 +7,6 @@ import lk.penguin.OdysseyOnWheels.dao.custom.CountriesDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.CustomerDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.CountriesDAOImpl;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.CustomerDAOImpl;
-import lk.penguin.OdysseyOnWheels.dto.CountriesDTO;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
 import lk.penguin.OdysseyOnWheels.entity.Countries;
 import lk.penguin.OdysseyOnWheels.entity.Customer;
@@ -50,7 +49,6 @@ public class CustomerBOImpl implements CustomerBO {
         return customerDAO.save(new Customer(customerDTO.getCustomerNIC(),customerDTO.getCustomerName(),customerDTO.getCustomerCountry(),customerDTO.getCustomerEmail()));
     }
     @Override
-
     public ObservableList<String> countryList() throws SQLException, ClassNotFoundException {
         ArrayList<Countries> countries= countriesDAO.getAll();
         ObservableList<String> countriesDTOS= FXCollections.observableArrayList();
@@ -61,5 +59,9 @@ public class CustomerBOImpl implements CustomerBO {
         }
 
         return countriesDTOS;
+    }
+    @Override
+    public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
+        return customerDAO.ifExists(id);
     }
 }

@@ -8,7 +8,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.UserBO;
+import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.UserBOImpl;
 import lk.penguin.OdysseyOnWheels.dao.custom.WelcomeBO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.WelcomeBoImpl;
@@ -39,17 +41,17 @@ public class WelcomeFormController implements Initializable {
     WelcomeBO welcomeBO=new WelcomeBoImpl();
 
     public static String passportId="0";
-    UserBO userBO=new UserBOImpl();
+    CustomerBO customerBO=new CustomerBOImpl();
 
     @FXML
     void btnRentOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-        if(userBO.ifExists(txtPassportId.getText())){
+        if(customerBO.ifExists(txtPassportId.getText())){
             System.out.println(txtPassportId.getLength());
             BackgroundFormController.transfer=1;
             Navigation.switchNavigation( "backgroundForm.fxml",event);
         }
         else {
-            System.out.println("You fucked up");
+            //Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, );
         }
 
     }

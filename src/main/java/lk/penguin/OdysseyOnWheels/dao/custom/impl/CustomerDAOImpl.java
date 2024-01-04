@@ -71,4 +71,10 @@ public class CustomerDAOImpl implements CustomerDAO {
                 customer.getCustomerEmail()
         );
     }
+
+    @Override
+    public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst= SQLUtil.execute("Select * from customer WHERE customerNIC=?",id);
+        return rst.next();
+    }
 }
