@@ -10,8 +10,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import lk.penguin.OdysseyOnWheels.bo.custom.LanguageBO;
-import lk.penguin.OdysseyOnWheels.bo.custom.impl.LanguageBOImpl;
+import lk.penguin.OdysseyOnWheels.bo.custom.RentBO;
+import lk.penguin.OdysseyOnWheels.bo.custom.impl.RentBOImpl;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
@@ -68,7 +68,7 @@ public class RentalCustomerFormController {
     @FXML
     private JFXComboBox<?> cmbLanguageFXID;
 
-    LanguageBO languageBO=new LanguageBOImpl();
+    RentBO rentBO=new RentBOImpl();
     @FXML
     void menuButtonOnAction(ActionEvent event) {
 
@@ -80,23 +80,23 @@ public class RentalCustomerFormController {
     }
     @FXML
     void cmbLanguageChangeOnAction(ActionEvent event) throws IOException {
-        LanguageBOImpl.language=(String) cmbLanguageFXID.getValue();
+        WelcomeFormController.language=(String) cmbLanguageFXID.getValue();
         Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "rentalCustomerForm.fxml");
     }
     public void initialize() throws SQLException, ClassNotFoundException {
         setValues();
-        ObservableList languageList= languageBO.getLanguageList();
+        ObservableList languageList= rentBO.getLanguageList();
         cmbLanguageFXID.setItems(languageList);
 
 
     }
     public void setValues() throws SQLException, ClassNotFoundException {
-        lblRentalId.setText(languageBO.get(LanguageBOImpl.language,5));
-        lblCustId.setText(languageBO.get(LanguageBOImpl.language,1));
-        lblPickUpLocation.setText(languageBO.get(LanguageBOImpl.language,6));
-        lblDropOffLocation.setText(languageBO.get(LanguageBOImpl.language,7));
-        lblStartingDate.setText(languageBO.get(LanguageBOImpl.language,3));
-        lblEndingDate.setText(languageBO.get(LanguageBOImpl.language,4));
+        lblRentalId.setText(rentBO.get(WelcomeFormController.language,5));
+        lblCustId.setText(rentBO.get(WelcomeFormController.language,1));
+        lblPickUpLocation.setText(rentBO.get(WelcomeFormController.language,6));
+        lblDropOffLocation.setText(rentBO.get(WelcomeFormController.language,7));
+        lblStartingDate.setText(rentBO.get(WelcomeFormController.language,3));
+        lblEndingDate.setText(rentBO.get(WelcomeFormController.language,4));
     }
 
 }

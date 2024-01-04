@@ -13,4 +13,8 @@ public class RentBOImpl implements RentBO {
     public ObservableList<String> getLanguageList() throws SQLException, ClassNotFoundException {
         return languageDAO.getAllLanguageList();
     }
+    @Override
+    public String get(String language,int nb) throws SQLException, ClassNotFoundException {
+        return languageDAO.get(language,nb);
+    }
 }
