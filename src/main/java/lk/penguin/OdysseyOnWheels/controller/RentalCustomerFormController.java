@@ -70,6 +70,8 @@ public class RentalCustomerFormController {
 
     @FXML
     private Pane transactionLoadPane;
+    @FXML
+    private Pane tableLoadPane;
 
     RentBO rentBO=new RentBOImpl();
     @FXML
@@ -89,6 +91,7 @@ public class RentalCustomerFormController {
     public void initialize() throws SQLException, ClassNotFoundException {
         setLabelValues();
         setComboboxValues();
+        datePickerEnding.setOnAction(event ->lblSearchButton.fire());
 
     }
 

@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="rentCustomerAnchorPane" prefHeight="1600.0" prefWidth="1423.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.RentalCustomerFormController">
    <children>
@@ -132,11 +131,7 @@
          <children>
             <Label alignment="TOP_LEFT" prefHeight="198.0" prefWidth="1424.0" text="Label" />
          </children></Pane>
-      <Pane layoutY="821.0" prefHeight="454.0" prefWidth="1424.0">
-         <children>
-            <Text layoutX="187.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="table" wrappingWidth="219.73670959472656" />
-         </children>
-      </Pane>
+      <Pane fx:id="tableLoadPane" layoutY="821.0" prefHeight="454.0" prefWidth="1424.0" />
       <Pane layoutY="1275.0" prefHeight="323.0" prefWidth="856.0">
          <children>
             <JFXTextArea layoutX="6.0" layoutY="3.0" prefHeight="323.0" prefWidth="856.0" text="EMBARK ON AN UNBEATABLE SELF-DRIVE JOURNEY IN SRI LANKA WITH KINGS RENT-A-CAR&#10;Experience the freedom of travelling across Sri Lanka with the most affordable self-drive car rental options in the island. Plan your trip with our flexible rental plans and hire vehicles either on a short-term or a long-term basis.&#10;&#10;With Kings Rent a Car’s comprehensively insured fleet of well-maintained vehicles you can enjoy a wide range of choices. Select from spacious luxury sedans to comfortable fuel-efficient compact cars, including crossovers, MPVs and 4WD SUVs that fit your budget neatly.&#10;&#10;For your convenience we offer vehicle pick-up and drop-off services in all the major cities across the island including Bandaranaike International Airport (BIA), Mattala Rajapaksa International Airport (MRIA), surrounding airport hotels, Arugambay, Negombo, Colombo, Jaffna, Kandy, Kalpitiya, Matara, Sigiriya, Polonnaruwa, Tangalle and Trincomalee.&#10;&#10;Make the most of your travel experience in Sri Lanka with our customer-friendly approach that meets service excellence with professionalism." />
