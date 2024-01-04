@@ -12,8 +12,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import lk.penguin.OdysseyOnWheels.bo.custom.LanguageBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.LanguageBOImpl;
+import lk.penguin.OdysseyOnWheels.util.Navigation;
 
+import java.io.IOException;
+import java.sql.Array;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RentalCustomerFormController {
 
@@ -75,12 +79,14 @@ public class RentalCustomerFormController {
 
     }
     @FXML
-    void cmbLanguageChangeOnAction(ActionEvent event) {
-
+    void cmbLanguageChangeOnAction(ActionEvent event) throws IOException {
+        LanguageBOImpl.language=(String) cmbLanguageFXID.getValue();
+        Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "rentalCustomerForm.fxml");
     }
     public void initialize() throws SQLException, ClassNotFoundException {
         setValues();
-        ObservableList<String> languageList= languageBO.getLanguageList();
+        ObservableList languageList= languageBO.getLanguageList();
+        cmbLanguageFXID.setItems(languageList);
 
 
     }
