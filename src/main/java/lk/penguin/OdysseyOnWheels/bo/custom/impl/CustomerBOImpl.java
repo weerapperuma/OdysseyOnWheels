@@ -51,16 +51,15 @@ public class CustomerBOImpl implements CustomerBO {
     }
     @Override
 
-    public ObservableList<CountriesDTO> countryList() throws SQLException, ClassNotFoundException {
+    public ObservableList<String> countryList() throws SQLException, ClassNotFoundException {
         ArrayList<Countries> countries= countriesDAO.getAll();
-        ObservableList<CountriesDTO> countriesDTOS= FXCollections.observableArrayList();
+        ObservableList<String> countriesDTOS= FXCollections.observableArrayList();
         for(Countries country:countries){
-            CountriesDTO countriesDTO=new CountriesDTO();
-            countriesDTO.setCountryName(country.getCountryName());
+            String countryNames=country.getCountryName();
 
-            countriesDTOS.add(countriesDTO);
+            countriesDTOS.add(countryNames);
         }
 
-        return countriesDTOS.sorted();
+        return countriesDTOS;
     }
 }

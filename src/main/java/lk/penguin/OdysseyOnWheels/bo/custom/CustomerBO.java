@@ -19,5 +19,5 @@ public interface CustomerBO extends SuperBO {
 
     boolean save(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException;
 
-    public ObservableList<CountriesDTO> countryList() throws SQLException, ClassNotFoundException;
+    public ObservableList<String> countryList() throws SQLException, ClassNotFoundException;
 }
