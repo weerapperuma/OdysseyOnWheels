@@ -8,8 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import lk.penguin.OdysseyOnWheels.bo.custom.LanguageBO;
-import lk.penguin.OdysseyOnWheels.bo.custom.impl.LanguageBOImpl;
+import lk.penguin.OdysseyOnWheels.dao.custom.WelcomeBO;
+import lk.penguin.OdysseyOnWheels.dao.custom.impl.WelcomeBoImpl;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
@@ -32,9 +32,9 @@ public class WelcomeFormController implements Initializable {
     @FXML
     private TextField txtPassportId;
 
-    LanguageBO languageBO=new LanguageBOImpl();
 
     public static String language="english";
+    WelcomeBO welcomeBO=new WelcomeBoImpl();
 
     @FXML
     void btnRentOnAction(ActionEvent event) throws IOException {
@@ -120,7 +120,7 @@ public class WelcomeFormController implements Initializable {
 
     }
     public void setValues() throws SQLException, ClassNotFoundException {
-        lblTitle.setText(languageBO.get(WelcomeFormController.language,1));
-        btntxtRent.setText(languageBO.get(WelcomeFormController.language,2));
+        lblTitle.setText(welcomeBO.get(WelcomeFormController.language,1));
+        btntxtRent.setText(welcomeBO.get(WelcomeFormController.language,2));
     }
 }
