@@ -99,6 +99,7 @@ public class RentalCustomerFormController {
         cmbPickupLocation.setItems(locations);
         cmbDropOffLocation.setItems(locations);
         lblCustIdSelected.setText(WelcomeFormController.passportId);
+        lblRentIdAutoGenerate.setText(rentBO.generateId());
     }
 
     public void setLabelValues() throws SQLException, ClassNotFoundException {

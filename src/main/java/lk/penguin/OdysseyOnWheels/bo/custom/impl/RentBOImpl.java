@@ -5,8 +5,10 @@ import javafx.collections.ObservableList;
 import lk.penguin.OdysseyOnWheels.bo.custom.RentBO;
 import lk.penguin.OdysseyOnWheels.dao.custom.LanguageDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.LocationsDAO;
+import lk.penguin.OdysseyOnWheels.dao.custom.RentDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.LanguageDAOImpl;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.LocationsDAOImpl;
+import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDAOImpl;
 import lk.penguin.OdysseyOnWheels.entity.Locations;
 import lk.penguin.OdysseyOnWheels.entity.Rent;
 
@@ -16,6 +18,8 @@ import java.util.ArrayList;
 public class RentBOImpl implements RentBO {
     LanguageDAO languageDAO=new LanguageDAOImpl();
     LocationsDAO locationsDAO=new LocationsDAOImpl();
+
+    RentDAO rentDAO=new RentDAOImpl();
 
     @Override
     public ObservableList<String> getLanguageList() throws SQLException, ClassNotFoundException {
@@ -35,5 +39,17 @@ public class RentBOImpl implements RentBO {
             locatiosOB.add(location1);
         }
         return locatiosOB;
+    }
+
+    @Override
+    public String generateId() throws SQLException, ClassNotFoundException {
+        String lastNumber=rentDAO.getLastNumber();
+        if(lastNumber!=null){
+            int newLastnb=Integer.parseInt(lastNumber)+1;
+            return String.format("R-%05d", newLastnb);
+        }
+        else {
+            return "R-00001";
+        }
     }
 }

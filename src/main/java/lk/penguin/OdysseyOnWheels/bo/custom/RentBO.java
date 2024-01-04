@@ -10,4 +10,6 @@ public interface RentBO {
     String get(String language, int nb) throws SQLException, ClassNotFoundException;
 
     ObservableList getLocations() throws SQLException, ClassNotFoundException;
+
+    String generateId() throws SQLException, ClassNotFoundException;
 }
