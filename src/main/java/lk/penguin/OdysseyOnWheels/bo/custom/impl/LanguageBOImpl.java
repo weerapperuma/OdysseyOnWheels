@@ -18,7 +18,7 @@ public class LanguageBOImpl implements LanguageBO {
     }
 
     @Override
-    public ObservableList<String> getLanguageList() {
+    public ObservableList<String> getLanguageList() throws SQLException, ClassNotFoundException {
         return languageDAO.getAllLanguageList();
     }
 }

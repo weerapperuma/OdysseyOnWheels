@@ -15,5 +15,5 @@ public interface LanguageBO extends SuperBO {
 
     public String get(String language,int nb) throws SQLException, ClassNotFoundException;
 
-    ObservableList<String> getLanguageList();
+    public ObservableList<String> getLanguageList() throws SQLException, ClassNotFoundException;
 }
