@@ -3,6 +3,8 @@ package lk.penguin.OdysseyOnWheels.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import lk.penguin.OdysseyOnWheels.bo.custom.UserBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.UserBOImpl;
@@ -13,10 +15,12 @@ import java.sql.SQLException;
 
 public class LoginFormController {
     @FXML
-    private TextField txtPassword;
+    private PasswordField txtPassword;
 
     @FXML
     private TextField txtUserName;
+    @FXML
+    private Button btnLoginfxId;
 
     UserBO userBO=new UserBOImpl();
     @FXML
@@ -40,5 +44,9 @@ public class LoginFormController {
     @FXML
     void hplinkTroubleLogin(ActionEvent event) {
 
+    }
+    public void initialize(){
+        txtUserName.setOnAction(event ->txtPassword.requestFocus());
+        txtPassword.setOnAction(event ->btnLoginfxId.fire());
     }
 }

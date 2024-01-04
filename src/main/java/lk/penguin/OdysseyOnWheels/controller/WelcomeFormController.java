@@ -119,6 +119,7 @@ public class WelcomeFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        txtPassportId.setOnAction(event -> btntxtRent.fire());
 
         try {
             setValues();
@@ -133,4 +134,5 @@ public class WelcomeFormController implements Initializable {
         lblTitle.setText(welcomeBO.get(WelcomeFormController.language,1));
         btntxtRent.setText(welcomeBO.get(WelcomeFormController.language,2));
     }
+
 }
