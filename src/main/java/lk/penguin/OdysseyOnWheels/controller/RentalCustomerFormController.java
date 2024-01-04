@@ -68,6 +68,9 @@ public class RentalCustomerFormController {
     @FXML
     private JFXComboBox<?> cmbLanguageFXID;
 
+    @FXML
+    private Pane transactionLoadPane;
+
     RentBO rentBO=new RentBOImpl();
     @FXML
     void menuButtonOnAction(ActionEvent event) {
@@ -75,8 +78,8 @@ public class RentalCustomerFormController {
     }
 
     @FXML
-    void searchBtnOnAction(ActionEvent event) {
-        System.out.println(datePickerStarting.getValue());
+    void searchBtnOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(transactionLoadPane,"transactionForm.fxml");
     }
     @FXML
     void cmbLanguageChangeOnAction(ActionEvent event) throws IOException {
@@ -95,6 +98,7 @@ public class RentalCustomerFormController {
         ObservableList locations=rentBO.getLocations();
         cmbPickupLocation.setItems(locations);
         cmbDropOffLocation.setItems(locations);
+        lblCustIdSelected.setText(WelcomeFormController.passportId);
     }
 
     public void setLabelValues() throws SQLException, ClassNotFoundException {

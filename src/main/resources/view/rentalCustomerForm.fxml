@@ -120,7 +120,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="502.0" layoutY="105.0" prefHeight="552.0" prefWidth="922.0">
+      <Pane fx:id="transactionLoadPane" layoutX="502.0" layoutY="105.0" prefHeight="552.0" prefWidth="922.0">
          <children>
             <ImageView fitHeight="542.0" fitWidth="922.0" pickOnBounds="true" preserveRatio="true">
                <image>

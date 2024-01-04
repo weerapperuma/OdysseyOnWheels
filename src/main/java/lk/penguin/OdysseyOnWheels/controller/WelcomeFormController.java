@@ -46,12 +46,12 @@ public class WelcomeFormController implements Initializable {
     @FXML
     void btnRentOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         if(customerBO.ifExists(txtPassportId.getText())){
-            System.out.println(txtPassportId.getLength());
+            this.passportId=txtPassportId.getText();
             BackgroundFormController.transfer=1;
             Navigation.switchNavigation( "backgroundForm.fxml",event);
         }
         else {
-            //Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, );
+            Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane,"customerSaveForm.fxml" );
         }
 
     }
