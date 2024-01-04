@@ -43,8 +43,11 @@ public class CustomerSaveFormController {
 
     CustomerBO customerBO=new CustomerBOImpl();
     public void initialize() throws SQLException, ClassNotFoundException {
-        ObservableList countryList=customerBO.countryList();
+        ObservableList<String > countryList=customerBO.countryList();
         cmbCustCountry.setItems(countryList);
+        for(String country:countryList){
+            cmbCustCountry.setValue(countryList.get(1));
+        }
     }
 
     @FXML
