@@ -76,7 +76,7 @@ public class RentalCustomerFormController {
 
     @FXML
     void searchBtnOnAction(ActionEvent event) {
-
+        System.out.println(datePickerStarting.getValue());
     }
     @FXML
     void cmbLanguageChangeOnAction(ActionEvent event) throws IOException {
@@ -84,13 +84,24 @@ public class RentalCustomerFormController {
         Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "rentalCustomerForm.fxml");
     }
     public void initialize() throws SQLException, ClassNotFoundException {
-        setValues();
-        ObservableList languageList= rentBO.getLanguageList();
-        cmbLanguageFXID.setItems(languageList);
+        setLabelValues();
+        setComboboxValues();
+
 
 
     }
-    public void setValues() throws SQLException, ClassNotFoundException {
+
+    private void setComboboxValues() throws SQLException, ClassNotFoundException {
+        ObservableList languageList= rentBO.getLanguageList();
+        cmbLanguageFXID.setItems(languageList);
+        ObservableList locations=rentBO.getLocations();
+        cmbPickupLocation.setItems(locations);
+        cmbDropOffLocation.setItems(locations);
+    }
+
+    public void setLabelValues() throws SQLException, ClassNotFoundException {
+
+
         lblRentalId.setText(rentBO.get(WelcomeFormController.language,5));
         lblCustId.setText(rentBO.get(WelcomeFormController.language,1));
         lblPickUpLocation.setText(rentBO.get(WelcomeFormController.language,6));
