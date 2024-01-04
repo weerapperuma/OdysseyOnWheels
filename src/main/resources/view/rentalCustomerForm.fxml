@@ -54,6 +54,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <JFXComboBox fx:id="cmbLanguageFXID" layoutX="1115.0" layoutY="68.0" onAction="#cmbLanguageChangeOnAction" prefHeight="25.0" prefWidth="83.0" promptText="Language" />
          </children>
       </Pane>
       <Pane fx:id="paneBokingfirstpane" layoutY="105.0" prefHeight="518.0" prefWidth="500.0" style="-fx-background-color: white;">

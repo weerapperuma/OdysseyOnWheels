@@ -1,5 +1,6 @@
 package lk.penguin.OdysseyOnWheels.bo.custom;
 
+import javafx.collections.ObservableList;
 import lk.penguin.OdysseyOnWheels.bo.SuperBO;
 import lk.penguin.OdysseyOnWheels.dao.custom.LanguageDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.LanguageDAOImpl;
@@ -13,4 +14,6 @@ public interface LanguageBO extends SuperBO {
 
 
     public String get(String language,int nb) throws SQLException, ClassNotFoundException;
+
+    ObservableList<String> getLanguageList();
 }

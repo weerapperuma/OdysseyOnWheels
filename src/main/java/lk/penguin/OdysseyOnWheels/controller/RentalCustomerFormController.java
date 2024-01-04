@@ -2,6 +2,8 @@ package lk.penguin.OdysseyOnWheels.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -59,6 +61,8 @@ public class RentalCustomerFormController {
 
     @FXML
     private AnchorPane rentCustomerAnchorPane;
+    @FXML
+    private JFXComboBox<?> cmbLanguageFXID;
 
     LanguageBO languageBO=new LanguageBOImpl();
     @FXML
@@ -70,15 +74,23 @@ public class RentalCustomerFormController {
     void searchBtnOnAction(ActionEvent event) {
 
     }
-    public void initialize() throws SQLException, ClassNotFoundException {
+    @FXML
+    void cmbLanguageChangeOnAction(ActionEvent event) {
 
+    }
+    public void initialize() throws SQLException, ClassNotFoundException {
+        setValues();
+        ObservableList<String> languageList= languageBO.getLanguageList();
+
+
+    }
+    public void setValues() throws SQLException, ClassNotFoundException {
         lblRentalId.setText(languageBO.get(LanguageBOImpl.language,5));
         lblCustId.setText(languageBO.get(LanguageBOImpl.language,1));
         lblPickUpLocation.setText(languageBO.get(LanguageBOImpl.language,6));
         lblDropOffLocation.setText(languageBO.get(LanguageBOImpl.language,7));
         lblStartingDate.setText(languageBO.get(LanguageBOImpl.language,3));
         lblEndingDate.setText(languageBO.get(LanguageBOImpl.language,4));
-
     }
 
 }
