@@ -196,6 +196,8 @@ INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil
     (2,'Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
     (3,'Начальный день','ආරම්භක දිනය','Starttag','शुरुआती दिन','Jour de départ','Starting day','தொடக்க நாள்','开始日','開始日'),
     (4,'дата окончания','අවසන් දිනය','Endtag','समाप्त होने की तारीख','Jour de fin','Ending day','கடைசி நாள்','结束日','結束日'),
-    (5,'номер аренды','කුලී අංකය','Mietnummer','किराया संख्या','numéro de loyer','Rent number','வாடகை எண்','租金号码','家賃番号')
+    (5,'номер аренды','කුලී අංකය','Mietnummer','किराया संख्या','numéro de loyer','Rent number','வாடகை எண்','租金号码','家賃番号'),
+    (6,'выбрать место','ආරම්භක ස්ථානය','Treffpunkt','लेने की जगह','lieu de ramassage','pickup location','எடுக்கும் இடம்','接人的地方','乗車場所'),
+    (7,'Место сброса','අවසන් ස්ථානය','Endort','समापन स्थान','lieu de fin','Drop off location','முடிவடையும் இடம்','结束地点','終了場所')
 
 ;

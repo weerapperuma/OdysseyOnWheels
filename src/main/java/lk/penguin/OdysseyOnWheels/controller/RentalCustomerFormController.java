@@ -26,6 +26,12 @@ public class RentalCustomerFormController {
 
     @FXML
     private DatePicker datePickerStarting;
+    @FXML
+    private Label lblStartingDate;
+
+    @FXML
+    private Label lblEndingDate;
+
 
     @FXML
     private Label lblCustId;
@@ -68,8 +74,11 @@ public class RentalCustomerFormController {
 
         lblRentalId.setText(languageBO.get(LanguageBOImpl.language,5));
         lblCustId.setText(languageBO.get(LanguageBOImpl.language,1));
-        lblPickUpLocation.setText(languageBO.get(LanguageBOImpl.language,3));
-        lblDropOffLocation.setText(languageBO.get(LanguageBOImpl.language,4));
+        lblPickUpLocation.setText(languageBO.get(LanguageBOImpl.language,6));
+        lblDropOffLocation.setText(languageBO.get(LanguageBOImpl.language,7));
+        lblStartingDate.setText(languageBO.get(LanguageBOImpl.language,3));
+        lblEndingDate.setText(languageBO.get(LanguageBOImpl.language,4));
+
     }
 
 }
