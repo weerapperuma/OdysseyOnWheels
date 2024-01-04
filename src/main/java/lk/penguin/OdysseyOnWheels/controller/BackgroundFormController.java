@@ -53,8 +53,10 @@ public class BackgroundFormController implements Initializable {
         try {
             if(BackgroundFormController.transfer==1){
                 goToRent();
+                transfer=0;
             }else{
                 goTOAdmin();
+                transfer=0;
             }
 
 
