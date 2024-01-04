@@ -18,4 +18,8 @@ public class UserBOImpl implements UserBO {
             return false;
         }
     }
+    @Override
+    public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
+        return userDAO.ifExists(id);
+    }
 }

@@ -33,4 +33,10 @@ public class UserDAOImpl implements UserDAO {
     public boolean update(User dto) throws SQLException, ClassNotFoundException {
         return false;
     }
+    @Override
+
+    public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet= SQLUtil.execute("SELECT * FROM user WHERE userId=?",id);
+        return resultSet.next();
+    }
 }

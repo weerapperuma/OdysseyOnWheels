@@ -87,8 +87,6 @@ public class RentalCustomerFormController {
         setLabelValues();
         setComboboxValues();
 
-
-
     }
 
     private void setComboboxValues() throws SQLException, ClassNotFoundException {
