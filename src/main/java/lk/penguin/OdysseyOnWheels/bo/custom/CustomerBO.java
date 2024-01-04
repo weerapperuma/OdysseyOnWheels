@@ -1,6 +1,8 @@
 package lk.penguin.OdysseyOnWheels.bo.custom;
 
+import javafx.collections.ObservableList;
 import lk.penguin.OdysseyOnWheels.bo.SuperBO;
+import lk.penguin.OdysseyOnWheels.dto.CountriesDTO;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
 
 import java.sql.SQLException;
@@ -16,4 +18,6 @@ public interface CustomerBO extends SuperBO {
     CustomerDTO get(String custId) throws SQLException, ClassNotFoundException;
 
     boolean save(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException;
+
+    public ObservableList<CountriesDTO> countryList() throws SQLException, ClassNotFoundException;
 }

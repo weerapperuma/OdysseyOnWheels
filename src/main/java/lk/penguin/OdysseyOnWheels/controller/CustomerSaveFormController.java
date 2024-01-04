@@ -1,6 +1,7 @@
 package lk.penguin.OdysseyOnWheels.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -41,8 +42,9 @@ public class CustomerSaveFormController {
     private TextField txtCustName;
 
     CustomerBO customerBO=new CustomerBOImpl();
-    public void initialize(){
-        cmbCustCountry.setItems(CustomerBOImpl.countryList());
+    public void initialize() throws SQLException, ClassNotFoundException {
+        ObservableList countryList=customerBO.countryList();
+        cmbCustCountry.setItems(countryList);
     }
 
     @FXML

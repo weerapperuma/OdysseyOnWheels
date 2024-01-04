@@ -8,7 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
+import lk.penguin.OdysseyOnWheels.dto.CountriesDTO;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
+import lk.penguin.OdysseyOnWheels.entity.Customer;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
@@ -16,6 +18,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CustomerUpdateFormController{
+
 
     @FXML
     private JFXComboBox<String> cmbCustCountry;
@@ -43,17 +46,17 @@ public class CustomerUpdateFormController{
 
     @FXML
     private TextField txtCustName;
-
-    CustomerBO customerBO=new CustomerBOImpl();
+    CustomerBOImpl customerBO=new CustomerBOImpl();
     CustomerDTO customerDTO=new CustomerDTO();
 
     public void initialize() throws SQLException, ClassNotFoundException {
-        ObservableList countryList=CustomerBOImpl.countryList();
+        ObservableList countryList=customerBO.countryList();
         customerDTO=customerBO.get(CustomerRawFormController.custId);
         System.out.println("Email:"+customerDTO.getCustomerEmail());
         lblCustId.setText(CustomerRawFormController.custId);
         txtCustINic.setText(customerDTO.getCustomerNIC());
         txtCustName.setText(customerDTO.getCustomerName());
+
         cmbCustCountry.setItems(countryList);
         if (countryList.contains(customerDTO.getCustomerCountry())) {
             cmbCustCountry.setValue(customerDTO.getCustomerCountry());
