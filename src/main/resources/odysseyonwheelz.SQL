@@ -108,6 +108,7 @@ CREATE TABLE language(
     japan VARCHAR(1000) DEFAULT NULL
 
 );
+CREATE TABLE locations(yard_name VARCHAR(100));
 
 INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES
     ('U001','PENGUIN','960036789v','0764532478','penguingotham@gmail.com','123'),
@@ -191,6 +192,26 @@ INSERT INTO vehicle(vehicle_id, vehicle_type,vehicle_name, per_day_80km,excess_m
     ('FGH-1234', 'SUV','Toyata Hilux 4wd Double Cab', 22500,225),
     ('IJK-5678', 'SUV','Terios 4wd', 22500,225);
 
+INSERT INTO locations(yard_name) VALUES
+    ('Arugam Bay town limits only - Arugam Bay town limits only'),
+    ('Bandaranaike International Airport (BIA) - Katunayake, colombo'),
+    ('Colombo - Suburbs - Colombo & Greater Colombo Area, Colombo'),
+    ('Dambulla / Sigiriya town limits - Dambulla / Sigiriya town limits'),
+    ('Dikwella / Tangalle town limits - Dikwella / Tangalle town limits'),
+    ('Ella - Ella, Ella, Uva, Sri Lanka'),
+    ('Galle Unawatuna City Limits - Galle Unawatuna City Limits (Any)'),
+    ('Habarana town limits - Habarana town limits (Any), Habarana'),
+    ('Jaffna Town Limits - Jaffna Town Limits (Any), Jaffna, Northern'),
+    ('Kalpitiya Tourism zone - Kalpitiya Tourism zone (Any), Kalpitiya'),
+    ('Kandy City limits - Kandy City limits (Any), Kandy, Central, Sri Lanka'),
+    ('Main Office - Battaramulla - 50,Ramya Mawatha, sri subuthipura'),
+    ('Mattala MRI International Airport - Mattala / Hambantota'),
+    ('Negambo City Hotels - Negambo City Hotels (Any), Negambo'),
+    ('Nilaveli / Trincomallee town limits - Nilaveli / Trincomallee town limits'),
+    ('Nuwara Eliya - Nuwara Eliya, Nuwara Eliya, Central, Sri Lanka'),
+    ('Polonnaruwa town limits - Polonnaruwa town limits (Any), Polonnaruwa');
+
+
 INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil,chinese,japan) VALUES
     (1,'номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
     (2,'Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
@@ -198,6 +219,4 @@ INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil
     (4,'дата окончания','අවසන් දිනය','Endtag','समाप्त होने की तारीख','Jour de fin','Ending day','கடைசி நாள்','结束日','結束日'),
     (5,'номер аренды','කුලී අංකය','Mietnummer','किराया संख्या','numéro de loyer','Rent number','வாடகை எண்','租金号码','家賃番号'),
     (6,'выбрать место','ආරම්භක ස්ථානය','Treffpunkt','लेने की जगह','lieu de ramassage','pickup location','எடுக்கும் இடம்','接人的地方','乗車場所'),
-    (7,'Место сброса','අවසන් ස්ථානය','Endort','समापन स्थान','lieu de fin','Drop off location','முடிவடையும் இடம்','结束地点','終了場所')
-
-;
+    (7,'Место сброса','අවසන් ස්ථානය','Endort','समापन स्थान','lieu de fin','Drop off location','முடிவடையும் இடம்','结束地点','終了場所');
