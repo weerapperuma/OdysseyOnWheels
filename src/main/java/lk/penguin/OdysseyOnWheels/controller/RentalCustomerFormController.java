@@ -6,6 +6,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -71,7 +73,14 @@ public class RentalCustomerFormController {
     @FXML
     private Pane transactionLoadPane;
     @FXML
-    private Pane tableLoadPane;
+    public  Pane tableLoadPane;
+    private static RentalCustomerFormController controller;
+    public RentalCustomerFormController(){
+        controller=this;
+    }
+    public static RentalCustomerFormController getInstance(){
+        return controller;
+    }
 
     RentBO rentBO=new RentBOImpl();
     @FXML
@@ -88,10 +97,16 @@ public class RentalCustomerFormController {
         WelcomeFormController.language=(String) cmbLanguageFXID.getValue();
         Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "rentalCustomerForm.fxml");
     }
-    public void initialize() throws SQLException, ClassNotFoundException {
+    public void initialize() throws SQLException, ClassNotFoundException, IOException {
         setLabelValues();
         setComboboxValues();
         datePickerEnding.setOnAction(event ->lblSearchButton.fire());
+
+//        FXMLLoader loader=new FXMLLoader(RentalCustomerFormController.class.getResource("view/vehicleTableForm.fxml"));
+//        Parent root=loader.load();
+//        VehicleTableFormController controller1=loader.getController();
+//
+//        this.tableLoadPane.getChildren().add(root);
 
     }
 
