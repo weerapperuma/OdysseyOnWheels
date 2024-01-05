@@ -10,5 +10,7 @@ import lombok.NoArgsConstructor;
 public class Vehicle {
     private String vehicleId;
     private String vehicleType;
-    private String status;
+    private String VehicleName;
+    private String perDay80Km;
+    private String excessMileage;
 }
