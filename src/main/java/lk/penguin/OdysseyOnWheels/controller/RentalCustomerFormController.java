@@ -73,6 +73,8 @@ public class RentalCustomerFormController {
     @FXML
     private Pane transactionLoadPane;
     @FXML
+    private Label paneWhyChooseUs;
+    @FXML
     public  Pane tableLoadPane;
     private static RentalCustomerFormController controller;
     public RentalCustomerFormController(){
@@ -101,12 +103,6 @@ public class RentalCustomerFormController {
         setLabelValues();
         setComboboxValues();
         datePickerEnding.setOnAction(event ->lblSearchButton.fire());
-
-//        FXMLLoader loader=new FXMLLoader(RentalCustomerFormController.class.getResource("view/vehicleTableForm.fxml"));
-//        Parent root=loader.load();
-//        VehicleTableFormController controller1=loader.getController();
-//
-//        this.tableLoadPane.getChildren().add(root);
 
     }
 
