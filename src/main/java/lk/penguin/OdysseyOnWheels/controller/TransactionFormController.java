@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -29,10 +30,6 @@ public class TransactionFormController {
 
 
     public void initialize() throws IOException, SQLException, ClassNotFoundException {
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("/view/vehicleTableForm.fxml"));
-        Pane vehiclePane=loader.load();
-        VehicleTableFormController controller=loader.getController();
-        controller.initialize();
-        tableLoadPaneInterface.getChildren().add(vehiclePane);
+        Navigation.switchPaging(RentalCustomerFormController.getInstance().tableLoadPane, "vehicleTableForm.fxml");
     }
 }
