@@ -56,7 +56,7 @@ public class CustomerManageFormController {
     }
 
     private void createCustomerRawLoadPane(CustomerDTO dto) throws IOException {
-        FXMLLoader loader=new FXMLLoader(EmployeeManageFormController.class.getResource("/view/customerRawForm.fxml"));
+        FXMLLoader loader=new FXMLLoader(CustomerManageFormController.class.getResource("/view/customerRawForm.fxml"));
         Parent root=loader.load();
         CustomerRawFormController controller=loader.getController();
 

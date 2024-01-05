@@ -23,10 +23,8 @@ public class BackgroundFormController implements Initializable {
     public AnchorPane pagingPane;
     @FXML
     private Label lblDateAndTime;
-    private static BackgroundFormController controller;
-
     public static int transfer=0;
-
+    private static BackgroundFormController controller;
     public BackgroundFormController(){
         controller=this;
     }
