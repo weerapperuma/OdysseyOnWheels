@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
 public class VehcileTransactionTableRawController {
 
@@ -34,4 +35,11 @@ public class VehcileTransactionTableRawController {
 
     }
 
+    public void setData(VehicleDTO dto) {
+        lblVehiId.setText(dto.getVehicleId());
+        lblVehiType.setText(dto.getVehicleType());
+        lblVehiName.setText(dto.getVehicleName());
+        lblPerDayCost.setText(dto.getPerDay80Km());
+        lblExcessMilageCost.setText(dto.getExcessMileage());
+    }
 }
