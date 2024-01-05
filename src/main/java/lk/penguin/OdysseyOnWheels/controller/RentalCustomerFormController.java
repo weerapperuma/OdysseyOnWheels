@@ -98,6 +98,7 @@ public class RentalCustomerFormController {
     private void setComboboxValues() throws SQLException, ClassNotFoundException {
         ObservableList languageList= rentBO.getLanguageList();
         cmbLanguageFXID.setItems(languageList);
+
         ObservableList locations=rentBO.getLocations();
         cmbPickupLocation.setItems(locations);
         cmbDropOffLocation.setItems(locations);
