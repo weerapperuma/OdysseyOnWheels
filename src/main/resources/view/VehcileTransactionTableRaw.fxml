@@ -3,15 +3,21 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="vehickeTransaxtionRaw" prefHeight="60.0" prefWidth="1419.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.VehcileTransactionTableRawController">
+<AnchorPane fx:id="vehickeTransaxtionRaw" prefHeight="45.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.VehcileTransactionTableRawController">
    <children>
-      <Label fx:id="lblVehiId" layoutX="5.0" layoutY="7.0" prefHeight="48.0" prefWidth="74.0" text="Label" />
-      <Label fx:id="lblVehiType" layoutX="93.0" layoutY="7.0" prefHeight="48.0" prefWidth="160.0" text="Label" />
-      <Label fx:id="lblVehiName" layoutX="261.0" layoutY="5.0" prefHeight="48.0" prefWidth="160.0" text="Label" />
-      <Label fx:id="lblPerDayCost" layoutX="437.0" layoutY="5.0" prefHeight="48.0" prefWidth="160.0" text="Label" />
-      <Label fx:id="lblExcessMilageCost" layoutX="601.0" layoutY="4.0" prefHeight="48.0" prefWidth="130.0" text="Label" />
-      <JFXButton fx:id="btnAdd" layoutX="1322.0" layoutY="18.0" onAction="#btnAddOnAction" text="ADD" />
+      <Label fx:id="lblVehiId" layoutX="5.0" layoutY="6.0" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: black;" text="XYZ-5678">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblVehiType" layoutX="108.0" layoutY="16.0" prefHeight="6.0" prefWidth="160.0" style="-fx-border-color: black;" text="luxury van">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="lblVehiName" layoutX="345.0" layoutY="16.0" prefHeight="0.0" prefWidth="160.0" text="Label" />
+      <Label fx:id="lblPerDayCost" layoutX="520.0" layoutY="14.0" prefHeight="0.0" prefWidth="160.0" text="Label" />
+      <Label fx:id="lblExcessMilageCost" layoutX="710.0" layoutY="16.0" prefHeight="0.0" prefWidth="130.0" text="Label" />
+      <JFXButton fx:id="btnAdd" layoutX="1038.0" layoutY="4.0" onAction="#btnAddOnAction" prefHeight="0.0" prefWidth="41.0" text="ADD" />
    </children>
 </AnchorPane>

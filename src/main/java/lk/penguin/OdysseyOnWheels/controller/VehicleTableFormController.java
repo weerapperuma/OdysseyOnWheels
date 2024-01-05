@@ -12,4 +12,6 @@ public class VehicleTableFormController {
     @FXML
     private VBox vehicleTableVbox;
 
+
+
 }

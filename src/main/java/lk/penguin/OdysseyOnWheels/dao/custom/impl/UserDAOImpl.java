@@ -4,7 +4,6 @@ import javafx.scene.control.Alert;
 import lk.penguin.OdysseyOnWheels.dao.custom.UserDAO;
 import lk.penguin.OdysseyOnWheels.entity.User;
 import lk.penguin.OdysseyOnWheels.util.SQLUtil;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

@@ -81,7 +81,7 @@ public class RentalCustomerFormController {
 
     @FXML
     void searchBtnOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(transactionLoadPane,"transactionForm.fxml");
+        Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
     }
     @FXML
     void cmbLanguageChangeOnAction(ActionEvent event) throws IOException {
