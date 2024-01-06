@@ -6,9 +6,9 @@
 
 <AnchorPane prefHeight="406.0" prefWidth="1202.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.VehicleTableFormController">
    <children>
-      <ScrollPane fx:id="vehicleTableScrolePane" layoutY="-1.0" prefHeight="406.0" prefWidth="1202.0">
+      <ScrollPane fx:id="vehicleTableScrolePane" focusTraversable="false" hbarPolicy="NEVER" layoutY="-1.0" prefHeight="406.0" prefWidth="1202.0" vbarPolicy="ALWAYS">
          <content>
-            <VBox fx:id="vehicleTableVbox" prefHeight="406.0" prefWidth="1202.0" />
+            <VBox fx:id="vehicleTableVbox" prefHeight="397.0" prefWidth="1189.0" />
          </content>
       </ScrollPane>
    </children>

@@ -73,7 +73,7 @@ public class RentalCustomerFormController {
     @FXML
     private Pane transactionLoadPane;
     @FXML
-    private Label paneWhyChooseUs;
+    private Pane paneWhyChosseUs;
     @FXML
     public  Pane tableLoadPane;
     private static RentalCustomerFormController controller;
@@ -104,6 +104,7 @@ public class RentalCustomerFormController {
         setComboboxValues();
         datePickerEnding.setOnAction(event ->lblSearchButton.fire());
 
+        Navigation.switchPaging(RentalCustomerFormController.getInstance().paneWhyChosseUs,"whyChooseUsForm.fxml");
     }
 
     private void setComboboxValues() throws SQLException, ClassNotFoundException {

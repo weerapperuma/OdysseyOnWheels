@@ -127,10 +127,7 @@
                </image>
             </ImageView>
          </children></Pane>
-      <Pane layoutY="623.0" prefHeight="197.0" prefWidth="1424.0">
-         <children>
-            <Label fx:id="paneWhyChooseUs" alignment="TOP_LEFT" prefHeight="198.0" prefWidth="1424.0" text="Label" />
-         </children></Pane>
+      <Pane fx:id="paneWhyChosseUs" layoutY="623.0" prefHeight="197.0" prefWidth="1424.0" />
       <Pane fx:id="tableLoadPane" layoutY="821.0" prefHeight="454.0" prefWidth="1424.0" />
       <Pane layoutY="1275.0" prefHeight="323.0" prefWidth="856.0">
          <children>

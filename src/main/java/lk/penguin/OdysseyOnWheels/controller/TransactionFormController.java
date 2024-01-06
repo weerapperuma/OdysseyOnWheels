@@ -30,6 +30,6 @@ public class TransactionFormController {
 
 
     public void initialize() throws IOException, SQLException, ClassNotFoundException {
-        Navigation.switchPaging(RentalCustomerFormController.getInstance().tableLoadPane, "vehicleTableForm.fxml");
+        Navigation.switchPaging(tableLoadPaneInterface, "vehicleTableForm.fxml");
     }
 }
