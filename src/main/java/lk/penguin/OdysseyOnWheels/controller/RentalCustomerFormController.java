@@ -128,5 +128,4 @@ public class RentalCustomerFormController {
         lblStartingDate.setText(rentBO.get(WelcomeFormController.language,3));
         lblEndingDate.setText(rentBO.get(WelcomeFormController.language,4));
     }
-
 }

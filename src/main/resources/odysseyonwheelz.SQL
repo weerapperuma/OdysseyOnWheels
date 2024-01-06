@@ -77,10 +77,10 @@ CREATE TABLE rent_detail (
     order_date DATE,
 
     CONSTRAINT FOREIGN KEY (rent_id) REFERENCES rent(rentId) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT FOREIGN KEY (vehicle_id) REFERENCES vehicle(vehicle_id),
-    CONSTRAINT FOREIGN KEY (start_date) REFERENCES rent(rent_starting),
-    CONSTRAINT FOREIGN KEY (end_date) REFERENCES rent(rent_ending),
-    CONSTRAINT FOREIGN KEY (order_date) REFERENCES rent(order_date)
+    CONSTRAINT FOREIGN KEY (vehicle_id) REFERENCES vehicle(vehicle_id) ON DELETE CASCADE ON UPDATE CASCADE ,
+    CONSTRAINT FOREIGN KEY (start_date) REFERENCES rent(rent_starting) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (end_date) REFERENCES rent(rent_ending) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (order_date) REFERENCES rent(order_date) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE sup_order (
@@ -263,14 +263,11 @@ INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil
     (7,'Место сброса','අවසන් ස්ථානය','Endort','समापन स्थान','lieu de fin','Drop off location','முடிவடையும் இடம்','结束地点','終了場所');
 
 INSERT INTO rent(rentId, customerNIC, rent_first_amount, rent_second_amount, rent_starting, rent_ending, order_date) VALUES
-    ('R-00001','AB123456',30000.00,0,'2024-01-11','2024-02-12','2024-01-06'),
-    ('R-00002','FF901234',45000.00,20000,'2024-03-06','2024-03-06','2024-01-06'),
+    ('R-00001','AB123456',61000.00,0,'2024-01-11','2024-02-12','2024-01-06'),
+    ('R-00002','FF901234',45000.00,0,'2024-03-06','2024-03-06','2024-01-06'),
     ('R-00003','FF901234',45000.00,20000,'2024-03-01','2024-03-09','2024-01-06'),
-    ('R-00004','GG567890',32000.00,15000,'2024-04-15','2024-05-18','2024-01-06'),
-    ('R-00005','HH123456',28000.00,12000,'2024-06-02','2024-07-05','2024-01-06'),
-    ('R-00006','II789012',40000.00,18000,'2024-08-10','2024-09-20','2024-01-06'),
-    ('R-00007','JJ345678',35000.00,16000,'2024-10-05','2024-10-25','2024-01-06'),
-    ('R-00008','KK901234',42000.00,19000,'2024-11-12','2024-12-15','2024-01-06'),
-    ('R-00009','LL567890',30000.00,14000,'2024-01-03','2024-02-08','2024-01-06'),
-    ('R-00010','MM123456',38000.00,17000,'2024-03-20','2024-04-25','2024-01-06'),
-    ('R-00011','NN789012',33000.00,15000,'2024-05-10','2024-06-15','2024-01-06');
+    ('R-00004','GG567890',32000.00,15000,'2024-04-15','2024-05-18','2024-01-06');
+
+INSERT INTO rent_detail (rent_id, vehicle_id, rent_fee, start_date, end_date, order_date) VALUES
+    ('R-00001','ZAB-5678',26500,'2024-01-11','2024-02-12','2024-01-06'),
+    ('R-00001','QRS-5678',34500,'2024-01-11','2024-02-12','2024-01-06');
