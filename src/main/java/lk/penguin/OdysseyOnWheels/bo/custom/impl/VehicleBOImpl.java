@@ -21,7 +21,8 @@ public class VehicleBOImpl implements VehicleBO {
         }
         return dtos;
     }
-    public VehicleDTO get(String id){
+    @Override
+    public VehicleDTO get(String id) throws SQLException, ClassNotFoundException {
         Vehicle vehicle=vehicleDAO.get(id);
         return new VehicleDTO(vehicle.getVehicleId(),vehicle.getVehicleType(),vehicle.getVehicleName(),vehicle.getPerDay80Km(),vehicle.getExcessMileage() );
     }

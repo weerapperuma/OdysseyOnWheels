@@ -7,4 +7,6 @@ import java.util.ArrayList;
 
 public interface VehicleBO {
     ArrayList<VehicleDTO> loadAll() throws SQLException, ClassNotFoundException;
+
+    VehicleDTO get(String id) throws SQLException, ClassNotFoundException;
 }

@@ -24,4 +24,20 @@ public class VehicleDAOImpl implements VehicleDAO {
         }
         return vehicles;
     }
+
+    @Override
+    public Vehicle get(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst=SQLUtil.execute("SELECT * FROM vehicle WHERE vehicle_id=?",id);
+        while (rst.next()){
+            Vehicle vehicle=new Vehicle(
+                    rst.getString(1),
+                    rst.getString(2),
+                    rst.getString(3),
+                    rst.getString(4),
+                    rst.getString(5)
+            );
+            return vehicle;
+        }
+        return null;
+    }
 }

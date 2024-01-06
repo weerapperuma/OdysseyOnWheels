@@ -9,6 +9,8 @@ import lk.penguin.OdysseyOnWheels.bo.custom.VehicleBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.VehicleBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
+import java.sql.SQLException;
+
 public class VehcileTransactionTableRawController {
 
     @FXML
@@ -35,8 +37,9 @@ public class VehcileTransactionTableRawController {
     VehicleBO vehicleBo=new VehicleBOImpl();
 
     @FXML
-    void btnAddOnAction(ActionEvent event) {
-        VehicleDTO vehicleDTO=vehicleBo.
+    void btnAddOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        VehicleDTO vehicleDTO=vehicleBo.get(lblVehiId.getText());
+        System.out.println(vehicleDTO.getVehicleName());
     }
 
     public void setData(VehicleDTO dto) {
