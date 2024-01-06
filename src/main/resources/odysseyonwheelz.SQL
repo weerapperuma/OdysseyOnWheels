@@ -261,3 +261,6 @@ INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil
     (5,'номер аренды','කුලී අංකය','Mietnummer','किराया संख्या','numéro de loyer','Rent number','வாடகை எண்','租金号码','家賃番号'),
     (6,'выбрать место','ආරම්භක ස්ථානය','Treffpunkt','लेने की जगह','lieu de ramassage','pickup location','எடுக்கும் இடம்','接人的地方','乗車場所'),
     (7,'Место сброса','අවසන් ස්ථානය','Endort','समापन स्थान','lieu de fin','Drop off location','முடிவடையும் இடம்','结束地点','終了場所');
+
+INSERT INTO rent(rentId, customerNIC, rent_first_amount, rent_second_amount, rent_starting, rent_ending, order_date) VALUES
+    ('R-00001','AB123456',30000.00,0,'2024-01-11','2024-02-12','2024-01-06');

@@ -45,7 +45,7 @@ public class RentBOImpl implements RentBO {
     public String generateId() throws SQLException, ClassNotFoundException {
         String lastNumber=rentDAO.getLastNumber();
         if(lastNumber!=null){
-            int newLastnb=Integer.parseInt(lastNumber)+1;
+            int newLastnb=Integer.parseInt(lastNumber.substring(2))+1;
             return String.format("R-%05d", newLastnb);
         }
         else {
