@@ -7,23 +7,23 @@
 
 <AnchorPane fx:id="vehickeTransaxtionRaw" prefHeight="45.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.VehcileTransactionTableRawController">
    <children>
-      <Label fx:id="lblVehiId" layoutX="11.0" layoutY="6.0" prefHeight="34.0" prefWidth="112.0" style="-fx-border-color: black;" text="XYZ-5678">
+      <Label fx:id="lblVehiId" layoutX="11.0" layoutY="6.0" prefHeight="34.0" prefWidth="112.0" text="XYZ-5678">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></Label>
-      <Label fx:id="lblVehiType" layoutX="134.0" layoutY="5.0" prefHeight="34.0" prefWidth="122.0" style="-fx-border-color: black;" text="luxury van">
+      <Label fx:id="lblVehiType" layoutX="134.0" layoutY="5.0" prefHeight="34.0" prefWidth="122.0" text="luxury van">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></Label>
-      <Label fx:id="lblVehiName" layoutX="271.0" layoutY="5.0" prefHeight="34.0" prefWidth="457.0" style="-fx-border-color: black;" text="Mercedes Benz S-Class AMG (Long Wheel Base)">
+      <Label fx:id="lblVehiName" layoutX="271.0" layoutY="5.0" prefHeight="34.0" prefWidth="457.0" text="Mercedes Benz S-Class AMG (Long Wheel Base)">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></Label>
-      <Label fx:id="lblPerDayCost" layoutX="765.0" layoutY="5.0" prefHeight="34.0" prefWidth="130.0" style="-fx-border-color: black;" text="34500">
+      <Label fx:id="lblPerDayCost" layoutX="765.0" layoutY="5.0" prefHeight="34.0" prefWidth="130.0" text="34500">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></Label>
-      <Label fx:id="lblExcessMilageCost" layoutX="915.0" layoutY="5.0" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: black;" text="250">
+      <Label fx:id="lblExcessMilageCost" layoutX="915.0" layoutY="5.0" prefHeight="34.0" prefWidth="82.0" text="250">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></Label>
