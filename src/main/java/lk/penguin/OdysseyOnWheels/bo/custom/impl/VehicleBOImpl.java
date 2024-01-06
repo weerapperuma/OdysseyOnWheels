@@ -21,4 +21,8 @@ public class VehicleBOImpl implements VehicleBO {
         }
         return dtos;
     }
+    public VehicleDTO get(String id){
+        Vehicle vehicle=vehicleDAO.get(id);
+        return new VehicleDTO(vehicle.getVehicleId(),vehicle.getVehicleType(),vehicle.getVehicleName(),vehicle.getPerDay80Km(),vehicle.getExcessMileage() );
+    }
 }

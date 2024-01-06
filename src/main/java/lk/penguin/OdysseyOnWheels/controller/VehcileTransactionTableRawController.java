@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import lk.penguin.OdysseyOnWheels.bo.custom.VehicleBO;
+import lk.penguin.OdysseyOnWheels.bo.custom.impl.VehicleBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
 public class VehcileTransactionTableRawController {
@@ -30,9 +32,11 @@ public class VehcileTransactionTableRawController {
     @FXML
     private AnchorPane vehickeTransaxtionRaw;
 
+    VehicleBO vehicleBo=new VehicleBOImpl();
+
     @FXML
     void btnAddOnAction(ActionEvent event) {
-
+        VehicleDTO vehicleDTO=vehicleBo.
     }
 
     public void setData(VehicleDTO dto) {
