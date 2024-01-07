@@ -31,9 +31,7 @@ public class TransactionFormController {
 
     public static VBox addCart;
 
-//    public static void addCart(Parent root) {
-//
-//    }
+
 
     public void initialize() throws IOException, SQLException, ClassNotFoundException {
         Navigation.switchPaging(tableLoadPaneInterface, "vehicleTableForm.fxml");

@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane;
 import lk.penguin.OdysseyOnWheels.bo.custom.RentBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.RentBOImpl;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
+import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
 import java.io.IOException;
 import java.sql.Array;
@@ -96,7 +97,7 @@ public class RentalCustomerFormController {
     }
 
     @FXML
-    void searchBtnOnAction(ActionEvent event) throws IOException {
+    void searchBtnOnAction(ActionEvent event) throws IOException, SQLException {
         LocalDate sDate =datePickerStarting.getValue();
         if(sDate!=null){
             DateTimeFormatter formatter=DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -104,6 +105,7 @@ public class RentalCustomerFormController {
             LocalDate eDate=datePickerEnding.getValue();
             if(eDate!=null){
                 endingDay=eDate.format(formatter);
+                TransactionUtil.startTransaction();
                 Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
             }
 
