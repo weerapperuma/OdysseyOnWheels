@@ -15,7 +15,6 @@ public class RentDTO {
     private String customerId;
     private Double rentFirstAmount;
     private Double rentSecondAmount;
-    private Double rentTotalAmount;
     private LocalDate rentStarting;
     private LocalDate rentEnding;
     private LocalDate orderDate;

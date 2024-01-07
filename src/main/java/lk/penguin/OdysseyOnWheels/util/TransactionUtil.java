@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class TransactionUtil {
 
-    static Connection connection;
+    public static Connection connection;
 
     static {
         try {
@@ -24,7 +24,7 @@ public class TransactionUtil {
         connection.setAutoCommit(false);
     }
     public static void endTransaction() throws SQLException {
-        connection.setAutoCommit(false);
+        connection.setAutoCommit(true);
     }
     public static void rollBack() throws SQLException {
         connection.rollback();

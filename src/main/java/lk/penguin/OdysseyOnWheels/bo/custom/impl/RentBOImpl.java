@@ -55,7 +55,8 @@ public class RentBOImpl implements RentBO {
     }
 
     @Override
-    public boolean save(RentDTO rentDTO) {
-        return
+    public boolean save(RentDTO rentDTO) throws SQLException, ClassNotFoundException {
+        System.out.println("bo cust id:" +rentDTO.getCustomerId());
+        return rentDAO.save(new Rent(rentDTO.getRentId(),rentDTO.getCustomerId(),rentDTO.getRentFirstAmount(),rentDTO.getRentSecondAmount(),0.00, rentDTO.getRentStarting(),rentDTO.getRentEnding(),rentDTO.getOrderDate()));
     }
 }

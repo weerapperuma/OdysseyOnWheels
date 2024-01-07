@@ -98,7 +98,7 @@ public class RentalCustomerFormController {
     }
 
     @FXML
-    void searchBtnOnAction(ActionEvent event) throws IOException, SQLException {
+    void searchBtnOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         LocalDate sDate =datePickerStarting.getValue();
         if(sDate!=null){
             DateTimeFormatter formatter=DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -107,13 +107,20 @@ public class RentalCustomerFormController {
             if(eDate!=null){
                 endingDay=eDate.format(formatter);
                 TransactionUtil.startTransaction();
-                rentBO.save(new RentDTO(lblRentalId.getText(),
-                        lblCustId.getText(),
-                        0.0,0.0,0.0,
+                boolean isSaved=rentBO.save(new RentDTO(lblRentIdAutoGenerate.getText(),
+                        this.lblCustIdSelected.getText(),
+                        0.0,0.0,
                         datePickerStarting.getValue(),
                         datePickerStarting.getValue(),
                         LocalDate.now()));
-                Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
+                if(isSaved){
+                    TransactionUtil.connection.commit();
+                    Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
+                }
+                else{
+                    TransactionUtil.rollBack();
+                    new Alert(Alert.AlertType.ERROR,"Doesnt saved");
+                }
             }
         }
         else {

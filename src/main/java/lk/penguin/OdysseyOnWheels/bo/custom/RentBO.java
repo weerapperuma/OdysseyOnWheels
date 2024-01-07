@@ -14,5 +14,5 @@ public interface RentBO {
 
     String generateId() throws SQLException, ClassNotFoundException;
 
-    boolean save(RentDTO rentDTO);
+    boolean save(RentDTO rentDTO) throws SQLException, ClassNotFoundException;
 }
