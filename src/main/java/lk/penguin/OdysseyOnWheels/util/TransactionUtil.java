@@ -24,6 +24,7 @@ public class TransactionUtil {
         connection.setAutoCommit(false);
     }
     public static void endTransaction() throws SQLException {
+        connection.commit();
         connection.setAutoCommit(true);
     }
     public static void rollBack() throws SQLException {

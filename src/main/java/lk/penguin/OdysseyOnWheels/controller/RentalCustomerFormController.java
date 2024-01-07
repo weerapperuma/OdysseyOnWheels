@@ -114,7 +114,6 @@ public class RentalCustomerFormController {
                         datePickerStarting.getValue(),
                         LocalDate.now()));
                 if(isSaved){
-                    TransactionUtil.connection.commit();
                     Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
                 }
                 else{
