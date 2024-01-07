@@ -14,7 +14,7 @@ public class RentDetailDTO {
     private String primaryID;
     private String rentId;
     private String vehicleId;
-    private BigDecimal rentFee;
+    private Double rentFee;
     private LocalDate startingDate;
     private LocalDate endingDate;
     private LocalDate orderDate;
