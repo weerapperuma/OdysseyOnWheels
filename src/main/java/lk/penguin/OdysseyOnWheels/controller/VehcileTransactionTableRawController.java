@@ -7,7 +7,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import lk.penguin.OdysseyOnWheels.bo.custom.TransactionBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.VehicleBO;
+import lk.penguin.OdysseyOnWheels.bo.custom.impl.TransactionBOImpl;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.VehicleBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
@@ -38,21 +40,19 @@ public class VehcileTransactionTableRawController {
     private AnchorPane vehickeTransaxtionRaw;
 
     VehicleBO vehicleBo=new VehicleBOImpl();
+    TransactionBO transactionBO=new TransactionBOImpl();
 
     @FXML
     void btnAddOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
         VehicleDTO vehicleDTO=vehicleBo.get(lblVehiId.getText());
         System.out.println(vehicleDTO.getVehicleName());
-        createRaw();
+        boolean isAdded=transactionBO.addToCart(vehicleDTO);
+        if(isAdded){
+            transactionBO.reloadVbox();
+        }
     }
 
-    private void createRaw() throws IOException {
-        FXMLLoader loader=new FXMLLoader(TransactionFormController.class.getResource("/view/addedCartForm.fxml"));
-        Parent root=loader.load();
-        AddedCartFormController addedCartFormController=loader.getController();
-        addedCartFormController.setData(lblVehiId.getText());
-        TransactionFormController.addCart.getChildren().add(root);
-    }
+
 
     public void setData(VehicleDTO dto) {
         lblVehiId.setText(dto.getVehicleId());

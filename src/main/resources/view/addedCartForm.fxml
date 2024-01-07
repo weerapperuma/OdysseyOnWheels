@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="38.0" prefWidth="203.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.AddedCartFormController">
+<AnchorPane prefHeight="38.0" prefWidth="198.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.AddedCartFormController">
    <children>
-      <Label fx:id="addedCartCarID" layoutX="2.0" layoutY="3.0" prefHeight="32.0" prefWidth="143.0" text="Car" textFill="#1500ff">
+      <Label fx:id="addedCartCarID" layoutX="5.0" layoutY="3.0" prefHeight="32.0" prefWidth="143.0" text="Car" textFill="#1500ff">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <JFXButton layoutX="161.0" layoutY="3.0" onAction="#btnAddedCarDeleteOnAction" prefHeight="32.0" prefWidth="34.0" styleClass="btndelete" text="">
+      <JFXButton layoutX="157.0" layoutY="3.0" onAction="#btnAddedCarDeleteOnAction" prefHeight="32.0" prefWidth="34.0" styleClass="btndelete" text="">
          <graphic>
             <ImageView fitHeight="17.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" styleClass="btndelete">
                <image>
