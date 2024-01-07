@@ -9,6 +9,7 @@ import lk.penguin.OdysseyOnWheels.dao.custom.RentDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.LanguageDAOImpl;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.LocationsDAOImpl;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDAOImpl;
+import lk.penguin.OdysseyOnWheels.dto.RentDTO;
 import lk.penguin.OdysseyOnWheels.entity.Locations;
 import lk.penguin.OdysseyOnWheels.entity.Rent;
 
@@ -51,5 +52,10 @@ public class RentBOImpl implements RentBO {
         else {
             return "R-00001";
         }
+    }
+
+    @Override
+    public boolean save(RentDTO rentDTO) {
+        return
     }
 }

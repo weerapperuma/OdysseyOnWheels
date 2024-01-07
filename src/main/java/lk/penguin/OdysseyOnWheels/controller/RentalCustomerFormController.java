@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import lk.penguin.OdysseyOnWheels.bo.custom.RentBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.RentBOImpl;
+import lk.penguin.OdysseyOnWheels.dto.RentDTO;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
@@ -106,9 +107,14 @@ public class RentalCustomerFormController {
             if(eDate!=null){
                 endingDay=eDate.format(formatter);
                 TransactionUtil.startTransaction();
+                rentBO.save(new RentDTO(lblRentalId.getText(),
+                        lblCustId.getText(),
+                        0.0,0.0,0.0,
+                        datePickerStarting.getValue(),
+                        datePickerStarting.getValue(),
+                        LocalDate.now()));
                 Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
             }
-
         }
         else {
             new Alert(Alert.AlertType.ERROR,"Invalid date");

@@ -13,9 +13,9 @@ import java.time.LocalDate;
 public class Rent {
     private String rentId;
     private String customerId;
-    private BigDecimal rentFirstAmount;
-    private BigDecimal rentSecondAmount;
-    private BigDecimal rentTotalAmount;
+    private Double rentFirstAmount;
+    private Double rentSecondAmount;
+    private Double rentTotalAmount;
     private LocalDate rentStarting;
     private LocalDate rentEnding;
     private LocalDate orderDate;
