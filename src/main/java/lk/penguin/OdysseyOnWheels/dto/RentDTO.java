@@ -1,4 +1,4 @@
-package lk.penguin.OdysseyOnWheels.entity;
+package lk.penguin.OdysseyOnWheels.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class Rent {
+public class RentDTO {
     private String rentId;
     private String customerId;
     private BigDecimal rentFirstAmount;

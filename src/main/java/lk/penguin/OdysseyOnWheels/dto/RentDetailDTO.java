@@ -1,4 +1,4 @@
-package lk.penguin.OdysseyOnWheels.entity;
+package lk.penguin.OdysseyOnWheels.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class RentDetail {
+public class RentDetailDTO {
     private String primaryID;
     private String rentId;
     private String vehicleId;
