@@ -3,6 +3,7 @@ package lk.penguin.OdysseyOnWheels.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -28,8 +29,14 @@ public class TransactionFormController {
     @FXML
     private AnchorPane transactionLoadingPane;
 
+    public static VBox addCart;
+
+    public static void addCart(Parent root) {
+
+    }
 
     public void initialize() throws IOException, SQLException, ClassNotFoundException {
         Navigation.switchPaging(tableLoadPaneInterface, "vehicleTableForm.fxml");
+        addCart=addToCartVboxInterface;
     }
 }
