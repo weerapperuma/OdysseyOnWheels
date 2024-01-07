@@ -16,8 +16,8 @@ public class VehicleBOImpl implements VehicleBO {
     QueryDAO queryDAO=new QueryDAOImpl();
 
     @Override
-    public ArrayList<VehicleDTO> loadAll() throws SQLException, ClassNotFoundException {
-        ArrayList<Vehicle> vehicles= queryDAO.loadAll();
+    public ArrayList<VehicleDTO> loadAllWithoutRented(String startingDay,String endingDay) throws SQLException, ClassNotFoundException {
+        ArrayList<Vehicle> vehicles= queryDAO.loadAll(startingDay,endingDay);
         ArrayList<VehicleDTO> dtos=new ArrayList<>();
         for(Vehicle vehicle:vehicles){
             dtos.add(new VehicleDTO(vehicle.getVehicleId(),vehicle.getVehicleType(),vehicle.getVehicleName(),vehicle.getPerDay80Km(),vehicle.getExcessMileage()));

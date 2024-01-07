@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -19,6 +20,8 @@ import lk.penguin.OdysseyOnWheels.util.Navigation;
 import java.io.IOException;
 import java.sql.Array;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class RentalCustomerFormController {
@@ -83,6 +86,8 @@ public class RentalCustomerFormController {
     public static RentalCustomerFormController getInstance(){
         return controller;
     }
+    public static String startingDay;
+    public static String endingDay;
 
     RentBO rentBO=new RentBOImpl();
     @FXML
@@ -92,7 +97,22 @@ public class RentalCustomerFormController {
 
     @FXML
     void searchBtnOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
+        LocalDate sDate =datePickerStarting.getValue();
+        if(sDate!=null){
+            DateTimeFormatter formatter=DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            startingDay=sDate.format(formatter);
+            LocalDate eDate=datePickerEnding.getValue();
+            if(eDate!=null){
+                endingDay=eDate.format(formatter);
+                Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
+            }
+
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR,"Invalid date");
+        }
+
+
     }
     @FXML
     void cmbLanguageChangeOnAction(ActionEvent event) throws IOException {

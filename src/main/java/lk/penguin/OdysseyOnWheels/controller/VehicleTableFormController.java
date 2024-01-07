@@ -28,7 +28,7 @@ public class VehicleTableFormController {
 
     public void initialize() throws SQLException, ClassNotFoundException, IOException {
 
-        ArrayList<VehicleDTO> dtos= vehicleBO.loadAll();
+        ArrayList<VehicleDTO> dtos= vehicleBO.loadAllWithoutRented(RentalCustomerFormController.startingDay,RentalCustomerFormController.endingDay);
         for (VehicleDTO dto:dtos){
             createRawLoadPane(dto);
         }

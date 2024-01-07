@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 public interface QueryDAO {
 
-    ArrayList<Vehicle> loadAll() throws SQLException, ClassNotFoundException;
+    ArrayList<Vehicle> loadAll(String startingDay,String endingDay) throws SQLException, ClassNotFoundException;
 }
