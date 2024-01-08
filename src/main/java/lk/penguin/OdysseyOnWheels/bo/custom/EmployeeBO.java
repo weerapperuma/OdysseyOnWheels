@@ -1,12 +1,13 @@
 package lk.penguin.OdysseyOnWheels.bo.custom;
 
+import lk.penguin.OdysseyOnWheels.bo.SuperBO;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface EmployeeBO {
+public interface EmployeeBO extends SuperBO {
     void loadTableView() throws SQLException, ClassNotFoundException, IOException;
 
 
