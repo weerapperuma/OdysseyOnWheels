@@ -6,5 +6,6 @@ import java.sql.SQLException;
 
 public interface CrudUtil <T> extends SuperDAO {
     public boolean update(T dto) throws SQLException, ClassNotFoundException;
+    boolean ifExists(String id) throws SQLException, ClassNotFoundException;
 
 }
