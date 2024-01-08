@@ -19,6 +19,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 employee.getEmpContact()
                 );
     }
+
+    @Override
+    public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
     @Override
     public  String generateNewId() throws SQLException, ClassNotFoundException {
         ResultSet rst=SQLUtil.execute("SELECT employeeId FROM employee ORDER BY employeeId DESC LIMIT 1;");

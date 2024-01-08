@@ -35,7 +35,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
 
     public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
-        ResultSet resultSet= SQLUtil.execute("SELECT * FROM user WHERE userId=?",id);
+        ResultSet resultSet= SQLUtil.execute("SELECT * FROM user WHERE userName=?",id);
         return resultSet.next();
     }
 }

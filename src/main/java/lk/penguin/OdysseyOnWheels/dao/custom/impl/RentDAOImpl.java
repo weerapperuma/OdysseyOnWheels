@@ -26,6 +26,12 @@ public class RentDAOImpl implements RentDAO {
     public boolean update(Object dto) throws SQLException, ClassNotFoundException {
         return false;
     }
+
+    @Override
+    public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
     @Override
     public String getLastNumber() throws SQLException, ClassNotFoundException {
         ResultSet rst= SQLUtil.execute("SELECT rentId FROM rent ORDER BY rentId DESC LIMIT 1");
