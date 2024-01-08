@@ -77,4 +77,9 @@ public class CustomerDAOImpl implements CustomerDAO {
         ResultSet rst= SQLUtil.execute("Select * from customer WHERE customerNIC=?",id);
         return rst.next();
     }
+
+    @Override
+    public boolean update(Object dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
 }

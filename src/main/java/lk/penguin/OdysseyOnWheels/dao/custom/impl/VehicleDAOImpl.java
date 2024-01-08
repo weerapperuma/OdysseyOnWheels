@@ -40,4 +40,9 @@ public class VehicleDAOImpl implements VehicleDAO {
         }
         return null;
     }
+
+    @Override
+    public boolean update(Object dto) throws SQLException, ClassNotFoundException {
+        return false;
+    }
 }
