@@ -12,7 +12,7 @@
    <children>
       <Pane fx:id="placeOrderInterface" layoutX="1216.0" layoutY="3.0" prefHeight="442.0" prefWidth="203.0" style="-fx-border-color: black;">
          <children>
-            <JFXButton fx:id="RentSaveButtonOnAction" layoutX="64.0" layoutY="392.0" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: blue;" text="Save">
+            <JFXButton fx:id="RentSaveButtonOnAction" layoutX="64.0" layoutY="392.0" onAction="#addToCartSaveRentOnAction" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: blue;" text="Save">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

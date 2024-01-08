@@ -90,6 +90,10 @@ public class RentalCustomerFormController {
     }
     public static String startingDay;
     public static String endingDay;
+    public static String rentId;
+
+    public static LocalDate rentStarting;
+    public static LocalDate rentEnding;
 
     RentBO rentBO=new RentBOImpl();
     @FXML
@@ -103,15 +107,17 @@ public class RentalCustomerFormController {
         if(sDate!=null){
             DateTimeFormatter formatter=DateTimeFormatter.ofPattern("yyyy-MM-dd");
             startingDay=sDate.format(formatter);
+            rentStarting=datePickerStarting.getValue();
             LocalDate eDate=datePickerEnding.getValue();
             if(eDate!=null){
                 endingDay=eDate.format(formatter);
+                this.rentEnding=datePickerEnding.getValue();
                 TransactionUtil.startTransaction();
                 boolean isSaved=rentBO.save(new RentDTO(lblRentIdAutoGenerate.getText(),
                         this.lblCustIdSelected.getText(),
                         0.0,0.0,
                         datePickerStarting.getValue(),
-                        datePickerStarting.getValue(),
+                        datePickerEnding.getValue(),
                         LocalDate.now()));
                 if(isSaved){
                     Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
@@ -121,11 +127,9 @@ public class RentalCustomerFormController {
                     new Alert(Alert.AlertType.ERROR,"Doesnt saved");
                 }
             }
-        }
-        else {
+        } else {
             new Alert(Alert.AlertType.ERROR,"Invalid date");
         }
-
 
     }
     @FXML
@@ -134,6 +138,7 @@ public class RentalCustomerFormController {
         Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "rentalCustomerForm.fxml");
     }
     public void initialize() throws SQLException, ClassNotFoundException, IOException {
+        rentId=rentBO.generateId();
         setLabelValues();
         setComboboxValues();
         datePickerEnding.setOnAction(event ->lblSearchButton.fire());
@@ -149,7 +154,7 @@ public class RentalCustomerFormController {
         cmbPickupLocation.setItems(locations);
         cmbDropOffLocation.setItems(locations);
         lblCustIdSelected.setText(WelcomeFormController.passportId);
-        lblRentIdAutoGenerate.setText(rentBO.generateId());
+        lblRentIdAutoGenerate.setText(rentId);
     }
 
     public void setLabelValues() throws SQLException, ClassNotFoundException {

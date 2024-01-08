@@ -4,6 +4,7 @@ import javafx.scene.control.Label;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public interface TransactionBO {
     boolean addToCart(VehicleDTO dto);
@@ -11,4 +12,6 @@ public interface TransactionBO {
     void delete(String addedCartCarID) throws IOException;
 
     void reloadVbox() throws IOException;
+
+    boolean saveRentDetails() throws SQLException, ClassNotFoundException;
 }

@@ -5,16 +5,23 @@ import javafx.scene.Parent;
 import lk.penguin.OdysseyOnWheels.bo.custom.TransactionBO;
 import lk.penguin.OdysseyOnWheels.controller.AddedCartFormController;
 import lk.penguin.OdysseyOnWheels.controller.TransactionFormController;
+import lk.penguin.OdysseyOnWheels.dao.custom.RentDAO;
+import lk.penguin.OdysseyOnWheels.dao.custom.RentDetailDAO;
+import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDAOImpl;
+import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDetailDAOImpl;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class TransactionBOImpl implements TransactionBO {
+
+    RentDAO rentDAO=new RentDAOImpl();
+    RentDetailDAO rentDetailDAO=new RentDetailDAOImpl();
     public static ArrayList<VehicleDTO> addToCartVboxList;
     @Override
-
     public boolean addToCart(VehicleDTO dto){
         if(addToCartVboxList==null){
             addToCartVboxList=new ArrayList<>();
@@ -62,6 +69,10 @@ public class TransactionBOImpl implements TransactionBO {
 
         addedCartFormController.setData(vehicleDTO);
         TransactionFormController.addCart.getChildren().add(root);
+    }
+    @Override
+    public boolean saveRentDetails() throws SQLException, ClassNotFoundException {
+        return rentDetailDAO.save(addToCartVboxList);
     }
 
 }

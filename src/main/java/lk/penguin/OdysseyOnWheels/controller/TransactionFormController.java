@@ -1,13 +1,17 @@
 package lk.penguin.OdysseyOnWheels.controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import lk.penguin.OdysseyOnWheels.bo.custom.TransactionBO;
+import lk.penguin.OdysseyOnWheels.bo.custom.impl.TransactionBOImpl;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
+import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,9 +32,18 @@ public class TransactionFormController {
 
     @FXML
     private AnchorPane transactionLoadingPane;
+    TransactionBO transactionBO=new TransactionBOImpl();
 
     public static VBox addCart;
 
+    @FXML
+    void addToCartSaveRentOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        //TransactionUtil.startTransaction();
+        boolean allDone=transactionBO.saveRentDetails();
+        if(allDone){
+            TransactionUtil.endTransaction();
+        }
+    }
 
 
     public void initialize() throws IOException, SQLException, ClassNotFoundException {
