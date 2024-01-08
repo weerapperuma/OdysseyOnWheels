@@ -35,23 +35,32 @@ public class WelcomeFormController implements Initializable {
 
 
     public static String language="english";
-    WelcomeBO welcomeBO=new WelcomeBoImpl();
 
     public static String passportId="0";
-    CustomerBO customerBO=(CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.CUSTOMER);
-
-
+    WelcomeBO welcomeBO=(WelcomeBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.WELCOME);
     @FXML
     void btnRentOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
-        if(customerBO.ifExists(txtPassportId.getText())){
+        if(welcomeBO.ifExistsCustomer(txtPassportId.getText())){
             this.passportId=txtPassportId.getText();
             BackgroundFormController.transfer=1;
             Navigation.switchNavigation( "backgroundForm.fxml",event);
-            if (userBO.ifExists())
+
         }
-        else {
-            Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane,"customerSaveForm.fxml" );
+        boolean duck=welcomeBO.ifExistsUser(txtPassportId.getText());
+        System.out.println(duck);
+        if(duck){
+            System.out.println("dan yamu");
+            String tempUserName=txtPassportId.getText();
+            txtPassportId.clear();
+            lblTitle.setText("Input USER Password");
+            boolean isTrue=welcomeBO.chekCredentials(tempUserName,txtPassportId.getText());
+            if(isTrue){
+                Navigation.switchNavigation( "backgroundForm.fxml",event);
+            }
         }
+//        else {
+//            //Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane,"customerSaveForm.fxml" );
+//        }
 
     }
     @FXML
