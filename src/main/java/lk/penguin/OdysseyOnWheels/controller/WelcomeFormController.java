@@ -8,18 +8,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.UserBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
-import lk.penguin.OdysseyOnWheels.bo.custom.impl.UserBOImpl;
-import lk.penguin.OdysseyOnWheels.dao.custom.WelcomeBO;
-import lk.penguin.OdysseyOnWheels.dao.custom.impl.WelcomeBoImpl;
+import lk.penguin.OdysseyOnWheels.bo.custom.WelcomeBO;
+import lk.penguin.OdysseyOnWheels.bo.custom.impl.WelcomeBoImpl;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class WelcomeFormController implements Initializable {
@@ -31,8 +30,6 @@ public class WelcomeFormController implements Initializable {
     private Label lblTitle;
     @FXML
     private JFXButton btntxtRent;
-
-
     @FXML
     private TextField txtPassportId;
 
@@ -41,7 +38,8 @@ public class WelcomeFormController implements Initializable {
     WelcomeBO welcomeBO=new WelcomeBoImpl();
 
     public static String passportId="0";
-    CustomerBO customerBO=new CustomerBOImpl();
+    CustomerBO customerBO=(CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.CUSTOMER);
+
 
     @FXML
     void btnRentOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
@@ -49,6 +47,7 @@ public class WelcomeFormController implements Initializable {
             this.passportId=txtPassportId.getText();
             BackgroundFormController.transfer=1;
             Navigation.switchNavigation( "backgroundForm.fxml",event);
+            if (userBO.ifExists())
         }
         else {
             Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane,"customerSaveForm.fxml" );
@@ -132,7 +131,6 @@ public class WelcomeFormController implements Initializable {
     }
     public void setValues() throws SQLException, ClassNotFoundException {
         lblTitle.setText(welcomeBO.get(WelcomeFormController.language,1));
-        btntxtRent.setText(welcomeBO.get(WelcomeFormController.language,2));
     }
 
 }
