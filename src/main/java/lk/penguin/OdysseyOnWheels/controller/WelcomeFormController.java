@@ -6,7 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
@@ -33,6 +35,8 @@ public class WelcomeFormController implements Initializable {
     @FXML
     private TextField txtPassportId;
 
+    @FXML
+    private PasswordField pwPasswordField;
 
     public static String language="english";
 
@@ -46,31 +50,33 @@ public class WelcomeFormController implements Initializable {
             Navigation.switchNavigation( "backgroundForm.fxml",event);
 
         }
-        boolean duck=welcomeBO.ifExistsUser(txtPassportId.getText());
-        System.out.println(duck);
-        if(duck){
+        if(welcomeBO.ifExistsUser(txtPassportId.getText())){
             System.out.println("dan yamu");
             String tempUserName=txtPassportId.getText();
-            txtPassportId.clear();
-            lblTitle.setText("Input USER Password");
-            boolean isTrue=welcomeBO.chekCredentials(tempUserName,txtPassportId.getText());
-            if(isTrue){
-                Navigation.switchNavigation( "backgroundForm.fxml",event);
-            }
+            pwPasswordField.setVisible(true);
+
+            pwPasswordField.setOnKeyReleased(keyEvent -> {
+                try {
+                    if (keyEvent.getCode() == KeyCode.ENTER) {
+                        boolean isTrue = welcomeBO.chekCredentials(tempUserName, pwPasswordField.getText());
+                        if (isTrue) {
+                            Navigation.switchNavigation("backgroundForm.fxml", event);
+                        }
+                    }
+                } catch (IOException | SQLException | ClassNotFoundException e) {
+                    e.printStackTrace(); // Handle the exception appropriately
+                }
+            });
         }
-//        else {
-//            //Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane,"customerSaveForm.fxml" );
-//        }
+        else {
+            Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane,"customerSaveForm.fxml" );
+        }
 
     }
     @FXML
     void btnCloseOnAction(ActionEvent event) {
         Platform.exit();
         System.exit(0);
-    }
-    @FXML
-    void AdminLoginOnAction(ActionEvent event) throws IOException {
-        Navigation.switchNavigation("loginForm.fxml",event);
     }
 
     @FXML
@@ -127,6 +133,7 @@ public class WelcomeFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        pwPasswordField.setVisible(false);
         txtPassportId.setOnAction(event -> btntxtRent.fire());
 
         try {

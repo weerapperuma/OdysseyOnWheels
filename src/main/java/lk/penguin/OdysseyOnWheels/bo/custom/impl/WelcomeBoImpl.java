@@ -29,7 +29,6 @@ public class WelcomeBoImpl implements WelcomeBO {
     @Override
     public boolean ifExistsUser(String text) throws SQLException, ClassNotFoundException {
         boolean ifexists=userDAO.ifExists(text);
-        System.out.println("welome bo: "+ifexists);
         return userDAO.ifExists(text);
     }
 
