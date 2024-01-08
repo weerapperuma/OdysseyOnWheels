@@ -111,7 +111,7 @@ public class RentalCustomerFormController {
             LocalDate eDate=datePickerEnding.getValue();
             if(eDate!=null){
                 endingDay=eDate.format(formatter);
-                this.rentEnding=datePickerEnding.getValue();
+                rentEnding=datePickerEnding.getValue();
                 TransactionUtil.startTransaction();
                 boolean isSaved=rentBO.save(new RentDTO(lblRentIdAutoGenerate.getText(),
                         this.lblCustIdSelected.getText(),
@@ -158,7 +158,6 @@ public class RentalCustomerFormController {
     }
 
     public void setLabelValues() throws SQLException, ClassNotFoundException {
-
 
         lblRentalId.setText(rentBO.get(WelcomeFormController.language,5));
         lblCustId.setText(rentBO.get(WelcomeFormController.language,1));

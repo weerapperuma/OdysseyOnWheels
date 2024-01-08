@@ -47,3 +47,13 @@
     -fx-border-color: transparent;
     -fx-text-fill: #000000;
 }
+/* Apply these styles when the input is in focus */
+.text-field:focused {
+    -fx-border-color: #00ff00; /* Change border color when focused */
+}
+.text-field {
+    -fx-border-radius: 20;
+    -fx-border-color: #ff0000; /* Border color */
+    -fx-border-width: 2; /* Border width */
+    -fx-padding: 5; /* Padding to make the text not touch the border */
+}

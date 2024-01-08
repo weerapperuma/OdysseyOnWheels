@@ -72,7 +72,12 @@ public class TransactionBOImpl implements TransactionBO {
     }
     @Override
     public boolean saveRentDetails() throws SQLException, ClassNotFoundException {
-        return rentDetailDAO.save(addToCartVboxList);
+        boolean isSaved= rentDetailDAO.save(addToCartVboxList);
+        if(isSaved){
+            //rentDAO.addTotal();
+            System.out.println("ok");
+        }
+        return true;
     }
 
 }
