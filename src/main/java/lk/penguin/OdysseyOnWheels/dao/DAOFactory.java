@@ -1,6 +1,6 @@
 package lk.penguin.OdysseyOnWheels.dao;
 
-import lk.penguin.OdysseyOnWheels.dao.custom.impl.CountriesDAOImpl;
+import lk.penguin.OdysseyOnWheels.dao.custom.impl.*;
 
 import java.security.PublicKey;
 
@@ -23,6 +23,24 @@ public class DAOFactory {
         switch (daoType){
             case COUNTRIES :
                 return new CountriesDAOImpl();
+            case LANGUAGE:
+                return new LanguageDAOImpl();
+            case EMPLOYEE:
+                return new EmployeeDAOImpl();
+            case VEHICLE:
+                return new VehicleDAOImpl();
+            case USER:
+                return new UserDAOImpl();
+            case RENT:
+                return new RentDAOImpl();
+            case QUERY:
+                return new QueryDAOImpl();
+            case CUSTOMER:
+                return new CustomerDAOImpl();
+            case LOCATIONS:
+                return new LocationsDAOImpl();
+            case RENT_DETAIL:
+                return new RentDetailDAOImpl();
             default:
                 return null;
         }
