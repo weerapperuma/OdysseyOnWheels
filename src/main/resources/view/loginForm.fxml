@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="92.0" prefWidth="476.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.LoginFormController">
+<AnchorPane prefHeight="75.0" prefWidth="302.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.LoginFormController">
    <children>
-      <Pane layoutY="-10.0" prefHeight="112.0" prefWidth="476.0" style="-fx-border-color: black; -fx-background-color: #ffa31a; -fx-background-radius: 30;">
-         <children>
-            <Hyperlink layoutX="22.0" layoutY="75.0" onAction="#hplinkTroubleLogin" prefHeight="23.0" prefWidth="185.0" text="Having trouble logging in?">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font>
-            </Hyperlink>
-            <PasswordField fx:id="txtPassword" layoutX="18.0" layoutY="24.0" prefHeight="26.0" prefWidth="443.0" promptText="Input Password" style="-fx-background-radius: 20; -fx-border-radius: 20;">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font></PasswordField>
-            <JFXButton fx:id="btnLoginfxId" layoutX="423.0" layoutY="128.0" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="26.0" text="" />
-         </children>
-      </Pane>
+      <JFXButton fx:id="btnpassworduser" layoutX="263.0" layoutY="24.0" onAction="#btnUserPasswordOnAction" prefHeight="17.0" prefWidth="11.0" styleClass="btn" text="" />
+      <PasswordField fx:id="txtPasswordUser" layoutX="14.0" layoutY="24.0" prefHeight="34.0" prefWidth="234.0" promptText="Input User password">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </PasswordField>
    </children>
 </AnchorPane>
