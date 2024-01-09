@@ -11,9 +11,6 @@ public interface EmployeeBO extends SuperBO {
 
     boolean update(EmployeeDTO dto) throws SQLException, ClassNotFoundException;
 
-
-    ArrayList<EmployeeDTO> showAll(String id) throws SQLException, ClassNotFoundException;
-
     String generateNewId() throws SQLException, ClassNotFoundException;
 
     boolean save(EmployeeDTO employeeDTO) throws SQLException, ClassNotFoundException;
@@ -21,4 +18,8 @@ public interface EmployeeBO extends SuperBO {
     ArrayList<EmployeeDTO> getAll() throws SQLException, ClassNotFoundException;
 
     ArrayList<EmployeeDTO> search(String text) throws SQLException, ClassNotFoundException;
+
+    boolean delete(String empId) throws SQLException, ClassNotFoundException;
+
+    EmployeeDTO get(String id) throws SQLException, ClassNotFoundException;
 }

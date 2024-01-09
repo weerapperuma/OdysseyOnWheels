@@ -1,7 +1,9 @@
 package lk.penguin.OdysseyOnWheels.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import lk.penguin.OdysseyOnWheels.bo.BOFactory;
@@ -9,6 +11,7 @@ import lk.penguin.OdysseyOnWheels.bo.custom.EmployeeBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.EmployeeBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
+import lk.penguin.OdysseyOnWheels.util.REGEXUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,15 +19,13 @@ import lombok.NoArgsConstructor;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class EmployeeUpdateFormController {
     EmployeeBO employeeBO = (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.EMPLOYEE);
-
-    @FXML
-    private Label lblEmpId;
 
     @FXML
     private TextField txtEmpAddress;
@@ -43,51 +44,78 @@ public class EmployeeUpdateFormController {
 
     @FXML
     private TextField txtEmpPosition;
-
-
-    public EmployeeDTO loadIds(){
-
-        this.txtEmpName=txtEmpName;
-        this.txtEmpEmail=txtEmpEmail;
-        this.txtEmpAddress=txtEmpAddress;
-        this.txtEmpINic=txtEmpINic;
-        this.txtEmpPosition=txtEmpPosition;
-        this.txtEmpContact=txtEmpContact;
-        EmployeeDTO dto=new EmployeeDTO();
-        dto.setEmployeeId(EmployeeRawFormController.empId);
-        dto.setEmployeeName(txtEmpName.getText());
-        dto.setEmpEmail(txtEmpEmail.getText());
-        dto.setEmpNIC(txtEmpINic.getText());
-        dto.setEmpPosition(txtEmpPosition.getText());
-        dto.setEmpAddress(txtEmpAddress.getText());
-        dto.setEmpContact(txtEmpContact.getText());
-
-        return dto;
+    @FXML
+    private JFXButton btnEmpIdFxId;
+    @FXML
+    void btnCloseOnAction(ActionEvent event) {
+        Navigation.closePopup();
     }
 
 
     public void initialize() throws SQLException, ClassNotFoundException {
-        lblEmpId.setText(EmployeeRawFormController.empId);
-        ArrayList<EmployeeDTO> dtos=employeeBO.showAll(EmployeeRawFormController.empId);
-        txtEmpName.setText(dtos.getFirst().getEmployeeName());
-        txtEmpEmail.setText(dtos.getFirst().getEmpEmail());
-        txtEmpINic.setText(dtos.getFirst().getEmpNIC());
-        txtEmpPosition.setText(dtos.getFirst().getEmpPosition());
-        txtEmpAddress.setText(dtos.getFirst().getEmpAddress());
-        txtEmpContact.setText(dtos.getFirst().getEmpContact());
+        EmployeeDTO employeeDTO=employeeBO.get(EmployeeRawFormController.empId);
+        btnEmpIdFxId.setText(employeeDTO.getEmployeeId());
+        txtEmpName.setText(employeeDTO.getEmployeeName());
+        txtEmpEmail.setText(employeeDTO.getEmpEmail());
+        txtEmpINic.setText(employeeDTO.getEmpNIC());
+        txtEmpPosition.setText(employeeDTO.getEmpPosition());
+        txtEmpAddress.setText(employeeDTO.getEmpAddress());
+        txtEmpContact.setText(employeeDTO.getEmpContact());
     }
 
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
-        EmployeeDTO dto=loadIds();
-        boolean isUpdated=employeeBO.update(dto);
-        System.out.println(dto.getEmployeeName());
-        System.out.println(isUpdated);
-        if(isUpdated){
-            Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane,"employeeManageForm.fxml");
-            Navigation.closePopup();
+        if(isValidated()){
+            boolean isUpdated=employeeBO.update(new EmployeeDTO(
+                    EmployeeRawFormController.empId,
+                    txtEmpName.getText(),
+                    txtEmpEmail.getText(),
+                    txtEmpINic.getText(),
+                    txtEmpPosition.getText(),
+                    txtEmpAddress.getText(),
+                    txtEmpContact.getText()
+            ));
+            if(isUpdated){
+                Navigation.switchPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "employeeManageForm.fxml");
+                Navigation.closePopup();
+            }
         }
+
+    }
+    private boolean isValidated() {
+        boolean isEmpNameValidated = Pattern.compile("^[a-zA-Z]+( [a-zA-Z]+)?$").matcher(txtEmpName.getText()).matches();
+        if (!isEmpNameValidated) {
+            txtEmpEmail.setStyle("-fx-text-fill: red;");
+            return false;
+        }
+        boolean isEmpEmailValidated= REGEXUtil.validateEmail(txtEmpEmail.getText());
+        if(!isEmpEmailValidated){
+            txtEmpEmail.setStyle("-fx-text-fill: red;");
+            return false;
+        }
+        if(txtEmpINic.getLength()<5){
+            return false;
+        }
+        boolean isEmpPositionValidated=Pattern.compile("^[A-z]{1,}$").matcher(txtEmpPosition.getText()).matches();
+        if(!isEmpPositionValidated){
+            new Alert(Alert.AlertType.ERROR,"Invalid Employee Position").show();
+            return false;
+        }
+
+        boolean isAddressValidated=REGEXUtil.validateAddress(txtEmpAddress.getText());
+        if(!isAddressValidated){
+            txtEmpAddress.setStyle("-fx-text-fill: red;");
+            return false;
+        }
+
+        boolean isEmpContactValidated=REGEXUtil.validateContact(txtEmpContact.getText());
+        if(!isEmpContactValidated){
+            txtEmpContact.setStyle("-fx-text-fill: red;");
+            return false;
+        }
+
+        return true;
     }
 
 }

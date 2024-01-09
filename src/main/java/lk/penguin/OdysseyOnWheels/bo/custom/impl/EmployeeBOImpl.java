@@ -6,7 +6,7 @@ import lk.penguin.OdysseyOnWheels.dao.custom.EmployeeDAO;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
 import lk.penguin.OdysseyOnWheels.entity.Employee;
 import lk.penguin.OdysseyOnWheels.util.SQLUtil;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -25,26 +25,6 @@ public class EmployeeBOImpl implements EmployeeBO {
                 dto.getEmpContact(),
                 dto.getEmployeeId()
                 );
-    }
-    @Override
-    public ArrayList<EmployeeDTO> showAll(String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst= SQLUtil.execute("SELECT * FROM employee WHERE employeeId=?",id);
-        ArrayList<EmployeeDTO> dtos=new ArrayList<>();
-        while (rst.next()){
-            EmployeeDTO dto=new EmployeeDTO();
-
-            dto.setEmployeeId(rst.getString("employeeId"));
-            dto.setEmployeeName(rst.getString("employeeName"));
-            dto.setEmpEmail(rst.getString("empEmail"));
-            dto.setEmpNIC(rst.getString("empNIC"));
-            dto.setEmpPosition(rst.getString("empPosition"));
-            dto.setEmpAddress(rst.getString("empAddress"));
-            dto.setEmpContact(rst.getString("empContact"));
-
-            dtos.add(dto);
-
-        }
-        return dtos;
     }
     @Override
     public String generateNewId() throws SQLException, ClassNotFoundException {
@@ -108,5 +88,23 @@ public class EmployeeBOImpl implements EmployeeBO {
             employeeDTOS.add(employeeDTO);
         }
         return employeeDTOS;
+    }
+
+    @Override
+    public boolean delete(String empId) throws SQLException, ClassNotFoundException {
+        return employeeDAO.delete(empId);
+    }
+    @Override
+    public EmployeeDTO get(String id) throws SQLException, ClassNotFoundException {
+        Employee employee=employeeDAO.get(id);
+        return new EmployeeDTO(
+                employee.getEmployeeId(),
+                employee.getEmployeeName(),
+                employee.getEmpEmail(),
+                employee.getEmpNIC(),
+                employee.getEmpPosition(),
+                employee.getEmpAddress(),
+                employee.getEmpContact()
+        );
     }
 }

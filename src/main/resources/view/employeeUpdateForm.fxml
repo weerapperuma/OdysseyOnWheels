@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
+<?import java.net.URL?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,19 +9,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="549.0" prefWidth="319.0" stylesheets="@../style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.EmployeeUpdateFormController">
+<AnchorPane prefHeight="549.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.EmployeeUpdateFormController">
    <children>
-      <ImageView fitHeight="72.0" fitWidth="68.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="72.0" fitWidth="68.0" layoutX="125.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/icon/updated.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblEmpId" layoutX="220.0" layoutY="14.0" prefHeight="24.0" prefWidth="86.0" text="Label">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
       <TextField fx:id="txtEmpName" alignment="CENTER" layoutX="51.0" layoutY="146.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee Name" style="-fx-background-radius: 20;" />
       <TextField fx:id="txtEmpEmail" alignment="CENTER" layoutX="50.0" layoutY="207.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee Email" style="-fx-background-radius: 20;" />
       <TextField fx:id="txtEmpINic" alignment="CENTER" layoutX="50.0" layoutY="266.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee NIC" style="-fx-background-radius: 20;" />
@@ -59,5 +53,13 @@
          </font>
       </Text>
       <JFXButton layoutX="71.0" layoutY="483.0" onAction="#btnUpdateOnAction" styleClass="btn" text="Update" />
+      <JFXButton fx:id="btnEmpIdFxId" layoutX="14.0" layoutY="3.0" onAction="#btnCloseOnAction" prefHeight="28.0" prefWidth="290.0" styleClass="btnClose">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXButton>
    </children>
+   <stylesheets>
+      <URL value="@../style/button.css" />
+      <URL value="@../style/iconButton.css" />
+   </stylesheets>
 </AnchorPane>

@@ -42,14 +42,14 @@ public class EmployeeRawFormController {
     private Label lblEmpPosition;
 
     public static String empId;
-    EmployeeManageFormController employeeManageFormController;
 
     EmployeeBO employeeBO=(EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.EMPLOYEE);
     @FXML
     void btnEmpDeleteOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
         String empId=lblEmpId.getText();
-        SQLUtil.execute("DELETE FROM employee WHERE employeeId=?",empId);
-        Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "employeeManageForm.fxml");
+        if(employeeBO.delete(empId)){
+            Navigation.switchPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "employeeManageForm.fxml");
+        }
 
     }
 
@@ -58,7 +58,7 @@ public class EmployeeRawFormController {
         String empId2=lblEmpId.getText();
         empId = empId2;
         System.out.println(empId);
-        Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, "employeeUpdateForm.fxml");
+        Navigation.popupPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "employeeUpdateForm.fxml");
     }
 
     public void setData(EmployeeDTO dto) {
