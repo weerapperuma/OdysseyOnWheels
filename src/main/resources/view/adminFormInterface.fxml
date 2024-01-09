@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="830.0" prefWidth="1464.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.AdminFormInterfaceController">
+   <children>
+      <ImageView fitHeight="830.0" fitWidth="1464.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/img/wp4359126-sri-lanka-4k-wallpapers.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblDateTimeSet" alignment="CENTER_RIGHT" layoutX="898.0" layoutY="14.0" prefHeight="35.0" prefWidth="475.0" text="Date and time" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Pane layoutX="12.0" layoutY="43.0" prefHeight="774.0" prefWidth="1442.0" style="-fx-border-color: white;">
+         <children>
+            <JFXButton layoutX="671.0" layoutY="-36.0" onAction="#btnHomeOnAction" styleClass="btn" text="">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/icon/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton layoutX="241.0" layoutY="143.0" text="" />
+            <JFXButton layoutX="-2.0" layoutY="-37.0" onAction="#btnExitOnAction" styleClass="btndelete" text="">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/icon/back-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="20.0" layoutY="29.0" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="EMPLOYEE" textFill="#ff6f00">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="268.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/img/man_450_680_cinematic_shot_dyn.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="241.0" layoutY="29.0" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="CUSTOMER" textFill="#ff6f00">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="268.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/img/employee_image_by_size_of_450_.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="459.0" layoutY="29.0" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="USER" textFill="#ff6f00">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="268.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/img/user_image_size_512_768_cinema.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="20.0" layoutY="436.0" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="VEHICLE" textFill="#ff6f00">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="268.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/img/car_image_size_512_768_cinemat.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="241.0" layoutY="436.0" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="LOCATIONS" textFill="#ff6f00">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="268.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/img/building_image_size_512_768_ci.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="459.0" layoutY="436.0" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="RENT" textFill="#ff6f00">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="268.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/img/brevite-gOHBaIl5WRc-unsplash%20(1).jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="677.0" layoutY="436.0" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="SUPPLIER" textFill="#ff6f00">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="268.0" fitWidth="176.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assests/img/martin-katler-wx-XBLK1bWA-unsplash%20(1).jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+      <JFXButton layoutX="1416.0" layoutY="5.0" onAction="#closeAppOnAction" prefHeight="30.0" prefWidth="31.0" styleClass="btndelete" text="">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/icons8-dot-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
