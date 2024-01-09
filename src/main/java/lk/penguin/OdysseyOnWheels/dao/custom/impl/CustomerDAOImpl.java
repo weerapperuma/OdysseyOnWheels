@@ -13,20 +13,21 @@ import java.util.ArrayList;
 public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
-    public ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Customer> getAll() throws SQLException, ClassNotFoundException {
         ResultSet resultSet=SQLUtil.execute("SELECT * FROM Customer");
-        ArrayList<CustomerDTO>dtos=new ArrayList<>();
+        ArrayList<Customer>customers=new ArrayList<>();
 
         while (resultSet.next()){
-            CustomerDTO customerDTO=new CustomerDTO();
-            customerDTO.setCustomerNIC(resultSet.getString("customerNIC"));
-            customerDTO.setCustomerName(resultSet.getString("customerName"));
-            customerDTO.setCustomerCountry(resultSet.getString("customerCountry"));
-            customerDTO.setCustomerEmail(resultSet.getString("customerEmail"));
-            dtos.add(customerDTO);
+            Customer customer=new Customer(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+                    );
+            customers.add(customer);
         }
 
-        return dtos;
+        return customers;
     }
 
     @Override
@@ -47,19 +48,18 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public CustomerDTO get(String custId) throws SQLException, ClassNotFoundException {
-        ResultSet rst=SQLUtil.execute("Select * from customer Where customerNIC=?",custId);
-        CustomerDTO customerDTO = null;
+    public Customer get(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst=SQLUtil.execute("Select * from customer Where customerNIC=?",id);
         while (rst.next()){
-            customerDTO=new CustomerDTO(
-                rst.getString(1),
+            Customer customer=new Customer(
+                    rst.getString(1),
                     rst.getString(2),
                     rst.getString(3),
                     rst.getString(4)
-
             );
+            return customer;
         }
-        return customerDTO;
+        return null;
     }
 
     @Override

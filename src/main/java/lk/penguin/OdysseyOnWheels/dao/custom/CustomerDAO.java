@@ -8,14 +8,4 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface CustomerDAO extends CrudUtil<Customer> {
-
-    ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException;
-
-    boolean delete(String id) throws SQLException, ClassNotFoundException;
-
-    boolean update(Customer customer) throws SQLException, ClassNotFoundException;
-
-    CustomerDTO get(String custId) throws SQLException, ClassNotFoundException;
-
-    boolean ifExists(String id) throws SQLException, ClassNotFoundException;
 }
