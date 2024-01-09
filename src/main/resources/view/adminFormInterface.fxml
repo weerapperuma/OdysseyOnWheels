@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="830.0" prefWidth="1464.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.AdminFormInterfaceController">
+<AnchorPane prefHeight="828.0" prefWidth="1470.0" stylesheets="@../style/iconButton.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.AdminFormInterfaceController">
    <children>
-      <ImageView fitHeight="830.0" fitWidth="1464.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="839.0" fitWidth="1479.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/img/wp4359126-sri-lanka-4k-wallpapers.png" />
          </image>
@@ -20,18 +20,10 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Pane fx:id="adminUseCasesLoadPane" layoutX="12.0" layoutY="43.0" prefHeight="774.0" prefWidth="1442.0" style="-fx-border-color: white;">
+      <Pane fx:id="adminUseCasesLoadPane" layoutX="12.0" layoutY="47.0" prefHeight="774.0" prefWidth="1442.0" style="-fx-border-color: white;">
          <children>
-            <JFXButton layoutX="671.0" layoutY="-36.0" onAction="#btnHomeOnAction" styleClass="btn" text="">
-               <graphic>
-                  <ImageView fitHeight="65.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assests/icon/home.png" />
-                     </image>
-                  </ImageView>
-               </graphic></JFXButton>
             <JFXButton layoutX="241.0" layoutY="143.0" text="" />
-            <JFXButton layoutX="-2.0" layoutY="-37.0" onAction="#btnExitOnAction" styleClass="btndelete" text="">
+            <JFXButton layoutX="-2.0" layoutY="-40.0" onAction="#btnExitOnAction" prefHeight="12.0" prefWidth="31.0" styleClass="btndelete" text="">
                <graphic>
                   <ImageView fitHeight="65.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -135,5 +127,6 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <JFXButton layoutX="89.0" layoutY="6.0" onAction="#btnHomeOnAction" prefHeight="34.0" prefWidth="1140.0" styleClass="btn" text="HOME" />
    </children>
 </AnchorPane>
