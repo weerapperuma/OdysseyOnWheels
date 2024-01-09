@@ -77,12 +77,15 @@ public class CustomerUpdateFormController {
     CustomerBO customerBO=(CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.CUSTOMER);
     public void initialize() throws SQLException, ClassNotFoundException {
         txtCustINic.setText(CustomerRawFormController.custId);
+        txtCustINic.setEditable(false);
         ObservableList<String> countryList=customerBO.countryList();
         cmbCustCountry.setItems(countryList);
         for(String country:countryList){
             cmbCustCountry.setValue(countryList.get(1));
         }
         CustomerDTO customerDTO=customerBO.get(CustomerRawFormController.custId);
+        txtCustName.setText(customerDTO.getCustomerName());
+        cmbCustCountry.setValue(customerDTO.getCustomerCountry());
         cmbCustCountry.setOnAction(event ->btnSaveFxId.fire());
     }
 
