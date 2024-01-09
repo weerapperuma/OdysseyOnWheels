@@ -32,7 +32,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton contentDisplay="TOP" layoutX="20.0" layoutY="29.0" onAction="#btnEmployeeOnAction" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="EMPLOYEE" textFill="#ff6f00">
+            <JFXButton contentDisplay="TOP" layoutX="20.0" layoutY="11.0" onAction="#btnEmployeeOnAction" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="EMPLOYEE" textFill="#ff6f00">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -44,7 +44,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton contentDisplay="TOP" layoutX="241.0" layoutY="29.0" onAction="#btnCustomerOnAction" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="CUSTOMER" textFill="#ff6f00">
+            <JFXButton contentDisplay="TOP" layoutX="241.0" layoutY="11.0" onAction="#btnCustomerOnAction" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="CUSTOMER" textFill="#ff6f00">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -56,7 +56,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton contentDisplay="TOP" layoutX="459.0" layoutY="29.0" onAction="#btnUserOnAction" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="USER" textFill="#ff6f00">
+            <JFXButton contentDisplay="TOP" layoutX="459.0" layoutY="11.0" onAction="#btnUserOnAction" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="USER" textFill="#ff6f00">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

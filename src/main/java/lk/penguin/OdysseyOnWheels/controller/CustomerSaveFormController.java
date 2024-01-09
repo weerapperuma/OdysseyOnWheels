@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import lk.penguin.OdysseyOnWheels.bo.BOFactory;
@@ -12,6 +13,7 @@ import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
 import lk.penguin.OdysseyOnWheels.entity.Customer;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
+import lk.penguin.OdysseyOnWheels.util.REGEXUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -41,6 +43,8 @@ public class CustomerSaveFormController {
 
     @FXML
     private TextField txtCustName;
+    @FXML
+    private Label lblShowError;
 
     CustomerBO customerBO=(CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.CUSTOMER);
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -57,15 +61,43 @@ public class CustomerSaveFormController {
     }
     @FXML
     void btnSaveOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
-        CustomerDTO customerDTO=new CustomerDTO(txtCustINic.getText(),
-                txtCustName.getText(),
-                cmbCustCountry.getValue(),
-                txtCustEmail.getText());
-        if(customerBO.save(customerDTO)){
-            Navigation.switchPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "customerManageForm.fxml");
-            Navigation.closePopup();
+        if(isValidated()){
+            CustomerDTO customerDTO=new CustomerDTO(txtCustINic.getText(),
+                    txtCustName.getText(),
+                    cmbCustCountry.getValue(),
+                    txtCustEmail.getText());
+            if(customerBO.save(customerDTO)){
+                Navigation.switchPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "customerManageForm.fxml");
+                Navigation.closePopup();
+            }
         }
+        else {
+            lblShowError.setText("Invalid Input");
+        }
+
 
     }
 
+    private boolean isValidated() {
+        if(txtCustINic.getLength()!=0){
+            System.out.println("passed customer nic");
+            if(cmbCustCountry.getValue()!=null){
+                System.out.println("passed customer country");
+                if(REGEXUtil.validateEmail(txtCustEmail.getText())){
+                    System.out.println("email ok");
+                    return true;
+                }
+            }
+        }
+        if(txtCustINic.getLength()==0){
+            lblNicTitle.setStyle("-fx-text-fill: red;");
+        }
+        if(cmbCustCountry.getValue()==null){
+            lblCustCountrylabel.setStyle("-fx-text-fill: red;");
+        }
+        if(!REGEXUtil.validateEmail(txtCustEmail.getText())){
+            lblEmaillabel.setStyle("-fx-text-fill: red;");
+        }
+        return false;
+    }
 }

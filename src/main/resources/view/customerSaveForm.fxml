@@ -8,12 +8,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="352.0" prefWidth="271.0" style="-fx-border-color: blue;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.CustomerSaveFormController">
+<AnchorPane prefHeight="372.0" prefWidth="271.0" style="-fx-border-color: blue;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.CustomerSaveFormController">
     <children>
         <TextField fx:id="txtCustName" alignment="CENTER" layoutX="40.0" layoutY="179.0" prefHeight="44.0" prefWidth="265.0" promptText="Customer Name" style="-fx-background-radius: 20;" />
         <TextField fx:id="txtCustEmail" alignment="CENTER" layoutX="40.0" layoutY="119.0" prefHeight="39.0" prefWidth="265.0" promptText="Customer Email" style="-fx-background-radius: 20;" />
         <TextField fx:id="txtCustINic" alignment="CENTER" layoutX="40.0" layoutY="61.0" prefHeight="39.0" prefWidth="265.0" promptText="Customer NIC" style="-fx-background-radius: 20;" />
-        <JFXButton layoutX="2.0" layoutY="300.0" onAction="#btnSaveOnAction" prefHeight="52.0" prefWidth="267.0" styleClass="btnSave" text="Save" />
+        <JFXButton layoutX="2.0" layoutY="317.0" onAction="#btnSaveOnAction" prefHeight="52.0" prefWidth="267.0" styleClass="btnSave" text="Save" />
         <JFXComboBox fx:id="cmbCustCountry" layoutX="40.0" layoutY="245.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-radius: 20;" styleClass="text-field" />
         <Label fx:id="lblNicTitle" layoutX="53.0" layoutY="43.0" prefHeight="18.0" prefWidth="139.0" text="NIC">
             <font>
@@ -36,6 +36,11 @@
             </font>
         </Label>
          <JFXButton layoutX="2.0" layoutY="1.0" onAction="#closeButtonOnAction" prefHeight="31.0" prefWidth="267.0" styleClass="btnClose" text="" />
+      <Label fx:id="lblShowError" layoutX="12.0" layoutY="295.0" prefHeight="18.0" prefWidth="247.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
 
     </children>
    <stylesheets>
