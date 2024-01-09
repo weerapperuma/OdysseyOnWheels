@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.CustomerBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
@@ -27,24 +28,11 @@ public class CustomerManageFormController {
     @FXML
     private ScrollPane scrolePane;
 
-    CustomerBO customerBO=new CustomerBOImpl();
-    CustomerDTO customerDTO=new CustomerDTO();
-
-    public VBox getMainContainer(){
-        return mainContainer;
-    }
-    public void setMainContainer(VBox mainContainer){
-        this.mainContainer=mainContainer;
-    }
-
-    @FXML
-    void btnHomeOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane,"dashBoard.fxml");
-    }
+    CustomerBO customerBO=(CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.CUSTOMER);
 
     @FXML
     void saveCustomerOnAction(ActionEvent event) throws IOException {
-        Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, "customerSaveForm.fxml");
+        Navigation.popupPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "customerSaveForm.fxml");
 
     }
     public void initialize() throws SQLException, ClassNotFoundException, IOException {
@@ -62,7 +50,7 @@ public class CustomerManageFormController {
 
         controller.setData(dto);
 
-        this.getMainContainer().getChildren().add(root);
+        mainContainer.getChildren().add(root);
     }
 
 
