@@ -55,7 +55,7 @@ CREATE TABLE rent(
     rent_starting DATE,
     rent_ending DATE,
     order_date DATE,
-    CONSTRAINT FOREIGN KEY (customerNIC) REFERENCES customer(customerNIC),
+    CONSTRAINT FOREIGN KEY (customerNIC) REFERENCES customer(customerNIC) ON UPDATE CASCADE ,
     INDEX (rent_starting),
     INDEX (rent_ending),
     INDEX (order_date)

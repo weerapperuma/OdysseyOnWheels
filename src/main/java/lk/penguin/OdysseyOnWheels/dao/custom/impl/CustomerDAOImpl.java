@@ -1,5 +1,6 @@
 package lk.penguin.OdysseyOnWheels.dao.custom.impl;
 
+import javafx.scene.control.Alert;
 import lk.penguin.OdysseyOnWheels.dao.custom.CustomerDAO;
 import lk.penguin.OdysseyOnWheels.dto.CustomerDTO;
 import lk.penguin.OdysseyOnWheels.entity.Customer;
@@ -31,8 +32,19 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public boolean delete(String id) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("DELETE FROM Customer WHERE customerNIC=?",id);
+    public boolean delete(String id){
+        try {
+            return SQLUtil.execute("DELETE FROM Customer WHERE customerNIC=?",id);
+        } catch (SQLException e) {
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Error Deleting Customer");
+            alert.setContentText("Customer is already in the rent");
+            alert.show();
+            return false;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @Override
@@ -79,9 +91,12 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
     @Override
     public ArrayList<Customer> search(String text) throws SQLException, ClassNotFoundException {
-        System.out.println(text);
-        ResultSet resultSet=SQLUtil.execute("SELECT * FROM customer WHERE customerName LIKE ?;",("%"+text+"%"));
         ArrayList<Customer> customers=new ArrayList<>();
+        ResultSet resultSet;
+        resultSet=SQLUtil.execute("SELECT * FROM customer WHERE SUBSTRING_INDEX(customerName, ' ', -1) LIKE ?;",("%"+text+"%"));
+        if(!resultSet.next()){
+            resultSet=SQLUtil.execute("SELECT * FROM customer WHERE customerNIC LIKE ?;","%"+text+"%");
+        }
         while (resultSet.next()){
             Customer customer=new Customer(resultSet.getString(1),
                     resultSet.getString(2),
@@ -89,6 +104,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                     resultSet.getString(4));
             customers.add(customer);
         }
-        return customers;
+        return  customers;
+
     }
 }
