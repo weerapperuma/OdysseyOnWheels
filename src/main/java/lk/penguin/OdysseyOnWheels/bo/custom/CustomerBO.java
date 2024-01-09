@@ -22,4 +22,6 @@ public interface CustomerBO extends SuperBO {
     public ObservableList<String> countryList() throws SQLException, ClassNotFoundException;
 
     boolean ifExists(String id) throws SQLException, ClassNotFoundException;
+
+    CustomerDTO search(String text);
 }

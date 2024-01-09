@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import lk.penguin.OdysseyOnWheels.bo.BOFactory;
@@ -27,6 +28,17 @@ public class CustomerManageFormController {
 
     @FXML
     private ScrollPane scrolePane;
+    @FXML
+    private TextField txtSearchField;
+
+    @FXML
+    void txtSearchOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        System.out.println(txtSearchField.getText());
+        //CustomerDTO customerDTO=customerBO.search(txtSearchField.getText());
+        CustomerDTO customerDTO=customerBO.get(txtSearchField.getText());
+        mainContainer.getChildren().clear();
+        createCustomerRawLoadPane(customerDTO);
+    }
 
     CustomerBO customerBO=(CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.CUSTOMER);
 

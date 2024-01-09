@@ -6,6 +6,7 @@ import lk.penguin.OdysseyOnWheels.util.SQLUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RentDAOImpl implements RentDAO {
     @Override
@@ -30,6 +31,26 @@ public class RentDAOImpl implements RentDAO {
     @Override
     public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
         return false;
+    }
+
+    @Override
+    public boolean save(Object entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public Object get(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public ArrayList getAll() throws SQLException, ClassNotFoundException {
+        return null;
     }
 
     @Override

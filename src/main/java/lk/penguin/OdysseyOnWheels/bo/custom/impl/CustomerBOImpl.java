@@ -78,4 +78,9 @@ public class CustomerBOImpl implements CustomerBO {
     public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
         return customerDAO.ifExists(id);
     }
+
+    @Override
+    public CustomerDTO search(String text) {
+        return null;
+    }
 }

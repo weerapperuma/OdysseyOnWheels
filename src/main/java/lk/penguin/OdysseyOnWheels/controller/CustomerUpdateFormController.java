@@ -86,6 +86,7 @@ public class CustomerUpdateFormController {
         CustomerDTO customerDTO=customerBO.get(CustomerRawFormController.custId);
         txtCustName.setText(customerDTO.getCustomerName());
         cmbCustCountry.setValue(customerDTO.getCustomerCountry());
+        txtCustEmail.setText(customerDTO.getCustomerEmail());
         cmbCustCountry.setOnAction(event ->btnSaveFxId.fire());
     }
 
@@ -100,7 +101,7 @@ public class CustomerUpdateFormController {
                     txtCustName.getText(),
                     cmbCustCountry.getValue(),
                     txtCustEmail.getText());
-            if(customerBO.save(customerDTO)){
+            if(customerBO.updateCustomer(customerDTO)){
                 Navigation.switchPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "customerManageForm.fxml");
                 Navigation.closePopup();
             }

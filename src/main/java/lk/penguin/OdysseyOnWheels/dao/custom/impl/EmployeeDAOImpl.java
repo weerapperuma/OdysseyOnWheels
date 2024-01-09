@@ -6,6 +6,7 @@ import lk.penguin.OdysseyOnWheels.util.SQLUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
@@ -46,5 +47,20 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 employee.getEmpAddress(),
                 employee.getEmpContact()
                 );
+    }
+
+    @Override
+    public Employee get(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public ArrayList<Employee> getAll() throws SQLException, ClassNotFoundException {
+        return null;
     }
 }
