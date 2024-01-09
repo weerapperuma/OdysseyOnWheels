@@ -53,7 +53,7 @@ public class CustomerRawFormController {
     @FXML
     void btnCustUpdateOnAction(ActionEvent event) throws IOException {
         custId=lblCustNic.getText();
-        Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane, "customerUpdateForm.fxml");
+        Navigation.popupPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "customerUpdateForm.fxml");
     }
 
     public void setData(CustomerDTO dto) {

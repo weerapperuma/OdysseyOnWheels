@@ -7,7 +7,7 @@ import lk.penguin.OdysseyOnWheels.util.CrudUtil;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface CustomerDAO extends CrudUtil {
+public interface CustomerDAO extends CrudUtil<Customer> {
 
     ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException;
 
@@ -16,8 +16,6 @@ public interface CustomerDAO extends CrudUtil {
     boolean update(Customer customer) throws SQLException, ClassNotFoundException;
 
     CustomerDTO get(String custId) throws SQLException, ClassNotFoundException;
-
-    boolean save(Customer customer) throws SQLException, ClassNotFoundException;
 
     boolean ifExists(String id) throws SQLException, ClassNotFoundException;
 }
