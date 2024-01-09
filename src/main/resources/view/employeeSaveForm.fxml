@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -9,18 +10,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="549.0" prefWidth="319.0" stylesheets="@../style/button.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.EmployeeSaveFormController">
+<AnchorPane prefHeight="559.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.EmployeeSaveFormController">
     <children>
-        <ImageView fitHeight="72.0" fitWidth="68.0" layoutX="125.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="72.0" fitWidth="68.0" layoutX="126.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assests/icon/download.png" />
             </image>
         </ImageView>
-        <Label fx:id="lblEmpId" layoutX="220.0" layoutY="14.0" prefHeight="24.0" prefWidth="86.0" text="Label">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </Label>
         <TextField fx:id="txtEmpName" alignment="CENTER" layoutX="51.0" layoutY="146.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee Name" style="-fx-background-radius: 20;" />
         <TextField fx:id="txtEmpEmail" alignment="CENTER" layoutX="50.0" layoutY="207.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee Email" style="-fx-background-radius: 20;" />
         <TextField fx:id="txtEmpINic" alignment="CENTER" layoutX="50.0" layoutY="266.0" prefHeight="39.0" prefWidth="265.0" promptText="Employee NIC" style="-fx-background-radius: 20;" />
@@ -57,6 +53,21 @@
                 <Font name="System Bold Italic" size="12.0" />
             </font>
         </Text>
-        <JFXButton layoutX="71.0" layoutY="483.0" onAction="#btnSaveOnAction" styleClass="btn" text="Save" />
+        <JFXButton layoutX="68.0" layoutY="507.0" onAction="#btnSaveOnAction" styleClass="btn" text="Save" />
+      <JFXButton layoutX="13.0" layoutY="14.0" onAction="#btnCloseOnAction" prefHeight="34.0" prefWidth="295.0" styleClass="btnClose" text="" />
+      <Label fx:id="lblErrorShow" layoutX="52.0" layoutY="479.0" prefHeight="23.0" prefWidth="222.0" textFill="RED">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmpId" layoutX="22.0" layoutY="19.0" prefHeight="23.0" prefWidth="68.0" textFill="#0400ff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
     </children>
+   <stylesheets>
+      <URL value="@../style/button.css" />
+      <URL value="@../style/iconButton.css" />
+   </stylesheets>
 </AnchorPane>

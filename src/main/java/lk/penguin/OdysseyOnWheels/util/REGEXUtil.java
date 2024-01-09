@@ -12,5 +12,21 @@ public class REGEXUtil {
         }
         return false;
     }
-    
+    public static boolean validateAddress(String adddress){
+        boolean isAddressValidated=Pattern.compile("^[a-zA-Z, ]{1,100}$").matcher(adddress).matches();
+        if(isAddressValidated){
+            return true;
+        }
+        return false;
+    }
+    public static boolean validateContact(String contact){
+        boolean isContactValidated=Pattern.compile("^[0-9]{1,}$").matcher(contact).matches();
+        if(isContactValidated){
+            return true;
+        }
+        return false;
+    }
+
+
+
 }

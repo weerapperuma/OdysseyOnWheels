@@ -2,6 +2,7 @@ package lk.penguin.OdysseyOnWheels.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import lk.penguin.OdysseyOnWheels.bo.BOFactory;
@@ -9,9 +10,11 @@ import lk.penguin.OdysseyOnWheels.bo.custom.EmployeeBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.EmployeeBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
+import lk.penguin.OdysseyOnWheels.util.REGEXUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 public class EmployeeSaveFormController {
     EmployeeBO employeeBO=(EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.EMPLOYEE);
@@ -36,49 +39,67 @@ public class EmployeeSaveFormController {
 
     @FXML
     private TextField txtEmpPosition;
+    @FXML
+    private Label lblErrorShow;
     String empID="";
+    @FXML
+    void btnCloseOnAction(ActionEvent event) {
+        Navigation.closePopup();
+    }
 
-//    public void EmployeeSaveFormController(){
-//        this.txtEmpName=txtEmpName;
-//    }
+
     public void initialize() throws SQLException, ClassNotFoundException {
-        empID=generateId();
+        empID=employeeBO.generateNewId();
         this.lblEmpId.setText(empID);
 
     }
 
-    private String generateId() throws SQLException, ClassNotFoundException {
-        String lastId=employeeBO.generateNewId();
-        if(lastId!=null){
-            String lastNumber=trimFirstLetter(lastId);
-            int newLastNumber=Integer.parseInt(lastNumber)+1;
-            String out=String.format("E%03d",newLastNumber);
-            return out;
-        }
-        else {
-            return "E001";
-        }
-    }
-    public static String trimFirstLetter(String input){
-        return input.substring(1);
-    }
-
     @FXML
     void btnSaveOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
-        EmployeeDTO employeeDTO=new EmployeeDTO();
-        employeeDTO.setEmployeeId(empID);
-        employeeDTO.setEmployeeName(txtEmpName.getText());
-        employeeDTO.setEmpEmail(txtEmpEmail.getText());
-        employeeDTO.setEmpNIC(txtEmpINic.getText());
-        employeeDTO.setEmpPosition(txtEmpPosition.getText());
-        employeeDTO.setEmpAddress(txtEmpAddress.getText());
-        employeeDTO.setEmpContact(txtEmpContact.getText());
-
-        boolean isSaved=employeeBO.save(employeeDTO);
-        if(isSaved){
-            Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "employeeManageForm.fxml");
-            Navigation.closePopup();
+        if(isValidated()){
+            boolean isSaved=employeeBO.save(new EmployeeDTO(
+                    empID,txtEmpName.getText(),txtEmpEmail.getText(),txtEmpINic.getText(),txtEmpPosition.getText(),txtEmpAddress.getText(),txtEmpContact.getText()
+            ));
+            if(isSaved){
+                Navigation.switchPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "employeeManageForm.fxml");
+                Navigation.closePopup();
+            }
         }
+    }
+
+    private boolean isValidated() {
+        boolean isEmpNameValidated = Pattern.compile("^[a-zA-Z]+( [a-zA-Z]+)?$").matcher(txtEmpName.getText()).matches();
+        if (!isEmpNameValidated) {
+            txtEmpEmail.setStyle("-fx-text-fill: red;");
+            return false;
+        }
+        boolean isEmpEmailValidated= REGEXUtil.validateEmail(txtEmpEmail.getText());
+        if(!isEmpEmailValidated){
+            txtEmpEmail.setStyle("-fx-text-fill: red;");
+            return false;
+        }
+        if(txtEmpINic.getLength()<5){
+            return false;
+        }
+        boolean isEmpPositionValidated=Pattern.compile("^[A-z]{1,}$").matcher(txtEmpPosition.getText()).matches();
+        if(!isEmpPositionValidated){
+            new Alert(Alert.AlertType.ERROR,"Invalid Employee Position").show();
+            return false;
+        }
+
+        boolean isAddressValidated=REGEXUtil.validateAddress(txtEmpAddress.getText());
+        if(!isAddressValidated){
+            txtEmpAddress.setStyle("-fx-text-fill: red;");
+            return false;
+        }
+
+        boolean isEmpContactValidated=REGEXUtil.validateContact(txtEmpContact.getText());
+        if(!isEmpContactValidated){
+            txtEmpContact.setStyle("-fx-text-fill: red;");
+            return false;
+        }
+
+        return true;
     }
 
 }

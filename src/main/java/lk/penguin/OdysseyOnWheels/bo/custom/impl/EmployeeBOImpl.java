@@ -1,18 +1,11 @@
 package lk.penguin.OdysseyOnWheels.bo.custom.impl;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import lk.penguin.OdysseyOnWheels.bo.custom.EmployeeBO;
-import lk.penguin.OdysseyOnWheels.controller.EmployeeManageFormController;
-import lk.penguin.OdysseyOnWheels.controller.EmployeeRawFormController;
 import lk.penguin.OdysseyOnWheels.dao.DAOFactory;
 import lk.penguin.OdysseyOnWheels.dao.custom.EmployeeDAO;
-import lk.penguin.OdysseyOnWheels.dao.custom.impl.EmployeeDAOImpl;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
 import lk.penguin.OdysseyOnWheels.entity.Employee;
 import lk.penguin.OdysseyOnWheels.util.SQLUtil;
-
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -55,7 +48,16 @@ public class EmployeeBOImpl implements EmployeeBO {
     }
     @Override
     public String generateNewId() throws SQLException, ClassNotFoundException {
-        return employeeDAO.generateNewId();
+        String lastId=employeeDAO.generateNewId();
+        if(lastId!=null){
+            String lastNumber=lastId.substring(1);
+            int newLastNumber=Integer.parseInt(lastNumber)+1;
+            String out=String.format("E%03d",newLastNumber);
+            return out;
+        }
+        else {
+            return "E001";
+        }
     }
 
     @Override
