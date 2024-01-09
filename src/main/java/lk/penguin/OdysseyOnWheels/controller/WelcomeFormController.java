@@ -64,7 +64,7 @@ public class WelcomeFormController implements Initializable {
                         }
                     }
                 } catch (IOException | SQLException | ClassNotFoundException e) {
-                    e.printStackTrace(); // Handle the exception appropriately
+                    e.printStackTrace();
                 }
             });
         }

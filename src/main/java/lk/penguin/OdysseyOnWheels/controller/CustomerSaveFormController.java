@@ -1,5 +1,6 @@
 package lk.penguin.OdysseyOnWheels.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -45,6 +46,8 @@ public class CustomerSaveFormController {
     private TextField txtCustName;
     @FXML
     private Label lblShowError;
+    @FXML
+    private JFXButton btnSaveFxId;
 
     CustomerBO customerBO=(CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.CUSTOMER);
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -53,6 +56,7 @@ public class CustomerSaveFormController {
         for(String country:countryList){
             cmbCustCountry.setValue(countryList.get(1));
         }
+        cmbCustCountry.setOnAction(event ->btnSaveFxId.fire());
     }
 
     @FXML
