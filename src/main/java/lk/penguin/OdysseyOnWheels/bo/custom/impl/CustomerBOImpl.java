@@ -22,9 +22,19 @@ public class CustomerBOImpl implements CustomerBO {
     @Override
     public ArrayList<CustomerDTO> loadTableView() throws SQLException, ClassNotFoundException {
 
-        ArrayList<CustomerDTO> dtos= customerDAO.getAll();
+        ArrayList<Customer> customers= customerDAO.getAll();
+        ArrayList<CustomerDTO>customerDTOS=new ArrayList<>();
+        for(Customer customer:customers){
+            CustomerDTO customerDTO=new CustomerDTO(
+                    customer.getCustomerNIC(),
+                    customer.getCustomerName(),
+                    customer.getCustomerCountry(),
+                    customer.getCustomerEmail()
+                    );
+            customerDTOS.add(customerDTO);
+        }
 
-        return dtos;
+        return customerDTOS;
     }
 
     @Override
@@ -41,8 +51,13 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public CustomerDTO get(String custId) throws SQLException, ClassNotFoundException {
-        return  customerDAO.get(custId);
+    public CustomerDTO get(String id) throws SQLException, ClassNotFoundException {
+        Customer customer=customerDAO.get(id);
+        return  new CustomerDTO(
+                customer.getCustomerNIC(),
+                customer.getCustomerName(),
+                customer.getCustomerCountry(),
+                customer.getCustomerEmail());
     }
 
     @Override
