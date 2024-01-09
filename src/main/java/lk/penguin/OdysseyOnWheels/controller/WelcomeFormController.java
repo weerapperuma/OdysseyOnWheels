@@ -60,7 +60,7 @@ public class WelcomeFormController implements Initializable {
                     if (keyEvent.getCode() == KeyCode.ENTER) {
                         boolean isTrue = welcomeBO.chekCredentials(tempUserName, pwPasswordField.getText());
                         if (isTrue) {
-                            Navigation.switchNavigation("backgroundForm.fxml", event);
+                            Navigation.switchNavigation("adminFormInterface.fxml", event);
                         }
                     }
                 } catch (IOException | SQLException | ClassNotFoundException e) {
