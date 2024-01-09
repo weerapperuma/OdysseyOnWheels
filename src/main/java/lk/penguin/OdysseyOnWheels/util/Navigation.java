@@ -6,8 +6,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -32,6 +36,7 @@ public class Navigation {
 
         Parent root=loader.load();
         pane.getChildren().add(root);
+
     }
 
     public static void popupPaging(Pane pane,String path) throws IOException {
@@ -42,7 +47,7 @@ public class Navigation {
         popupStage.initModality(Modality.APPLICATION_MODAL);
         popupStage.initOwner(pane.getScene().getWindow());
 
-        popupStage.setTitle("Update");
+        popupStage.initStyle(StageStyle.UNDECORATED);
 
         Scene scene1=new Scene(root);
         popupStage.setScene(scene1);

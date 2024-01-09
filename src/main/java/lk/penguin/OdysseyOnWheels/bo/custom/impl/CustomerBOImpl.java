@@ -3,6 +3,7 @@ package lk.penguin.OdysseyOnWheels.bo.custom.impl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lk.penguin.OdysseyOnWheels.bo.custom.CustomerBO;
+import lk.penguin.OdysseyOnWheels.dao.DAOFactory;
 import lk.penguin.OdysseyOnWheels.dao.custom.CountriesDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.CustomerDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.CountriesDAOImpl;
@@ -16,8 +17,8 @@ import java.util.ArrayList;
 
 public class CustomerBOImpl implements CustomerBO {
 
-    CustomerDAO customerDAO=new CustomerDAOImpl();
-    CountriesDAO countriesDAO=new CountriesDAOImpl();
+    CustomerDAO customerDAO=(CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.CUSTOMER);
+    CountriesDAO countriesDAO=(CountriesDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.COUNTRIES);
     @Override
     public ArrayList<CustomerDTO> loadTableView() throws SQLException, ClassNotFoundException {
 
@@ -51,14 +52,12 @@ public class CustomerBOImpl implements CustomerBO {
     @Override
     public ObservableList<String> countryList() throws SQLException, ClassNotFoundException {
         ArrayList<Countries> countries= countriesDAO.getAll();
-        ObservableList<String> countriesDTOS= FXCollections.observableArrayList();
+        ObservableList<String> countriesList= FXCollections.observableArrayList();
         for(Countries country:countries){
             String countryNames=country.getCountryName();
-
-            countriesDTOS.add(countryNames);
+            countriesList.add(countryNames);
         }
-
-        return countriesDTOS;
+        return countriesList;
     }
     @Override
     public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
