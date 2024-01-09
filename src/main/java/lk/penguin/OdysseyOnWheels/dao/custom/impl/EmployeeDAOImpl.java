@@ -1,6 +1,7 @@
 package lk.penguin.OdysseyOnWheels.dao.custom.impl;
 
 import lk.penguin.OdysseyOnWheels.dao.custom.EmployeeDAO;
+import lk.penguin.OdysseyOnWheels.entity.Customer;
 import lk.penguin.OdysseyOnWheels.entity.Employee;
 import lk.penguin.OdysseyOnWheels.util.SQLUtil;
 
@@ -23,7 +24,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
-        return false;
+        ResultSet resultSet=SQLUtil.execute("SELECT * FROM employee WHERE employeeId=?",id);
+        return resultSet.next();
     }
 
     @Override
@@ -51,21 +53,62 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public Employee get(String id) throws SQLException, ClassNotFoundException {
-        return null;
+        ResultSet resultSet=SQLUtil.execute("SELECT * FROM employee WHERE employeeId=?",id);
+        if (resultSet.next()){
+            Employee employee=new Employee(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7));
+            return employee;
+        }
+        else{
+            return null;
+        }
     }
 
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
-        return false;
+        return SQLUtil.execute("DELETE FROM employee WHERE employeeId=?",id);
     }
 
     @Override
     public ArrayList<Employee> getAll() throws SQLException, ClassNotFoundException {
-        return null;
+        ArrayList<Employee> employees=new ArrayList<>();
+        ResultSet resultSet=SQLUtil.execute("SELECT * FROM employee");
+        while (resultSet.next()){
+            Employee employee=new Employee(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7));
+            employees.add(employee);
+        }
+        return employees;
     }
 
     @Override
     public ArrayList<Employee> search(String text) throws SQLException, ClassNotFoundException {
-        return null;
+        ArrayList<Employee> employees=new ArrayList<>();
+        ResultSet resultSet;
+        resultSet=SQLUtil.execute("SELECT * FROM employee WHERE SUBSTRING_INDEX(employeeName, ' ', -1) LIKE ?;",("%"+text+"%"));
+        if(!resultSet.next()){
+            resultSet=SQLUtil.execute("SELECT * FROM employee WHERE employeeId LIKE ?;","%"+text+"%");
+        }
+        while (resultSet.next()){
+            Employee employee=new Employee(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7));
+            employees.add(employee);
+        }
+        return employees;
     }
 }
