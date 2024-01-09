@@ -23,5 +23,5 @@ public interface CustomerBO extends SuperBO {
 
     boolean ifExists(String id) throws SQLException, ClassNotFoundException;
 
-    CustomerDTO search(String text);
+    ArrayList<CustomerDTO> search(String text) throws SQLException, ClassNotFoundException;
 }

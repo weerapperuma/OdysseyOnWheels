@@ -77,4 +77,18 @@ public class CustomerDAOImpl implements CustomerDAO {
         ResultSet rst= SQLUtil.execute("Select * from customer WHERE customerNIC=?",id);
         return rst.next();
     }
+    @Override
+    public ArrayList<Customer> search(String text) throws SQLException, ClassNotFoundException {
+        System.out.println(text);
+        ResultSet resultSet=SQLUtil.execute("SELECT * FROM customer WHERE customerName LIKE ?;",("%"+text+"%"));
+        ArrayList<Customer> customers=new ArrayList<>();
+        while (resultSet.next()){
+            Customer customer=new Customer(resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4));
+            customers.add(customer);
+        }
+        return customers;
+    }
 }

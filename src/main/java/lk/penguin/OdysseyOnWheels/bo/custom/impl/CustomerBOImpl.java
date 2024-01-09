@@ -80,7 +80,18 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public CustomerDTO search(String text) {
-        return null;
+    public ArrayList<CustomerDTO> search(String text) throws SQLException, ClassNotFoundException {
+        ArrayList<Customer> customers=customerDAO.search(text);
+        ArrayList<CustomerDTO> customerDTOS=new ArrayList<>();
+        for(Customer customer:customers){
+            CustomerDTO customerDTO=new CustomerDTO(
+                    customer.getCustomerNIC(),
+                    customer.getCustomerName(),
+                    customer.getCustomerCountry(),
+                    customer.getCustomerEmail()
+            );
+            customerDTOS.add(customerDTO);
+        }
+        return  customerDTOS;
     }
 }

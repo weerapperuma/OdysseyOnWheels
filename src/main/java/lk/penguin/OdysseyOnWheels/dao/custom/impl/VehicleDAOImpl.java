@@ -52,6 +52,11 @@ public class VehicleDAOImpl implements VehicleDAO {
     }
 
     @Override
+    public ArrayList search(String text) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
     public boolean update(Object dto) throws SQLException, ClassNotFoundException {
         return false;
     }

@@ -59,4 +59,9 @@ public class UserDAOImpl implements UserDAO {
     public ArrayList<User> getAll() throws SQLException, ClassNotFoundException {
         return null;
     }
+
+    @Override
+    public ArrayList<User> search(String text) throws SQLException, ClassNotFoundException {
+        return null;
+    }
 }

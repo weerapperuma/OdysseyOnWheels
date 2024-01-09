@@ -34,10 +34,17 @@ public class CustomerManageFormController {
     @FXML
     void txtSearchOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         System.out.println(txtSearchField.getText());
-        //CustomerDTO customerDTO=customerBO.search(txtSearchField.getText());
-        CustomerDTO customerDTO=customerBO.get(txtSearchField.getText());
-        mainContainer.getChildren().clear();
-        createCustomerRawLoadPane(customerDTO);
+        if(txtSearchField.getLength()==0){
+            Navigation.switchPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "customerManageForm.fxml");
+        }
+        else{
+            ArrayList<CustomerDTO> dtos=customerBO.search(txtSearchField.getText());
+            mainContainer.getChildren().clear();
+            for (CustomerDTO customerDTO1:dtos){
+                createCustomerRawLoadPane(customerDTO1);
+            }
+        }
+
     }
 
     CustomerBO customerBO=(CustomerBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.CUSTOMER);
