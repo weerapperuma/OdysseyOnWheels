@@ -87,4 +87,24 @@ public class EmployeeBOImpl implements EmployeeBO {
         }
         return employeeDTOS;
     }
+
+    @Override
+    public ArrayList<EmployeeDTO> search(String text) throws SQLException, ClassNotFoundException {
+        ArrayList<Employee> employees=employeeDAO.search(text);
+        System.out.println("Employee bo "+employees.size());
+        ArrayList<EmployeeDTO>employeeDTOS=new ArrayList<>();
+        for(Employee employee:employees){
+            EmployeeDTO employeeDTO=new EmployeeDTO(
+                    employee.getEmployeeId(),
+                    employee.getEmployeeName(),
+                    employee.getEmpEmail(),
+                    employee.getEmpNIC(),
+                    employee.getEmpPosition(),
+                    employee.getEmpAddress(),
+                    employee.getEmpContact()
+            );
+            employeeDTOS.add(employeeDTO);
+        }
+        return employeeDTOS;
+    }
 }

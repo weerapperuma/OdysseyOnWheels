@@ -109,6 +109,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                     resultSet.getString(7));
             employees.add(employee);
         }
+        System.out.println(employees.size());
         return employees;
     }
 }

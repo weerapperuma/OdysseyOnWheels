@@ -26,12 +26,22 @@ public class EmployeeManageFormController {
     @FXML
     private ScrollPane scrolePane;
     @FXML
-    public TextField txtSearchFxId;
-    @FXML
-    void txtsearchOnAction(ActionEvent event) {
+    private TextField txtSearchFxId;
 
-    }
     EmployeeBO employeeBO= (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.EMPLOYEE);
+    @FXML
+    void txtsearchOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        if(txtSearchFxId.getLength()==0){
+            Navigation.switchPaging(AdminFormInterfaceController.getInstance().adminUseCasesLoadPane, "employeeManageForm.fxml");
+        }
+        else{
+            ArrayList<EmployeeDTO>employeeDTOS=employeeBO.search(txtSearchFxId.getText());
+            mainContainer.getChildren().clear();
+            for(EmployeeDTO employeeDTO:employeeDTOS){
+                createEmployeeRawLoadPane(employeeDTO);
+            }
+        }
+    }
 
     @FXML
     void saveEmployeeOnAction(ActionEvent event) throws IOException {
