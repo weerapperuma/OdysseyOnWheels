@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import lk.penguin.OdysseyOnWheels.bo.custom.EmployeeBO;
 import lk.penguin.OdysseyOnWheels.controller.EmployeeManageFormController;
 import lk.penguin.OdysseyOnWheels.controller.EmployeeRawFormController;
+import lk.penguin.OdysseyOnWheels.dao.DAOFactory;
 import lk.penguin.OdysseyOnWheels.dao.custom.EmployeeDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.EmployeeDAOImpl;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
@@ -17,54 +18,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EmployeeBOImpl implements EmployeeBO {
-    private EmployeeManageFormController employeeManageFormController;
-    EmployeeDAO employeeDAO=new EmployeeDAOImpl();
+    EmployeeDAO employeeDAO=(EmployeeDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.EMPLOYEE);
 
 
-    public EmployeeBOImpl(EmployeeManageFormController employeeManageFormController) {
-        this.employeeManageFormController = employeeManageFormController;
-    }
-    @Override
-    public void loadTableView() throws SQLException, ClassNotFoundException, IOException {
-        String query="SELECT * FROM employee";
-        ArrayList<EmployeeDTO>dtos=loadALl(query);
-
-        for(EmployeeDTO dto:dtos){
-            createEmployeeRawLoadPane(dto);
-        }
-    }
-    @Override
-    public ArrayList<EmployeeDTO> loadALl(String query) throws SQLException, ClassNotFoundException {
-
-        ResultSet rst= SQLUtil.execute(query);
-        ArrayList<EmployeeDTO> dtos=new ArrayList<>();
-        while (rst.next()){
-            EmployeeDTO dto=new EmployeeDTO();
-
-            dto.setEmployeeId(rst.getString("employeeId"));
-            dto.setEmployeeName(rst.getString("employeeName"));
-            dto.setEmpEmail(rst.getString("empEmail"));
-            dto.setEmpNIC(rst.getString("empNIC"));
-            dto.setEmpPosition(rst.getString("empPosition"));
-            dto.setEmpAddress(rst.getString("empAddress"));
-            dto.setEmpContact(rst.getString("empContact"));
-
-            dtos.add(dto);
-
-        }
-        return dtos;
-    }
-
-    private void createEmployeeRawLoadPane(EmployeeDTO dto) throws IOException {
-        FXMLLoader loader=new FXMLLoader(EmployeeManageFormController.class.getResource("/view/employeeRawForm.fxml"));
-        Parent root=loader.load();
-        EmployeeRawFormController controller=loader.getController();
-
-        controller.setData(dto);
-
-        employeeManageFormController.getMainContainer().getChildren().add(root);
-
-    }
     @Override
     public boolean update(EmployeeDTO dto) throws SQLException, ClassNotFoundException {
         return SQLUtil.execute("UPDATE employee SET employeeName=?,empEmail=?,empNIC=?,empPosition=?, empAddress=?,empContact=? WHERE employeeId=?",
@@ -111,5 +67,24 @@ public class EmployeeBOImpl implements EmployeeBO {
                 employeeDTO.getEmpPosition(),
                 employeeDTO.getEmpAddress(),
                 employeeDTO.getEmpContact()));
+    }
+
+    @Override
+    public ArrayList<EmployeeDTO> getAll() throws SQLException, ClassNotFoundException {
+        ArrayList<Employee> employees=employeeDAO.getAll();
+        ArrayList<EmployeeDTO> employeeDTOS=new ArrayList<>();
+        for(Employee employee:employees){
+            EmployeeDTO employeeDTO=new EmployeeDTO(
+                    employee.getEmployeeId(),
+                    employee.getEmployeeName(),
+                    employee.getEmpEmail(),
+                    employee.getEmpNIC(),
+                    employee.getEmpPosition(),
+                    employee.getEmpAddress(),
+                    employee.getEmpContact()
+            );
+            employeeDTOS.add(employeeDTO);
+        }
+        return employeeDTOS;
     }
 }

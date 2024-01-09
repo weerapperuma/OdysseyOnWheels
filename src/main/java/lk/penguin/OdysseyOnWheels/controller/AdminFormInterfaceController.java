@@ -38,8 +38,8 @@ public class AdminFormInterfaceController implements Initializable {
     }
 
     @FXML
-    void btnEmployeeOnAction(ActionEvent event) {
-
+    void btnEmployeeOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(adminUseCasesLoadPane,"employeeManageForm.fxml");
     }
 
 

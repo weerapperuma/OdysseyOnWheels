@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.EmployeeBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.EmployeeBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
@@ -20,8 +21,7 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @Data
 public class EmployeeUpdateFormController {
-    EmployeeManageFormController employeeManageFormController=new EmployeeManageFormController();
-    EmployeeBO employeeBO = new EmployeeBOImpl(employeeManageFormController);
+    EmployeeBO employeeBO = (EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.EMPLOYEE);
 
     @FXML
     private Label lblEmpId;

@@ -24,7 +24,7 @@ public class BOFactory {
             case VEHICLE:
                 return new VehicleBOImpl();
             case EMPLOYEE:
-                //return new EmployeeBOImpl();
+                return new EmployeeBOImpl();
             default:
                 return null;
         }

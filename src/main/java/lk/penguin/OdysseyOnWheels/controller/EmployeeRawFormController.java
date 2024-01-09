@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.EmployeeBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.EmployeeBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.EmployeeDTO;
@@ -43,7 +44,7 @@ public class EmployeeRawFormController {
     public static String empId;
     EmployeeManageFormController employeeManageFormController;
 
-    EmployeeBO employeeBO=new EmployeeBOImpl(employeeManageFormController);
+    EmployeeBO employeeBO=(EmployeeBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.EMPLOYEE);
     @FXML
     void btnEmpDeleteOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
         String empId=lblEmpId.getText();

@@ -8,10 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface EmployeeBO extends SuperBO {
-    void loadTableView() throws SQLException, ClassNotFoundException, IOException;
-
-
-    ArrayList<EmployeeDTO> loadALl(String query) throws SQLException, ClassNotFoundException;
 
     boolean update(EmployeeDTO dto) throws SQLException, ClassNotFoundException;
 
@@ -21,4 +17,6 @@ public interface EmployeeBO extends SuperBO {
     String generateNewId() throws SQLException, ClassNotFoundException;
 
     boolean save(EmployeeDTO employeeDTO) throws SQLException, ClassNotFoundException;
+
+    ArrayList<EmployeeDTO> getAll() throws SQLException, ClassNotFoundException;
 }
