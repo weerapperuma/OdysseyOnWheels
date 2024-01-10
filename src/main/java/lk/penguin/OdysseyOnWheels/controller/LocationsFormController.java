@@ -30,6 +30,7 @@ public class LocationsFormController {
         if(addButtonFxId.getLength()!=0){
             boolean isSaved=locationsBO.save(new LocationsDTO(0,addButtonFxId.getText(),"Available"));
             if(isSaved){
+                System.out.println("location saved");
                 locationVboxMainContainer.getChildren().clear();
                 createRawLoadPane();
             }

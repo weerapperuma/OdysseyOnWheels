@@ -23,7 +23,7 @@ public class LocationsDAOImpl implements LocationsDAO {
 
     @Override
     public boolean save(Locations entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO locations VALUES (?,?)",entity.getYardName(),entity.getStatus());
+        return SQLUtil.execute("INSERT INTO locations(yard_name,status) VALUES (?,?)",entity.getYardName(),entity.getStatus());
     }
 
     @Override
