@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import lk.penguin.OdysseyOnWheels.dto.LocationsDTO;
 
 public class LocationRawFormController {
 
@@ -14,7 +15,7 @@ public class LocationRawFormController {
     private JFXButton btnUpdateFxId;
 
     @FXML
-    private JFXComboBox<?> cmbStatusFxId;
+    private JFXComboBox<String> cmbStatusFxId;
 
     @FXML
     private TextField txtLocationFx;
@@ -35,7 +36,20 @@ public class LocationRawFormController {
     }
 
     public void initialize(){
+
+        //cmbStatusFxId.setValue();
+    }
+
+    public void setData(LocationsDTO locationsDTO) {
         ObservableList<String> statusType= FXCollections.observableArrayList( "Available","Unavailable");
         cmbStatusFxId.setItems(statusType);
+        txtLocationFx.setText(locationsDTO.getYardName());
+        System.out.println(locationsDTO.getStatus());
+        if(statusType.contains(locationsDTO.getStatus())){
+            cmbStatusFxId.setValue(locationsDTO.getStatus());
+        }
+        else {
+            System.out.println("DTO status not in combo box");
+        }
     }
 }

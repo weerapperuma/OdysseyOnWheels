@@ -9,5 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class LocationsDTO {
     private String yardName;
+    private String status;
 }
 

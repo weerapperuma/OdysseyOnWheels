@@ -68,6 +68,10 @@ public class AdminFormInterfaceController implements Initializable {
     void btnVehicleOnAction(ActionEvent event) {
 
     }
+    @FXML
+    void btnLocationsOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(AdminFormInterfaceController.adminFormInterfaceController.adminUseCasesLoadPane, "locations.fxml");
+    }
 
     @FXML
     void closeAppOnAction(ActionEvent event) {

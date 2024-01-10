@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @Data
 public class Locations {
     private String yardName;
+    private String status;
 }

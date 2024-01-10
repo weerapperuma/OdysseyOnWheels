@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.LocationRawFormController">
+<AnchorPane prefHeight="50.0" prefWidth="890.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.LocationRawFormController">
    <children>
       <JFXButton fx:id="btnUpdateFxId" layoutX="823.0" layoutY="9.0" onAction="#btnUpdateOnAction" styleClass="btn" text="update" />
       <JFXComboBox fx:id="cmbStatusFxId" layoutX="647.0" layoutY="14.0" onAction="#cmbStatusOnAction" prefHeight="26.0" prefWidth="139.0" />

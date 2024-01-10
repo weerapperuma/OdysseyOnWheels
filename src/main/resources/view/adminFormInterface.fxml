@@ -80,7 +80,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton contentDisplay="TOP" layoutX="241.0" layoutY="436.0" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="LOCATIONS" textFill="#ff6f00">
+            <JFXButton contentDisplay="TOP" layoutX="241.0" layoutY="436.0" onAction="#btnLocationsOnAction" prefHeight="317.0" prefWidth="200.0" styleClass="btn" text="LOCATIONS" textFill="#ff6f00">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
