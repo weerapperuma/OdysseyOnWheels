@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="50.0" prefWidth="1096.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.VehicleRawFormController">
+   <children>
+      <Label fx:id="lblVehicleIDFx" layoutX="5.0" layoutY="6.0" prefHeight="38.0" prefWidth="81.0" style="-fx-border-color: grey;" text="AAI-5678">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTypeFx" layoutX="101.0" layoutY="8.0" prefHeight="32.0" prefWidth="118.0" style="-fx-border-color: white;" text="Luxury Van">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtVehicleNameFx" layoutX="239.0" layoutY="9.0" prefHeight="32.0" prefWidth="400.0" style="-fx-border-color: white;" text="CHRYSLER 300 C - White (Rolls Royce Facelift)">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPerDayCostFx" layoutX="658.0" layoutY="9.0" prefHeight="32.0" prefWidth="118.0" style="-fx-border-color: white;" text="34500">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAccessMileage" layoutX="792.0" layoutY="9.0" prefHeight="32.0" prefWidth="118.0" style="-fx-border-color: white;" text="345">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <JFXButton layoutX="1011.0" layoutY="12.0" onAction="#updateOnAction" styleClass="btn" stylesheets="@../style/iconButton.css" text="">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/updated.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbAvailableFx" layoutX="920.0" layoutY="12.0" prefHeight="26.0" prefWidth="49.0" />
+      <JFXButton layoutX="1053.0" layoutY="10.0" onAction="#deleteOnAction" prefHeight="26.0" prefWidth="19.0" styleClass="btndelete" stylesheets="@../style/iconButton.css" text="">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
