@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class LocationsDTO {
+    private Integer nb;
     private String yardName;
     private String status;
 }

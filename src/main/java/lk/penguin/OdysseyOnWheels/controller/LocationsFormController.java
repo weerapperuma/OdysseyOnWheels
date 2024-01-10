@@ -28,7 +28,7 @@ public class LocationsFormController {
     @FXML
     void txtAddLocationOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
         if(addButtonFxId.getLength()!=0){
-            boolean isSaved=locationsBO.save(new LocationsDTO(addButtonFxId.getText(),"Available"));
+            boolean isSaved=locationsBO.save(new LocationsDTO(0,addButtonFxId.getText(),"Available"));
             if(isSaved){
                 locationVboxMainContainer.getChildren().clear();
                 createRawLoadPane();
@@ -39,7 +39,7 @@ public class LocationsFormController {
         createRawLoadPane();
     }
 
-    private void createRawLoadPane() throws IOException {
+    private void createRawLoadPane() throws IOException, SQLException, ClassNotFoundException {
         ArrayList<LocationsDTO> locationsDTOS=locationsBO.getALL();
         for(LocationsDTO locationsDTO:locationsDTOS){
             FXMLLoader loader=new FXMLLoader(LocationsFormController.class.getResource("/view/locationRawForm.fxml"));

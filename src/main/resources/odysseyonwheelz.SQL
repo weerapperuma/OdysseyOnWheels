@@ -120,7 +120,7 @@ CREATE TABLE language(
     japan VARCHAR(1000) DEFAULT NULL
 
 );
-CREATE TABLE locations(yard_name VARCHAR(100),status VARCHAR(20));
+CREATE TABLE locations(nb int primary key auto_increment,yard_name VARCHAR(100),status VARCHAR(20));
 CREATE TABLE countries(country_name VARCHAR(100));
 
 INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES

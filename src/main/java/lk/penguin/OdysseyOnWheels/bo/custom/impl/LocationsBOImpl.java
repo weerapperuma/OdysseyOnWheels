@@ -18,6 +18,7 @@ public class LocationsBOImpl implements LocationsBO {
         ArrayList<LocationsDTO> locationsDTOS=new ArrayList<>();
         for(Locations locations1:locations){
             LocationsDTO locationsDTO=new LocationsDTO(
+                    locations1.getNb(),
                     locations1.getYardName(),
                     locations1.getStatus()
             );
@@ -28,11 +29,11 @@ public class LocationsBOImpl implements LocationsBO {
 
     @Override
     public boolean save(LocationsDTO locationsDTO) throws SQLException, ClassNotFoundException {
-        return locationsDAO.save(new Locations(locationsDTO.getYardName(), locationsDTO.getStatus()));
+        return locationsDAO.save(new Locations(0,locationsDTO.getYardName(), locationsDTO.getStatus()));
     }
 
     @Override
     public boolean update(LocationsDTO locationsDTO) throws SQLException, ClassNotFoundException {
-        return locationsDAO.update(new Locations(locationsDTO.getYardName(), locationsDTO.getStatus()));
+        return locationsDAO.update(new Locations(locationsDTO.getNb(),locationsDTO.getYardName(), locationsDTO.getStatus()));
     }
 }

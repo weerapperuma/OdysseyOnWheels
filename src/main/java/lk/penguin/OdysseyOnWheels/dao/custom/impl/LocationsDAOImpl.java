@@ -13,7 +13,7 @@ public class LocationsDAOImpl implements LocationsDAO {
 
     @Override
     public boolean update(Locations entity) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("UPDATE locations SET locations=?,customerName=?,customerCountry=?, customerEmail=? WHERE customerNIC=?;
+        return SQLUtil.execute("UPDATE locations SET yard_name=?, status=? WHERE nb=?",entity.getYardName(),entity.getStatus(),entity.getNb());
     }
 
     @Override
@@ -41,7 +41,7 @@ public class LocationsDAOImpl implements LocationsDAO {
         ResultSet rst= SQLUtil.execute("SELECT * FROM locations");
         ArrayList<Locations> locations=new ArrayList<>();
         while (rst.next()){
-            Locations entity=new Locations(rst.getString(1),rst.getString(2));
+            Locations entity=new Locations(rst.getInt(1),rst.getString(2),rst.getString(3));
             locations.add(entity);
         }
         return locations;

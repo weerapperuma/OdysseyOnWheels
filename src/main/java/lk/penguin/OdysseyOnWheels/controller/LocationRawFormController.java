@@ -34,7 +34,7 @@ public class LocationRawFormController {
 
     @FXML
     void cmbStatusOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        boolean isUpdated=locationsBO.update(new LocationsDTO(txtLocationFx.getText(),cmbStatusFxId.getValue()));
+        boolean isUpdated=locationsBO.update(new LocationsDTO(nb,txtLocationFx.getText(),cmbStatusFxId.getValue()));
         if(isUpdated){
             txtLocationFx.setStyle("-fx-text-fill: #00ff12;");
             cmbStatusFxId.setStyle("-fx-text-fill: #00ff12;");
@@ -45,7 +45,7 @@ public class LocationRawFormController {
 
     @FXML
     void txtLocationOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        boolean isUpdated=locationsBO.save(new LocationsDTO(txtLocationFx.getText(),cmbStatusFxId.getValue()));
+        boolean isUpdated=locationsBO.update(new LocationsDTO(nb,txtLocationFx.getText(),cmbStatusFxId.getValue()));
         if(isUpdated){
             txtLocationFx.setStyle("-fx-text-fill: #00ff12;");
             cmbStatusFxId.setStyle("-fx-text-fill: #00ff12;");
@@ -53,6 +53,7 @@ public class LocationRawFormController {
         txtLocationFx.setEditable(false);
         cmbStatusFxId.setEditable(false);
     }
+    int nb=0;
 
     public void initialize(){
         txtLocationFx.setEditable(false);
@@ -63,7 +64,7 @@ public class LocationRawFormController {
         ObservableList<String> statusType= FXCollections.observableArrayList( "Available","Unavailable");
         cmbStatusFxId.setItems(statusType);
         txtLocationFx.setText(locationsDTO.getYardName());
-        System.out.println(locationsDTO.getStatus());
+        nb=locationsDTO.getNb();
         if(statusType.contains(locationsDTO.getStatus())){
             cmbStatusFxId.setValue(locationsDTO.getStatus());
         }
