@@ -34,7 +34,7 @@ public class LocationRawFormController {
 
     @FXML
     void cmbStatusOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        boolean isUpdated=locationsBO.save(new LocationsDTO(txtLocationFx.getText(),cmbStatusFxId.getValue()));
+        boolean isUpdated=locationsBO.update(new LocationsDTO(txtLocationFx.getText(),cmbStatusFxId.getValue()));
         if(isUpdated){
             txtLocationFx.setStyle("-fx-text-fill: #00ff12;");
             cmbStatusFxId.setStyle("-fx-text-fill: #00ff12;");

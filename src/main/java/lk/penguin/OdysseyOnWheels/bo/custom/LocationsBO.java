@@ -10,4 +10,6 @@ public interface LocationsBO extends SuperBO {
     ArrayList<LocationsDTO> getALL() throws SQLException, ClassNotFoundException;
 
     boolean save(LocationsDTO locationsDTO) throws SQLException, ClassNotFoundException;
+
+    boolean update(LocationsDTO locationsDTO) throws SQLException, ClassNotFoundException;
 }

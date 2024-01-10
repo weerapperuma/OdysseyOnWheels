@@ -30,4 +30,9 @@ public class LocationsBOImpl implements LocationsBO {
     public boolean save(LocationsDTO locationsDTO) throws SQLException, ClassNotFoundException {
         return locationsDAO.save(new Locations(locationsDTO.getYardName(), locationsDTO.getStatus()));
     }
+
+    @Override
+    public boolean update(LocationsDTO locationsDTO) throws SQLException, ClassNotFoundException {
+        return locationsDAO.update(new Locations(locationsDTO.getYardName(), locationsDTO.getStatus()));
+    }
 }

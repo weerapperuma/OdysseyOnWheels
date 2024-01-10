@@ -13,7 +13,7 @@ public class LocationsDAOImpl implements LocationsDAO {
 
     @Override
     public boolean update(Locations entity) throws SQLException, ClassNotFoundException {
-        return false;
+        return SQLUtil.execute("UPDATE locations SET locations=?,customerName=?,customerCountry=?, customerEmail=? WHERE customerNIC=?;
     }
 
     @Override

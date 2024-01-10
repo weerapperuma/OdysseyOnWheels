@@ -26,24 +26,31 @@ public class LocationsFormController {
     LocationsBO locationsBO=(LocationsBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.LOCATIONS);
 
     @FXML
-    void txtAddLocationOnAction(ActionEvent event) {
-
-    }
-    public void initialize() throws SQLException, ClassNotFoundException, IOException {
-        ArrayList<LocationsDTO> locationsDTOS=locationsBO.getALL();
-        for(LocationsDTO locationsDTO:locationsDTOS){
-            createRawLoadPane(locationsDTO);
+    void txtAddLocationOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+        if(addButtonFxId.getLength()!=0){
+            boolean isSaved=locationsBO.save(new LocationsDTO(addButtonFxId.getText(),"Available"));
+            if(isSaved){
+                locationVboxMainContainer.getChildren().clear();
+                createRawLoadPane();
+            }
         }
     }
+    public void initialize() throws SQLException, ClassNotFoundException, IOException {
+        createRawLoadPane();
+    }
 
-    private void createRawLoadPane(LocationsDTO locationsDTO) throws IOException {
-        FXMLLoader loader=new FXMLLoader(LocationsFormController.class.getResource("/view/locationRawForm.fxml"));
-        Parent root=loader.load();
-        LocationRawFormController locationRawFormController=loader.getController();
+    private void createRawLoadPane() throws IOException {
+        ArrayList<LocationsDTO> locationsDTOS=locationsBO.getALL();
+        for(LocationsDTO locationsDTO:locationsDTOS){
+            FXMLLoader loader=new FXMLLoader(LocationsFormController.class.getResource("/view/locationRawForm.fxml"));
+            Parent root=loader.load();
+            LocationRawFormController locationRawFormController=loader.getController();
 
-        locationRawFormController.setData(locationsDTO);
+            locationRawFormController.setData(locationsDTO);
 
-        locationVboxMainContainer.getChildren().add(root);
+            locationVboxMainContainer.getChildren().add(root);
+        }
+
     }
 
 }
