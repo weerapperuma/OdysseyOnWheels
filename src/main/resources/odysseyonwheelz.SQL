@@ -206,7 +206,7 @@ INSERT INTO vehicle(vehicle_id, vehicle_type,vehicle_name, per_day_80km,excess_m
     ('IJK-5678', 'SUV','Terios 4wd', 22500,225);
 
 INSERT INTO locations(yard_name,status) VALUES
-    ('Arugam Bay town ','available'),
+    ('Arugam Bay town ','Available'),
     ('Bandaranaike International Airport (BIA) - Katunayake, colombo','Available'),
     ('Colombo - Suburbs - Colombo & Greater Colombo Area, Colombo','Available'),
     ('Dambulla / Sigiriya town limits - Dambulla / Sigiriya town limits','Available'),

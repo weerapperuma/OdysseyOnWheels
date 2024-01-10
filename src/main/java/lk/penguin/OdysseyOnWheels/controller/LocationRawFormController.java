@@ -7,7 +7,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import lk.penguin.OdysseyOnWheels.bo.BOFactory;
+import lk.penguin.OdysseyOnWheels.bo.custom.LocationsBO;
 import lk.penguin.OdysseyOnWheels.dto.LocationsDTO;
+
+import java.sql.SQLException;
 
 public class LocationRawFormController {
 
@@ -19,25 +23,40 @@ public class LocationRawFormController {
 
     @FXML
     private TextField txtLocationFx;
+    LocationsBO locationsBO=(LocationsBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.LOCATIONS);
 
     @FXML
-    void btnUpdateOnAction(ActionEvent event) {
+    void btnUpdateOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        txtLocationFx.setEditable(true);
+        cmbStatusFxId.setEditable(true);
 
     }
 
     @FXML
-    void cmbStatusOnAction(ActionEvent event) {
-
+    void cmbStatusOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        boolean isUpdated=locationsBO.save(new LocationsDTO(txtLocationFx.getText(),cmbStatusFxId.getValue()));
+        if(isUpdated){
+            txtLocationFx.setStyle("-fx-text-fill: #00ff12;");
+            cmbStatusFxId.setStyle("-fx-text-fill: #00ff12;");
+        }
+        txtLocationFx.setEditable(false);
+        cmbStatusFxId.setEditable(false);
     }
 
     @FXML
-    void txtLocationOnAction(ActionEvent event) {
-
+    void txtLocationOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        boolean isUpdated=locationsBO.save(new LocationsDTO(txtLocationFx.getText(),cmbStatusFxId.getValue()));
+        if(isUpdated){
+            txtLocationFx.setStyle("-fx-text-fill: #00ff12;");
+            cmbStatusFxId.setStyle("-fx-text-fill: #00ff12;");
+        }
+        txtLocationFx.setEditable(false);
+        cmbStatusFxId.setEditable(false);
     }
 
     public void initialize(){
-
-        //cmbStatusFxId.setValue();
+        txtLocationFx.setEditable(false);
+        cmbStatusFxId.setEditable(false);
     }
 
     public void setData(LocationsDTO locationsDTO) {
