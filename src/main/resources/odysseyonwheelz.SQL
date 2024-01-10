@@ -120,7 +120,7 @@ CREATE TABLE language(
     japan VARCHAR(1000) DEFAULT NULL
 
 );
-CREATE TABLE locations(yard_name VARCHAR(100));
+CREATE TABLE locations(yard_name VARCHAR(100),status VARCHAR(20));
 CREATE TABLE countries(country_name VARCHAR(100));
 
 INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES
@@ -205,24 +205,24 @@ INSERT INTO vehicle(vehicle_id, vehicle_type,vehicle_name, per_day_80km,excess_m
     ('FGH-1234', 'SUV','Toyata Hilux 4wd Double Cab', 22500,225),
     ('IJK-5678', 'SUV','Terios 4wd', 22500,225);
 
-INSERT INTO locations(yard_name) VALUES
-    ('Arugam Bay town limits only - Arugam Bay town limits only'),
-    ('Bandaranaike International Airport (BIA) - Katunayake, colombo'),
-    ('Colombo - Suburbs - Colombo & Greater Colombo Area, Colombo'),
-    ('Dambulla / Sigiriya town limits - Dambulla / Sigiriya town limits'),
-    ('Dikwella / Tangalle town limits - Dikwella / Tangalle town limits'),
-    ('Ella - Ella, Ella, Uva, Sri Lanka'),
-    ('Galle Unawatuna City Limits - Galle Unawatuna City Limits (Any)'),
-    ('Habarana town limits - Habarana town limits (Any), Habarana'),
-    ('Jaffna Town Limits - Jaffna Town Limits (Any), Jaffna, Northern'),
-    ('Kalpitiya Tourism zone - Kalpitiya Tourism zone (Any), Kalpitiya'),
-    ('Kandy City limits - Kandy City limits (Any), Kandy, Central, Sri Lanka'),
-    ('Main Office - Battaramulla - 50,Ramya Mawatha, sri subuthipura'),
-    ('Mattala MRI International Airport - Mattala / Hambantota'),
-    ('Negambo City Hotels - Negambo City Hotels (Any), Negambo'),
-    ('Nilaveli / Trincomallee town limits - Nilaveli / Trincomallee town limits'),
-    ('Nuwara Eliya - Nuwara Eliya, Nuwara Eliya, Central, Sri Lanka'),
-    ('Polonnaruwa town limits - Polonnaruwa town limits (Any), Polonnaruwa');
+INSERT INTO locations(yard_name,status) VALUES
+    ('Arugam Bay town ','available'),
+    ('Bandaranaike International Airport (BIA) - Katunayake, colombo','available'),
+    ('Colombo - Suburbs - Colombo & Greater Colombo Area, Colombo','available'),
+    ('Dambulla / Sigiriya town limits - Dambulla / Sigiriya town limits','available'),
+    ('Dikwella / Tangalle town limits - Dikwella / Tangalle town limits','available'),
+    ('Ella - Ella, Ella, Uva, Sri Lanka','available'),
+    ('Galle Unawatuna City Limits - Galle Unawatuna City Limits (Any)','available'),
+    ('Habarana town limits - Habarana town limits (Any), Habarana','available'),
+    ('Jaffna Town Limits - Jaffna Town Limits (Any), Jaffna, Northern','available'),
+    ('Kalpitiya Tourism zone - Kalpitiya Tourism zone (Any), Kalpitiya','available'),
+    ('Kandy City limits - Kandy City limits (Any), Kandy, Central, Sri Lanka','available'),
+    ('Main Office - Battaramulla - 50,Ramya Mawatha, sri subuthipura','available'),
+    ('Mattala MRI International Airport - Mattala / Hambantota','available'),
+    ('Negambo City Hotels - Negambo City Hotels (Any), Negambo','available'),
+    ('Nilaveli / Trincomallee town limits - Nilaveli / Trincomallee town limits','available'),
+    ('Nuwara Eliya - Nuwara Eliya, Nuwara Eliya, Central, Sri Lanka','available'),
+    ('Polonnaruwa town limits - Polonnaruwa town limits (Any), Polonnaruwa','available');
 
 INSERT INTO countries (country_name) VALUES
     ('Afghanistan'), ('Albania'), ('Algeria'), ('Andorra'), ('Angola'), ('Antigua and Barbuda'),

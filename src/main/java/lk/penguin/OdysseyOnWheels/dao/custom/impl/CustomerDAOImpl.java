@@ -93,7 +93,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public ArrayList<Customer> search(String text) throws SQLException, ClassNotFoundException {
         ArrayList<Customer> customers=new ArrayList<>();
         ResultSet resultSet;
-        resultSet=SQLUtil.execute("SELECT * FROM customer WHERE SUBSTRING_INDEX(customerName, ' ', -1) LIKE ?;",("%"+text+"%"));
+        resultSet=SQLUtil.execute("SELECT * FROM customer WHERE customerName LIKE ?;","%"+text+"%");
         if(!resultSet.next()){
             resultSet=SQLUtil.execute("SELECT * FROM customer WHERE customerNIC LIKE ?;","%"+text+"%");
         }

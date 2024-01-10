@@ -95,7 +95,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public ArrayList<Employee> search(String text) throws SQLException, ClassNotFoundException {
         ArrayList<Employee> employees=new ArrayList<>();
         ResultSet resultSet;
-        resultSet=SQLUtil.execute("SELECT * FROM employee WHERE SUBSTRING_INDEX(employeeName, ' ', -1) LIKE ?;",("%"+text+"%"));
+        resultSet=SQLUtil.execute("SELECT * FROM employee WHERE employeeName LIKE ?;","%"+text+"%");
         if(!resultSet.next()){
             resultSet=SQLUtil.execute("SELECT * FROM employee WHERE employeeId LIKE ?;","%"+text+"%");
         }
