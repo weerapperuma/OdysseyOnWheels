@@ -10,4 +10,6 @@ public interface VehicleBO extends SuperBO {
     ArrayList<VehicleDTO> loadAllWithoutRented(String startingDay,String endingDay) throws SQLException, ClassNotFoundException;
 
     VehicleDTO get(String id) throws SQLException, ClassNotFoundException;
+
+    ArrayList<VehicleDTO> getAll() throws SQLException, ClassNotFoundException;
 }

@@ -29,4 +29,22 @@ public class VehicleBOImpl implements VehicleBO {
         Vehicle vehicle=vehicleDAO.get(id);
         return new VehicleDTO(vehicle.getVehicleId(),vehicle.getVehicleType(),vehicle.getVehicleName(),vehicle.getPerDay80Km(),vehicle.getExcessMileage(),vehicle.getStatus() );
     }
+
+    @Override
+    public ArrayList<VehicleDTO> getAll() throws SQLException, ClassNotFoundException {
+        ArrayList<Vehicle> vehicles=vehicleDAO.getAll();
+        ArrayList<VehicleDTO>vehicleDTOS=new ArrayList<>();
+        for(Vehicle vehicle:vehicles){
+            VehicleDTO vehicleDTO=new VehicleDTO(
+                    vehicle.getVehicleId(),
+                    vehicle.getVehicleType(),
+                    vehicle.getVehicleName(),
+                    vehicle.getPerDay80Km(),
+                    vehicle.getExcessMileage(),
+                    vehicle.getStatus()
+            );
+            vehicleDTOS.add(vehicleDTO);
+        }
+        return vehicleDTOS;
+    }
 }

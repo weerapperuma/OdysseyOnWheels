@@ -49,8 +49,21 @@ public class VehicleDAOImpl implements VehicleDAO {
     }
 
     @Override
-    public ArrayList getAll() throws SQLException, ClassNotFoundException {
-        return null;
+    public ArrayList<Vehicle> getAll() throws SQLException, ClassNotFoundException {
+        ResultSet resultSet=SQLUtil.execute("SELECT * FROM vehicle");
+        ArrayList<Vehicle> vehicles=new ArrayList<>();
+        while (resultSet.next()){
+            Vehicle vehicle=new Vehicle(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getInt(6)
+            );
+            vehicles.add(vehicle);
+        }
+        return vehicles;
     }
 
     @Override
