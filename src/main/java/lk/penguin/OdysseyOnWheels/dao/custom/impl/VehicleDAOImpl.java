@@ -20,7 +20,8 @@ public class VehicleDAOImpl implements VehicleDAO {
                     resultSet.getString(2),
                     resultSet.getString(3),
                     resultSet.getString(4),
-                    resultSet.getString(5)));
+                    resultSet.getString(5),
+                    resultSet.getInt(6)));
         }
         return vehicles;
     }
@@ -34,7 +35,8 @@ public class VehicleDAOImpl implements VehicleDAO {
                     rst.getString(2),
                     rst.getString(3),
                     rst.getString(4),
-                    rst.getString(5)
+                    rst.getString(5),
+                    rst.getInt(6)
             );
             return vehicle;
         }

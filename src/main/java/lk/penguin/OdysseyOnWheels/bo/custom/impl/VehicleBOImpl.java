@@ -20,13 +20,13 @@ public class VehicleBOImpl implements VehicleBO {
         ArrayList<Vehicle> vehicles= queryDAO.loadAll(startingDay,endingDay);
         ArrayList<VehicleDTO> dtos=new ArrayList<>();
         for(Vehicle vehicle:vehicles){
-            dtos.add(new VehicleDTO(vehicle.getVehicleId(),vehicle.getVehicleType(),vehicle.getVehicleName(),vehicle.getPerDay80Km(),vehicle.getExcessMileage()));
+            dtos.add(new VehicleDTO(vehicle.getVehicleId(),vehicle.getVehicleType(),vehicle.getVehicleName(),vehicle.getPerDay80Km(),vehicle.getExcessMileage(),vehicle.getStatus()));
         }
         return dtos;
     }
     @Override
     public VehicleDTO get(String id) throws SQLException, ClassNotFoundException {
         Vehicle vehicle=vehicleDAO.get(id);
-        return new VehicleDTO(vehicle.getVehicleId(),vehicle.getVehicleType(),vehicle.getVehicleName(),vehicle.getPerDay80Km(),vehicle.getExcessMileage() );
+        return new VehicleDTO(vehicle.getVehicleId(),vehicle.getVehicleType(),vehicle.getVehicleName(),vehicle.getPerDay80Km(),vehicle.getExcessMileage(),vehicle.getStatus() );
     }
 }
