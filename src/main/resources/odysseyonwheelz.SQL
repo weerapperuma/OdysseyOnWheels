@@ -66,7 +66,8 @@ CREATE TABLE vehicle (
     vehicle_type VARCHAR(50),
     vehicle_name VARCHAR(100),
     per_day_80km DOUBLE,
-    excess_mileage DOUBLE
+    excess_mileage DOUBLE,
+    status INT(2)
 );
 CREATE TABLE rent_detail (
     primaryID INT AUTO_INCREMENT PRIMARY KEY ,
@@ -178,32 +179,32 @@ VALUES
     ('PP901234', 'Samuel Kofi', 'Ghana', 'samuel.kofi@example.com'),
     ('QQ567890', 'Sophie Abimbola', 'Kenya', 'sophie.abimbola@example.com');
 
-INSERT INTO vehicle(vehicle_id, vehicle_type,vehicle_name, per_day_80km,excess_mileage) VALUES
-    ('QA-5678', 'normal','Suzuki Alto',12000,120 ),
-    ('AAI-5678', 'normal','Suzuki Celerio', 13500,135),
-    ('BAY-3489', 'normal','Perodua Axia',13500,135),
-    ('ABC-1234', 'normal','Perodua Bezza Prime Sedan(2017)',13500,135),
-    ('XYZ-5678', 'normal','Toyota Vitz',13500,135),
-    ('DEF-9876', 'luxury','Mercedes Benz S-Class AMG (Long Wheel Base)', 65000,650),
-    ('GHI-5432', 'luxury','BMW 320-White', 29500,295),
-    ('JKL-9876', 'luxury','CHRYSLER 300 C - White (Rolls Royce Facelift)', 34500,345),
-    ('MNO-1234', 'luxury','Mercedes Benz C 350 - 2017', 34500,345),
-    ('PQR-5678', 'luxury','Jaguar XF 3.0 V6', 39500,395),
-    ('STU-9876', 'luxury','Toyota Camry', 24500,245),
-    ('VWX-1234', 'MVP','Toyota Alphard 6 Passenger',34500,345),
-    ('YZA-5678', 'MVP','Mercedes Vito Luxury 5 + 2 Passenger',29500,295),
-    ('BCD-9876', 'luxury van', 'Toyota Regius 9 Seater - Dual A/C New Petrol',17500,175),
-    ('EFG-1234', 'luxury van', 'Toyota Regius 9 Seater - Dual A/c',16500,165),
-    ('HIJ-5678', 'luxury van', 'Toyota Hiace Commuter 09 Seater - Line A/c',17500,175),
-    ('KLM-9876', 'luxury van', 'Toyota Hiace Commuter 15 Seater - Line A/c',17500,175),
-    ('NOP-1234', 'luxury van', 'Toyota Grand Cabin 13 Seater - Line A/c',18500,185),
-    ('QRS-5678', 'SUV','Toyota Land Cruiser Prado TRJ 150', 34500,345),
-    ('TUV-9876', 'SUV','Mitsubishi Montero Sport 2018', 29500,295),
-    ('WXY-1234', 'SUV','Nissan X Trail (diesel)', 26000,265),
-    ('ZAB-5678', 'SUV','Toyota Rush 2018', 26500,265),
-    ('CDE-9876', 'SUV','Suzuki Vitara', 22500,225),
-    ('FGH-1234', 'SUV','Toyata Hilux 4wd Double Cab', 22500,225),
-    ('IJK-5678', 'SUV','Terios 4wd', 22500,225);
+INSERT INTO vehicle(vehicle_id, vehicle_type,vehicle_name, per_day_80km,excess_mileage,status) VALUES
+    ('QA-5678', 'normal','Suzuki Alto',12000,120,1 ),
+    ('AAI-5678', 'normal','Suzuki Celerio', 13500,135,1),
+    ('BAY-3489', 'normal','Perodua Axia',13500,135,1),
+    ('ABC-1234', 'normal','Perodua Bezza Prime Sedan(2017)',13500,135,1),
+    ('XYZ-5678', 'normal','Toyota Vitz',13500,135,1),
+    ('DEF-9876', 'luxury','Mercedes Benz S-Class AMG (Long Wheel Base)', 65000,650,1),
+    ('GHI-5432', 'luxury','BMW 320-White', 29500,295,1),
+    ('JKL-9876', 'luxury','CHRYSLER 300 C - White (Rolls Royce Facelift)', 34500,345,1),
+    ('MNO-1234', 'luxury','Mercedes Benz C 350 - 2017', 34500,345,1),
+    ('PQR-5678', 'luxury','Jaguar XF 3.0 V6', 39500,395,1),
+    ('STU-9876', 'luxury','Toyota Camry', 24500,245,1),
+    ('VWX-1234', 'MVP','Toyota Alphard 6 Passenger',34500,345,1),
+    ('YZA-5678', 'MVP','Mercedes Vito Luxury 5 + 2 Passenger',29500,295,1),
+    ('BCD-9876', 'luxury van', 'Toyota Regius 9 Seater - Dual A/C New Petrol',17500,175,1),
+    ('EFG-1234', 'luxury van', 'Toyota Regius 9 Seater - Dual A/c',16500,165,1),
+    ('HIJ-5678', 'luxury van', 'Toyota Hiace Commuter 09 Seater - Line A/c',17500,175,1),
+    ('KLM-9876', 'luxury van', 'Toyota Hiace Commuter 15 Seater - Line A/c',17500,175,1),
+    ('NOP-1234', 'luxury van', 'Toyota Grand Cabin 13 Seater - Line A/c',18500,185,1),
+    ('QRS-5678', 'SUV','Toyota Land Cruiser Prado TRJ 150', 34500,345,1),
+    ('TUV-9876', 'SUV','Mitsubishi Montero Sport 2018', 29500,295,1),
+    ('WXY-1234', 'SUV','Nissan X Trail (diesel)', 26000,265,1),
+    ('ZAB-5678', 'SUV','Toyota Rush 2018', 26500,265,1),
+    ('CDE-9876', 'SUV','Suzuki Vitara', 22500,225,1),
+    ('FGH-1234', 'SUV','Toyata Hilux 4wd Double Cab', 22500,225,1),
+    ('IJK-5678', 'SUV','Terios 4wd', 22500,225,1);
 
 INSERT INTO locations(yard_name,status) VALUES
     ('Arugam Bay town ','Available'),

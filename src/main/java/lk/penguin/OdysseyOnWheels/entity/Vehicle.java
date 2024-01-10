@@ -13,4 +13,5 @@ public class Vehicle {
     private String VehicleName;
     private String perDay80Km;
     private String excessMileage;
+    private Integer status;
 }

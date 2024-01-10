@@ -13,4 +13,5 @@ public class VehicleDTO {
     private String VehicleName;
     private String perDay80Km;
     private String excessMileage;
+    private Integer status;
 }
