@@ -50,8 +50,8 @@ public class VehicleRawFormController {
         txtPerDayCostFx.setText(dto.getPerDay80Km());
         txtAccessMileage.setText(dto.getExcessMileage());
 
-        List<Integer> statusValues= Arrays.asList(1,0);
-        ObservableList<Integer> statusList= FXCollections.observableList(statusValues);
+        ObservableList<Integer> statusList= FXCollections.observableArrayList(1,0);
+        cmbAvailableFx.setItems(statusList);
 
         if(statusList.contains(dto.getStatus())){
             cmbAvailableFx.setValue(dto.getStatus());

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -35,27 +36,35 @@
                <Font name="System Bold" size="14.0" />
             </font>
          </Label>
-            <Label layoutX="92.0" layoutY="6.0" prefHeight="38.0" prefWidth="118.0" text="TYPE" textFill="WHITE">
+            <Label layoutX="102.0" layoutY="6.0" prefHeight="38.0" prefWidth="118.0" text="TYPE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="231.0" layoutY="5.0" prefHeight="38.0" prefWidth="397.0" text="VEHICLE NAME" textFill="WHITE">
+            <Label layoutX="241.0" layoutY="5.0" prefHeight="38.0" prefWidth="397.0" text="VEHICLE NAME" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="649.0" layoutY="6.0" prefHeight="38.0" prefWidth="118.0" text="PER DAY COST" textFill="WHITE">
+            <Label layoutX="662.0" layoutY="6.0" prefHeight="38.0" prefWidth="118.0" text="PER DAY COST" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="776.0" layoutY="4.0" prefHeight="38.0" prefWidth="118.0" text="EXCESS MILEAGE" textFill="WHITE">
+            <Label layoutX="796.0" layoutY="4.0" prefHeight="38.0" prefWidth="118.0" text="EXCESS MILEAGE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
       </children>
       </Pane>
+      <JFXButton layoutX="1086.0" layoutY="14.0" onAction="#btnExitOnAction" text="">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icon/icons8-dot-50.png" />
+               </image></ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

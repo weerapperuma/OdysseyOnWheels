@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.VehicleBO;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
+import lk.penguin.OdysseyOnWheels.util.Navigation;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,6 +25,10 @@ public class VehicleFormController {
 
     VehicleBO vehicleBO=(VehicleBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.VEHICLE);
 
+    @FXML
+    void btnExitOnAction(ActionEvent event) {
+        Navigation.closePopup();
+    }
     @FXML
     void txtVehicleOnAction(ActionEvent event) {
 
