@@ -66,7 +66,7 @@ public class AdminFormInterfaceController implements Initializable {
 
     @FXML
     void btnVehicleOnAction(ActionEvent event) throws IOException {
-        Navigation.popupPaging(adminUseCasesLoadPane,"vehicleForm.fxml");
+        Navigation.switchPaging(adminUseCasesLoadPane,"vehicleForm.fxml");
     }
     @FXML
     void btnLocationsOnAction(ActionEvent event) throws IOException {

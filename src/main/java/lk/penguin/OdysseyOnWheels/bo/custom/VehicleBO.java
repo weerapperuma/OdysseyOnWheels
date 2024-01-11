@@ -20,4 +20,6 @@ public interface VehicleBO extends SuperBO {
     boolean ifExists(String text) throws SQLException, ClassNotFoundException;
 
     ArrayList<VehicleDTO> search(String text) throws SQLException, ClassNotFoundException;
+
+    boolean save(VehicleDTO vehicleDTO) throws SQLException, ClassNotFoundException;
 }
