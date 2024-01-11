@@ -12,6 +12,7 @@ import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.VehicleBO;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
+import java.sql.SQLException;
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
@@ -53,8 +54,8 @@ public class VehicleRawFormController {
         lblVehicleIDFx.setText(dto.getVehicleId());
         txtTypeFx.setText(dto.getVehicleType());
         txtVehicleNameFx.setText(dto.getVehicleName());
-        txtPerDayCostFx.setText(dto.getPerDay80Km());
-        txtAccessMileage.setText(dto.getExcessMileage());
+        txtPerDayCostFx.setText(Double.toString(dto.getPerDay80Km()));
+        txtAccessMileage.setText(Double.toString(dto.getExcessMileage()));
 
         ObservableList<Integer> statusList= FXCollections.observableArrayList(1,0);
         cmbAvailableFx.setItems(statusList);
@@ -66,14 +67,16 @@ public class VehicleRawFormController {
         }
     }
     @FXML
-    void cmbStatusOnAction(ActionEvent event) {
+    void cmbStatusOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         txtTypeFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
         txtVehicleNameFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
         txtPerDayCostFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
         txtAccessMileage.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
         System.out.println(isValidated());
         if(isValidated()){
-            System.out.println("elakiri");
+            if(update()){
+                System.out.println("helllloo");
+            }
         }
         setCustomEditable(false);
 
@@ -111,13 +114,14 @@ public class VehicleRawFormController {
         txtPerDayCostFx.setEditable(x);
         txtAccessMileage.setEditable(x);
     }
-    private boolean update(){
+    private boolean update() throws SQLException, ClassNotFoundException {
         String prc=txtPerDayCostFx.getText();
         return vehicleBO.update(new VehicleDTO(
                 lblVehicleIDFx.getText(),
                 txtTypeFx.getText(),
                 txtVehicleNameFx.getText(),
                 Double.parseDouble(prc),
-                txtAccessMileage.getText()));
+                Double.parseDouble(txtAccessMileage.getText()),
+                cmbAvailableFx.getValue()));
     }
 }

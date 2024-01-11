@@ -58,7 +58,7 @@ public class VehcileTransactionTableRawController {
         lblVehiId.setText(dto.getVehicleId());
         lblVehiType.setText(dto.getVehicleType());
         lblVehiName.setText(dto.getVehicleName());
-        lblPerDayCost.setText(dto.getPerDay80Km());
-        lblExcessMilageCost.setText(dto.getExcessMileage());
+        lblPerDayCost.setText(Double.toString(dto.getPerDay80Km()));
+        lblExcessMilageCost.setText(Double.toString(dto.getExcessMileage()));
     }
 }

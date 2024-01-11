@@ -12,4 +12,6 @@ public interface VehicleBO extends SuperBO {
     VehicleDTO get(String id) throws SQLException, ClassNotFoundException;
 
     ArrayList<VehicleDTO> getAll() throws SQLException, ClassNotFoundException;
+
+    boolean update(VehicleDTO vehicleDTO) throws SQLException, ClassNotFoundException;
 }
