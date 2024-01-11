@@ -125,7 +125,7 @@ CREATE TABLE locations(nb int primary key auto_increment,yard_name VARCHAR(100),
 CREATE TABLE countries(country_name VARCHAR(100));
 
 INSERT INTO user (userId, userName, userNIC, userMobile, userEmail,userPassword) VALUES
-    ('U001','PENGUIN','960036789v','0764532478','penguingotham@gmail.com','123'),
+    ('U001','PENGUIN','960036789v','0764532478','sdweerapperuma@gmail.com','123'),
     ('U002','RIDDLER','960089769v','0767834971','RIDDLER34gotham@gmail.com','456');
 
 INSERT INTO employee (employeeId, employeeName, empEmail, empNIC, empPosition, empAddress, empContact)

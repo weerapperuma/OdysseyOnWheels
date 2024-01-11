@@ -10,8 +10,13 @@ import java.util.ArrayList;
 
 public class UserDAOImpl implements UserDAO {
     @Override
-    public boolean update(User dto) throws SQLException, ClassNotFoundException {
-        return false;
+    public boolean update(User entity) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("UPDATE user SET userName=?,userNIC=?,userMobile=?,userEmail=?,userPassword=? WHERE userId=?",
+                entity.getUserName(),
+                entity.getUserNIC(),
+                entity.getUserMobile(),
+                entity.getUserEmail(),
+                entity.getUserPassword());
     }
     @Override
 
