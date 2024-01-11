@@ -108,7 +108,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </PasswordField>
-      <Hyperlink layoutX="747.0" layoutY="580.0" onAction="#forgetPasswordOnAction" prefHeight="24.0" prefWidth="326.0" text="Forget Password?" textFill="#ff5024">
+      <Hyperlink fx:id="hyperLinkForget" layoutX="751.0" layoutY="581.0" onAction="#forgetPasswordOnAction" prefHeight="24.0" prefWidth="236.0" text="Forget Password ? " textFill="#ff7300">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>

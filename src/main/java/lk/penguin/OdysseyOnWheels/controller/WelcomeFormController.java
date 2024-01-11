@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -27,6 +28,8 @@ public class WelcomeFormController implements Initializable {
 
     @FXML
     private Pane weclcomeNicFxId;
+    @FXML
+    private Hyperlink hyperLinkForget;
 
     @FXML
     private Label lblTitle;
@@ -59,6 +62,8 @@ public class WelcomeFormController implements Initializable {
                         boolean isTrue = welcomeBO.chekCredentials(tempUserName, pwPasswordField.getText());
                         if (isTrue) {
                             Navigation.switchNavigation( "adminFormInterface.fxml",event);
+                        }else{
+                            hyperLinkForget.setVisible(true);
                         }
                     }
                 } catch (IOException | SQLException | ClassNotFoundException e) {
@@ -79,8 +84,9 @@ public class WelcomeFormController implements Initializable {
     }
 
     @FXML
-    void forgetPasswordOnAction(ActionEvent event) {
-
+    void forgetPasswordOnAction(ActionEvent event) throws IOException {
+        passportId=txtPassportId.getText();
+        Navigation.popupPaging(weclcomeNicFxId,"forgetPasswordForm.fxml");
     }
     @FXML
     void changeToFrenchNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
@@ -137,6 +143,7 @@ public class WelcomeFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pwPasswordField.setVisible(false);
+        hyperLinkForget.setVisible(false);
         txtPassportId.setOnAction(event -> btntxtRent.fire());
 
         try {
