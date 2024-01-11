@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="832.0" prefWidth="1518.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.BackgroundFormController">
+<AnchorPane prefHeight="832.0" prefWidth="1518.0" style="-fx-background-color: #004953;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.BackgroundFormController">
    <children>
       <AnchorPane fx:id="pagingPane" layoutX="42.0" layoutY="33.0" prefHeight="774.0" prefWidth="1442.0" />
       <Label fx:id="lblDateAndTime" layoutX="715.0" layoutY="3.0" prefHeight="28.0" prefWidth="292.0" text="Label">

@@ -23,7 +23,6 @@ public class BackgroundFormController implements Initializable {
     public AnchorPane pagingPane;
     @FXML
     private Label lblDateAndTime;
-    public static int transfer=0;
     private static BackgroundFormController controller;
     public BackgroundFormController(){
         controller=this;
@@ -37,11 +36,7 @@ public class BackgroundFormController implements Initializable {
             String currentDateTime = dateTimeFormat.format(new Date());
             lblDateAndTime.setText(currentDateTime);
         }));
-
-        // Set the timeline to repeat indefinitely
         clockTimeline.setCycleCount(Timeline.INDEFINITE);
-
-        // Start the timeline
         clockTimeline.play();
     }
 
@@ -49,24 +44,10 @@ public class BackgroundFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         startClock();
         try {
-            if(BackgroundFormController.transfer==1){
-                goToRent();
-                transfer=0;
-            }else{
-                goTOAdmin();
-                transfer=0;
-            }
-
-
+            Navigation.switchPaging(pagingPane,"rentalDashBoardForm.fxml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-    public void goTOAdmin() throws IOException {
-        Navigation.switchPaging(pagingPane,"dashBoard.fxml");
-    }
-    public void goToRent() throws IOException {
-        Navigation.switchPaging(pagingPane,"rentalDashBoardForm.fxml");
     }
     @FXML
     void dashCloseButtonOnAction(ActionEvent event) {

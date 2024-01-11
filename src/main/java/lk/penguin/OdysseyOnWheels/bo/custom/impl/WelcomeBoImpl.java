@@ -8,6 +8,7 @@ import lk.penguin.OdysseyOnWheels.dao.custom.LanguageDAO;
 import lk.penguin.OdysseyOnWheels.bo.custom.WelcomeBO;
 import lk.penguin.OdysseyOnWheels.dao.custom.UserDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.LanguageDAOImpl;
+import lk.penguin.OdysseyOnWheels.entity.User;
 
 import java.sql.SQLException;
 
@@ -34,7 +35,8 @@ public class WelcomeBoImpl implements WelcomeBO {
 
     @Override
     public boolean chekCredentials(String userName,String text) throws SQLException, ClassNotFoundException {
-        return userDAO.isCheked(userName,text);
+        User user=userDAO.get(userName);
+        return (text.equals(user.getUserPassword()));
     }
 
 }

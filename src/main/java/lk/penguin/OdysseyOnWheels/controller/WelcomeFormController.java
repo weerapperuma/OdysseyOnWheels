@@ -46,7 +46,6 @@ public class WelcomeFormController implements Initializable {
     void btnRentOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         if(welcomeBO.ifExistsCustomer(txtPassportId.getText())){
             this.passportId=txtPassportId.getText();
-            BackgroundFormController.transfer=1;
             Navigation.switchNavigation( "backgroundForm.fxml",event);
 
         }
@@ -72,12 +71,17 @@ public class WelcomeFormController implements Initializable {
         }
 
     }
+
     @FXML
     void btnCloseOnAction(ActionEvent event) {
         Platform.exit();
         System.exit(0);
     }
 
+    @FXML
+    void forgetPasswordOnAction(ActionEvent event) {
+
+    }
     @FXML
     void changeToFrenchNIC(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         WelcomeFormController.language="french";
