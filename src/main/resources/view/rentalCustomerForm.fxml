@@ -129,9 +129,18 @@
          </children></Pane>
       <Pane fx:id="paneWhyChosseUs" layoutY="623.0" prefHeight="197.0" prefWidth="1424.0" />
       <Pane fx:id="tableLoadPane" layoutY="821.0" prefHeight="454.0" prefWidth="1424.0" />
-      <Pane layoutY="1275.0" prefHeight="323.0" prefWidth="856.0">
+      <Pane layoutX="1.0" layoutY="1339.0" prefHeight="204.0" prefWidth="934.0">
          <children>
-            <JFXTextArea layoutX="6.0" layoutY="3.0" prefHeight="323.0" prefWidth="856.0" text="EMBARK ON AN UNBEATABLE SELF-DRIVE JOURNEY IN SRI LANKA WITH KINGS RENT-A-CAR&#10;Experience the freedom of travelling across Sri Lanka with the most affordable self-drive car rental options in the island. Plan your trip with our flexible rental plans and hire vehicles either on a short-term or a long-term basis.&#10;&#10;With Kings Rent a Car’s comprehensively insured fleet of well-maintained vehicles you can enjoy a wide range of choices. Select from spacious luxury sedans to comfortable fuel-efficient compact cars, including crossovers, MPVs and 4WD SUVs that fit your budget neatly.&#10;&#10;For your convenience we offer vehicle pick-up and drop-off services in all the major cities across the island including Bandaranaike International Airport (BIA), Mattala Rajapaksa International Airport (MRIA), surrounding airport hotels, Arugambay, Negombo, Colombo, Jaffna, Kandy, Kalpitiya, Matara, Sigiriya, Polonnaruwa, Tangalle and Trincomalee.&#10;&#10;Make the most of your travel experience in Sri Lanka with our customer-friendly approach that meets service excellence with professionalism." />
+            <JFXTextArea layoutX="65.0" layoutY="11.0" prefHeight="176.0" prefWidth="791.0" text="EMBARK ON AN UNBEATABLE SELF-DRIVE JOURNEY IN SRI LANKA WITH KINGS RENT-A-CAR&#10;Experience the freedom of travelling across Sri Lanka with the most affordable self-drive car rental options in the island. Plan your trip with our flexible rental plans and hire vehicles either on a short-term or a long-term basis.&#10;&#10;With Kings Rent a Car’s comprehensively insured fleet of well-maintained vehicles you can enjoy a wide range of choices. Select from spacious luxury sedans to comfortable fuel-efficient compact cars, including crossovers, MPVs and 4WD SUVs that fit your budget neatly.&#10;&#10;For your convenience we offer vehicle pick-up and drop-off services in all the major cities across the island including Bandaranaike International Airport (BIA), Mattala Rajapaksa International Airport (MRIA), surrounding airport hotels, Arugambay, Negombo, Colombo, Jaffna, Kandy, Kalpitiya, Matara, Sigiriya, Polonnaruwa, Tangalle and Trincomalee.&#10;&#10;Make the most of your travel experience in Sri Lanka with our customer-friendly approach that meets service excellence with professionalism." />
+         </children>
+      </Pane>
+      <Pane layoutY="1547.0" prefHeight="54.0" prefWidth="1424.0" style="-fx-background-color: #2f4f4f;">
+         <children>
+            <Label alignment="CENTER" layoutX="402.0" layoutY="15.0" prefHeight="20.0" prefWidth="572.0" text="Copyright © 2021 OdysseyOnWheelz, Sri Lanka. All rights reserved." textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

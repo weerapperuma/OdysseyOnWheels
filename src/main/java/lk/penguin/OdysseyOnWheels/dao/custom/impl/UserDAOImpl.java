@@ -10,26 +10,6 @@ import java.util.ArrayList;
 
 public class UserDAOImpl implements UserDAO {
     @Override
-    public boolean isCheked(String id,String txtPassword) throws SQLException, ClassNotFoundException {
-        ResultSet rst =SQLUtil.execute("SELECT userPassword FROM user WHERE userName=?",id);
-
-        if(rst.next()){
-            String pw=rst.getString("userPassword");
-            if(pw.equals(txtPassword)){
-                return true;
-            }
-            else {
-                new Alert(Alert.AlertType.ERROR,"Invalid Password").show();
-            }
-        }
-        else{
-            new Alert(Alert.AlertType.ERROR,"Invalid User Name").show();
-        }
-        return false;
-    }
-
-
-    @Override
     public boolean update(User dto) throws SQLException, ClassNotFoundException {
         return false;
     }
@@ -47,7 +27,18 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User get(String id) throws SQLException, ClassNotFoundException {
-        return null;
+        ResultSet resultSet=SQLUtil.execute("SELECT * FROM user WHERE userName=?",id);
+        while (resultSet.next()){
+            User user=new User(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getInt(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6)
+            );
+            return user;
+        }return null;
     }
 
     @Override
