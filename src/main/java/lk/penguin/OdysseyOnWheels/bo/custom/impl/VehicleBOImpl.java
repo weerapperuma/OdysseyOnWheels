@@ -1,6 +1,7 @@
 package lk.penguin.OdysseyOnWheels.bo.custom.impl;
 
 import lk.penguin.OdysseyOnWheels.bo.custom.VehicleBO;
+import lk.penguin.OdysseyOnWheels.dao.DAOFactory;
 import lk.penguin.OdysseyOnWheels.dao.custom.QueryDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.VehicleDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.QueryDAOImpl;
@@ -13,8 +14,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class VehicleBOImpl implements VehicleBO {
-    VehicleDAO vehicleDAO=new VehicleDAOImpl();
-    QueryDAO queryDAO=new QueryDAOImpl();
+    VehicleDAO vehicleDAO=(VehicleDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.VEHICLE);
+    QueryDAO queryDAO=(QueryDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.QUERY);
 
     @Override
     public ArrayList<VehicleDTO> loadAllWithoutRented(String startingDay,String endingDay) throws SQLException, ClassNotFoundException {
@@ -64,5 +65,29 @@ public class VehicleBOImpl implements VehicleBO {
     @Override
     public boolean delete(String text) throws SQLException, ClassNotFoundException {
         return vehicleDAO.delete(text);
+    }
+
+    @Override
+    public boolean ifExists(String text) throws SQLException, ClassNotFoundException {
+        return vehicleDAO.ifExists(text);
+    }
+
+    @Override
+    public ArrayList<VehicleDTO> search(String text) throws SQLException, ClassNotFoundException {
+        ArrayList<Vehicle> vehicles=vehicleDAO.search(text);
+
+        ArrayList<VehicleDTO> vehicleDTOS=new ArrayList<>();
+        for(Vehicle vehicle:vehicles){
+            VehicleDTO vehicleDTO=new VehicleDTO(
+                    vehicle.getVehicleId(),
+                    vehicle.getVehicleType(),
+                    vehicle.getVehicleName(),
+                    vehicle.getPerDay80Km(),
+                    vehicle.getPerDay80Km(),
+                    vehicle.getStatus()
+            );
+            vehicleDTOS.add(vehicleDTO);
+        }
+        return vehicleDTOS;
     }
 }

@@ -24,21 +24,35 @@ public class VehicleFormController {
     private VBox vboxMainContainer;
 
     VehicleBO vehicleBO=(VehicleBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.VEHICLE);
+    ArrayList<VehicleDTO> vehicleDTOS=null;
 
     @FXML
     void btnExitOnAction(ActionEvent event) {
         Navigation.closePopup();
     }
     @FXML
-    void txtVehicleOnAction(ActionEvent event) {
+    void txtVehicleOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+        if(txtVehicleSearchFx.getLength()!=0){
+            if(vehicleBO.ifExists(txtVehicleSearchFx.getText())){
+                vboxMainContainer.getChildren().clear();
+                vehicleDTOS=vehicleBO.search(txtVehicleSearchFx.getText());
+                createRawLoadPane();
+            }
+        }
+        else {
+            txtVehicleSearchFx.clear();
+            vehicleDTOS=vehicleBO.getAll();
+            createRawLoadPane();
+        }
 
     }
     public void initialize() throws SQLException, IOException, ClassNotFoundException {
+        vehicleDTOS=vehicleBO.getAll();
         createRawLoadPane();
     }
 
     private void createRawLoadPane() throws SQLException, ClassNotFoundException, IOException {
-        ArrayList<VehicleDTO> vehicleDTOS=vehicleBO.getAll();
+
         for(VehicleDTO dto:vehicleDTOS){
             FXMLLoader loader=new FXMLLoader(VehicleFormController.class.getResource("/view/vehicleRawForm.fxml"));
             Parent root=loader.load();

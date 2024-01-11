@@ -16,4 +16,8 @@ public interface VehicleBO extends SuperBO {
     boolean update(VehicleDTO vehicleDTO) throws SQLException, ClassNotFoundException;
 
     boolean delete(String text) throws SQLException, ClassNotFoundException;
+
+    boolean ifExists(String text) throws SQLException, ClassNotFoundException;
+
+    ArrayList<VehicleDTO> search(String text) throws SQLException, ClassNotFoundException;
 }

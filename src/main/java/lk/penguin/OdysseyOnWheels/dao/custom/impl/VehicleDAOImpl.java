@@ -2,6 +2,7 @@ package lk.penguin.OdysseyOnWheels.dao.custom.impl;
 
 import javafx.scene.control.Alert;
 import lk.penguin.OdysseyOnWheels.dao.custom.VehicleDAO;
+import lk.penguin.OdysseyOnWheels.entity.Employee;
 import lk.penguin.OdysseyOnWheels.entity.Vehicle;
 import lk.penguin.OdysseyOnWheels.util.SQLUtil;
 
@@ -90,8 +91,22 @@ public class VehicleDAOImpl implements VehicleDAO {
     }
 
     @Override
-    public ArrayList search(String text) throws SQLException, ClassNotFoundException {
-        return null;
+    public ArrayList<Vehicle> search(String text) throws SQLException, ClassNotFoundException {
+        ArrayList<Vehicle> vehicles=new ArrayList<>();
+
+        ResultSet resultSet=SQLUtil.execute("SELECT * FROM vehicle WHERE vehicle_id=?",text);
+        while (resultSet.next()){
+            Vehicle vehicle=new Vehicle(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getDouble(4),
+                    resultSet.getDouble(5),
+                    resultSet.getInt(6)
+            );
+            vehicles.add(vehicle);
+        }
+        return vehicles;
     }
 
 
