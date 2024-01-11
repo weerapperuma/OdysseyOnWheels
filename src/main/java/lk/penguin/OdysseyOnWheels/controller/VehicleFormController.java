@@ -46,6 +46,7 @@ public class VehicleFormController {
 
             vehicleRawFormController.setData(dto);
 
+
             vboxMainContainer.getChildren().add(root);
         }
     }

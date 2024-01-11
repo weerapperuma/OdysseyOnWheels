@@ -7,6 +7,7 @@ import lk.penguin.OdysseyOnWheels.dao.custom.impl.QueryDAOImpl;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.VehicleDAOImpl;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 import lk.penguin.OdysseyOnWheels.entity.Vehicle;
+import lk.penguin.OdysseyOnWheels.util.SQLUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -58,5 +59,10 @@ public class VehicleBOImpl implements VehicleBO {
                 vehicleDTO.getExcessMileage(),
                 vehicleDTO.getStatus()
         ));
+    }
+
+    @Override
+    public boolean delete(String text) throws SQLException, ClassNotFoundException {
+        return vehicleDAO.delete(text);
     }
 }

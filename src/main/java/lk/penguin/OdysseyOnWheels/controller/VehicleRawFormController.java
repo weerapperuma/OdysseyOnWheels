@@ -11,7 +11,9 @@ import javafx.scene.control.TextField;
 import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.VehicleBO;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
+import lk.penguin.OdysseyOnWheels.util.Navigation;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.SQLOutput;
 import java.util.Arrays;
@@ -41,8 +43,10 @@ public class VehicleRawFormController {
     VehicleBO vehicleBO=(VehicleBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.VEHICLE);
 
     @FXML
-    void deleteOnAction(ActionEvent event) {
-
+    void deleteOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
+        if(vehicleBO.delete(lblVehicleIDFx.getText())){
+            System.out.println("done");
+        }
     }
 
     @FXML
@@ -68,17 +72,7 @@ public class VehicleRawFormController {
     }
     @FXML
     void cmbStatusOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        txtTypeFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
-        txtVehicleNameFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
-        txtPerDayCostFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
-        txtAccessMileage.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
-        System.out.println(isValidated());
-        if(isValidated()){
-            if(update()){
-                System.out.println("helllloo");
-            }
-        }
-        setCustomEditable(false);
+        setForUpdate();
 
     }
 
@@ -123,5 +117,34 @@ public class VehicleRawFormController {
                 Double.parseDouble(prc),
                 Double.parseDouble(txtAccessMileage.getText()),
                 cmbAvailableFx.getValue()));
+    }
+    private void setForUpdate() throws SQLException, ClassNotFoundException {
+        txtTypeFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
+        txtVehicleNameFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
+        txtPerDayCostFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
+        txtAccessMileage.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
+        if(isValidated()){
+            update();
+        }
+        setCustomEditable(false);
+    }
+    @FXML
+    void txtExcessMileageOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        setForUpdate();
+    }
+
+    @FXML
+    void txtPerDayCostOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        setForUpdate();
+    }
+
+    @FXML
+    void txtVehicleNameOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        setForUpdate();
+    }
+
+    @FXML
+    void txtVehicleTypeOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        setForUpdate();
     }
 }
