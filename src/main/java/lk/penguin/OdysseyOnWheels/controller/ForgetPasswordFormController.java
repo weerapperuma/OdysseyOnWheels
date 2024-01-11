@@ -31,21 +31,17 @@ public class ForgetPasswordFormController {
     private TextField txtOtpFx;
 
     ForgetPasswordBO forgetPasswordBO=(ForgetPasswordBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.FORGET);
+    public static String newOtp=null;
     @FXML
     void ResetPasswordOnAction(ActionEvent event) throws SQLException, MessagingException, ClassNotFoundException {
         newPasswordFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
         confirmPasswordFx.setStyle("-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14;");
         btnCloseForgotForm.setText("*");
-        if(newPasswordFx.getText()==confirmPasswordFx.getText()){
-            String otp=forgetPasswordBO.getOTP();
-            lblOtpFx.setVisible(true);
+        if(newPasswordFx.getText().equals(confirmPasswordFx.getText())){
+            newOtp=forgetPasswordBO.getOTP();
+            System.out.println(newOtp);
             txtOtpFx.setVisible(true);
-            if(chekOtp(otp)){
-                if(forgetPasswordBO.update(WelcomeFormController.passportId,newPasswordFx.getText())){
-                    Navigation.closePopup();
-                }
-
-            }
+            lblOtpFx.setVisible(true);
         }
         else{
             newPasswordFx.setStyle("-fx-text-fill: red;");
@@ -54,19 +50,19 @@ public class ForgetPasswordFormController {
         }
     }
 
-    private boolean chekOtp(String otp) {
-
-        return (otp.equals(txtOtpFx.getText()));
-    }
-
     @FXML
     void btnCloseForgotFormOnAction(ActionEvent event) {
         Navigation.closePopup();
     }
 
     @FXML
-    void txtOtpOnAction(ActionEvent event) {
-
+    void txtOtpOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        if(newOtp.equals(txtOtpFx.getText())){
+            System.out.println("otp set");
+            if(forgetPasswordBO.update(WelcomeFormController.passportId,newPasswordFx.getText())){
+                Navigation.closePopup();
+            }
+        }
     }
     public void initialize(){
         lblOtpFx.setVisible(false);
