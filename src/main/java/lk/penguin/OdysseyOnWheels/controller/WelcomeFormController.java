@@ -51,7 +51,6 @@ public class WelcomeFormController implements Initializable {
 
         }
         if(welcomeBO.ifExistsUser(txtPassportId.getText())){
-            System.out.println("dan yamu");
             String tempUserName=txtPassportId.getText();
             pwPasswordField.setVisible(true);
 
