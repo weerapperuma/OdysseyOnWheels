@@ -39,7 +39,6 @@ public class ForgetPasswordFormController {
         btnCloseForgotForm.setText("*");
         if(newPasswordFx.getText().equals(confirmPasswordFx.getText())){
             newOtp=forgetPasswordBO.getOTP();
-            System.out.println(newOtp);
             txtOtpFx.setVisible(true);
             lblOtpFx.setVisible(true);
         }
@@ -58,8 +57,11 @@ public class ForgetPasswordFormController {
     @FXML
     void txtOtpOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         if(newOtp.equals(txtOtpFx.getText())){
-            System.out.println("otp set");
-            if(forgetPasswordBO.update(WelcomeFormController.passportId,newPasswordFx.getText())){
+            boolean updated=forgetPasswordBO.update(WelcomeFormController.passportId,newPasswordFx.getText());
+
+            System.out.println("DAO;"+updated);
+            if(updated){
+                System.out.println("set unaaaaaa");
                 Navigation.closePopup();
             }
         }

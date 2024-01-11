@@ -11,12 +11,14 @@ import java.util.ArrayList;
 public class UserDAOImpl implements UserDAO {
     @Override
     public boolean update(User entity) throws SQLException, ClassNotFoundException {
+        System.out.println(entity.getUserName()+"/n"+entity.getUserNIC()+"/n"+entity.getUserMobile()+" "+entity.getUserEmail()+" "+entity.getUserPassword()+" "+entity.getUserId());
         return SQLUtil.execute("UPDATE user SET userName=?,userNIC=?,userMobile=?,userEmail=?,userPassword=? WHERE userId=?",
                 entity.getUserName(),
                 entity.getUserNIC(),
                 entity.getUserMobile(),
                 entity.getUserEmail(),
-                entity.getUserPassword());
+                entity.getUserPassword(),
+                entity.getUserId());
     }
     @Override
 

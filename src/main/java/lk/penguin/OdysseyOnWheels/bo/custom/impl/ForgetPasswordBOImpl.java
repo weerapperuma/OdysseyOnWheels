@@ -35,6 +35,6 @@ public class ForgetPasswordBOImpl implements ForgetPasswordBO {
     @Override
     public boolean update(String passportId, String text) throws SQLException, ClassNotFoundException {
         User user=userDAO.get(WelcomeFormController.passportId);
-        return userDAO.update(new User(passportId,user.getUserName(),user.getUserNIC(),user.getUserMobile(),user.getUserEmail(),text));
+        return userDAO.update(new User(user.getUserId(),passportId,user.getUserNIC(),user.getUserMobile(),user.getUserEmail(),text));
     }
 }
