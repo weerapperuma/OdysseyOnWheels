@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="50.0" prefWidth="1096.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.VehicleRawFormController">
    <children>
-      <Label fx:id="lblVehicleIDFx" layoutX="5.0" layoutY="6.0" prefHeight="38.0" prefWidth="81.0" style="-fx-border-color: grey;" text="AAI-5678">
+      <Label fx:id="lblVehicleIDFx" layoutX="5.0" layoutY="6.0" prefHeight="38.0" prefWidth="81.0" text="AAI-5678">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -45,7 +45,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXComboBox fx:id="cmbAvailableFx" layoutX="920.0" layoutY="12.0" prefHeight="26.0" prefWidth="49.0" />
+      <JFXComboBox fx:id="cmbAvailableFx" layoutX="920.0" layoutY="12.0" onAction="#cmbStatusOnAction" prefHeight="26.0" prefWidth="49.0" />
       <JFXButton layoutX="1053.0" layoutY="10.0" onAction="#deleteOnAction" prefHeight="26.0" prefWidth="19.0" styleClass="btndelete" stylesheets="@../style/iconButton.css" text="">
          <graphic>
             <ImageView fitHeight="19.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">

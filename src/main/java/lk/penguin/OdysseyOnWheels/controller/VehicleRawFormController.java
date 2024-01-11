@@ -12,6 +12,7 @@ import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 public class VehicleRawFormController {
 
@@ -40,7 +41,10 @@ public class VehicleRawFormController {
 
     @FXML
     void updateOnAction(ActionEvent event) {
-
+        txtVehicleNameFx.setEditable(true);
+        txtTypeFx.setEditable(true);
+        txtPerDayCostFx.setEditable(true);
+        txtAccessMileage.setEditable(true);
     }
 
     public void setData(VehicleDTO dto) {
@@ -58,5 +62,42 @@ public class VehicleRawFormController {
         }else {
             System.out.println("Not in list");
         }
+    }
+    @FXML
+    void cmbStatusOnAction(ActionEvent event) {
+        if(isValidated()){
+            System.out.println("elakiri");
+        }
+    }
+
+    private boolean isValidated() {
+        boolean isvehicleTypeValidated= Set.of("luxury","SUV","luxury van","MVP","normal").contains(txtTypeFx.getText());
+        if(!isvehicleTypeValidated){
+            txtTypeFx.setStyle("-fx-text-fill: red;");
+        }
+
+        boolean isName=txtVehicleNameFx.getText().matches("\\w{6,}");
+        if (!isName){
+            txtVehicleNameFx.setStyle("-fx-text-fill: red;");
+
+        }
+
+        boolean isPerDayCost=!(txtPerDayCostFx.getText()!=null);
+        if(!isPerDayCost){
+            txtPerDayCostFx.setStyle("-fx-text-fill: red;");
+        }
+        boolean isExcessMilage=!(txtAccessMileage.getText()!=null);
+        if(!isExcessMilage){
+            txtAccessMileage.setStyle("-fx-text-fill: red;");
+        }
+        return isvehicleTypeValidated && isName && isPerDayCost && isExcessMilage;
+
+    }
+
+    public void initialize(){
+        txtVehicleNameFx.setEditable(false);
+        txtTypeFx.setEditable(false);
+        txtPerDayCostFx.setEditable(false);
+        txtAccessMileage.setEditable(false);
     }
 }
