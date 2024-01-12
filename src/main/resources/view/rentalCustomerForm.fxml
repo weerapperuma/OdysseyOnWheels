@@ -119,8 +119,7 @@
                </image>
             </ImageView>
          </children></Pane>
-      <Pane fx:id="paneWhyChosseUs" layoutY="588.0" prefHeight="197.0" prefWidth="1424.0" />
-      <Pane fx:id="tableLoadPane" layoutY="789.0" prefHeight="454.0" prefWidth="1424.0">
+      <Pane fx:id="tableLoadPane" layoutY="592.0" prefHeight="454.0" prefWidth="1424.0" style="-fx-border-color: black;">
          <children>
             <ImageView fitHeight="403.0" fitWidth="922.0" layoutX="30.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -133,7 +132,7 @@
                </image>
             </ImageView>
          </children></Pane>
-      <Pane fx:id="paneBottomLeft" layoutX="3.0" layoutY="1248.0" prefHeight="297.0" prefWidth="711.0" />
+      <Pane fx:id="paneBottomLeft" layoutX="3.0" layoutY="1248.0" prefHeight="297.0" prefWidth="711.0" style="-fx-border-color: black;" />
       <Pane layoutY="1547.0" prefHeight="54.0" prefWidth="1424.0" style="-fx-background-color: #2f4f4f;">
          <children>
             <Label alignment="CENTER" layoutX="402.0" layoutY="15.0" prefHeight="20.0" prefWidth="572.0" text="Copyright © 2021 OdysseyOnWheelz, Sri Lanka. All rights reserved." textFill="WHITE">
@@ -143,7 +142,10 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="paneBottomRight" layoutX="722.0" layoutY="1248.0" prefHeight="295.0" prefWidth="700.0" />
+      <Pane fx:id="paneBottomRight" layoutX="722.0" layoutY="1248.0" prefHeight="295.0" prefWidth="700.0" style="-fx-border-color: black;">
+         <children>
+            <Pane fx:id="paneWhyChosseUs" layoutX="-722.0" layoutY="-200.0" prefHeight="197.0" prefWidth="1424.0" style="-fx-border-color: black;" />
+         </children></Pane>
    </children>
    <stylesheets>
       <URL value="@../style/pane.css" />

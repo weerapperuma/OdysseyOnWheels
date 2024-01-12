@@ -30,10 +30,10 @@ import java.util.ArrayList;
 public class RentalCustomerFormController {
 
     @FXML
-    private JFXComboBox<?> cmbDropOffLocation;
+    private JFXComboBox<String> cmbDropOffLocation;
 
     @FXML
-    private JFXComboBox<?> cmbPickupLocation;
+    private JFXComboBox<String> cmbPickupLocation;
 
     @FXML
     private DatePicker datePickerEnding;
@@ -101,6 +101,7 @@ public class RentalCustomerFormController {
     public static LocalDate rentEnding;
 
     RentBO rentBO=new RentBOImpl();
+    public
     @FXML
     void menuButtonOnAction(ActionEvent event) {
 
@@ -109,38 +110,47 @@ public class RentalCustomerFormController {
     @FXML
     void searchBtnOnAction(ActionEvent event) throws IOException, SQLException, ClassNotFoundException {
         LocalDate sDate =datePickerStarting.getValue();
-        if(sDate!=null){
-            DateTimeFormatter formatter=DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            startingDay=sDate.format(formatter);
-            rentStarting=datePickerStarting.getValue();
-            LocalDate eDate=datePickerEnding.getValue();
-            if(eDate!=null){
-                endingDay=eDate.format(formatter);
-                rentEnding=datePickerEnding.getValue();
-                TransactionUtil.startTransaction();
-                boolean isSaved=rentBO.save(new RentDTO(lblRentIdAutoGenerate.getText(),
-                        this.lblCustIdSelected.getText(),
-                        0.0,0.0,
-                        datePickerStarting.getValue(),
-                        datePickerEnding.getValue(),
-                        LocalDate.now()));
-                if(isSaved){
-                    Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
-                }
-                else{
-                    TransactionUtil.rollBack();
-                    new Alert(Alert.AlertType.ERROR,"Doesnt saved");
-                }
-            }
-        } else {
-            new Alert(Alert.AlertType.ERROR,"Invalid date");
-        }
+        LocalDate eDate=datePickerEnding.getValue();
+        boolean isValidated=validate(sDate,eDate);
 
+        if(isValidated){
+            boolean isSaved=rentBO.save(new RentDTO(lblRentIdAutoGenerate.getText(),
+                    lblCustIdSelected.getText(),
+                    cmbPickupLocation.getValue(),
+                    cmbDropOffLocation.getValue(),
+                    datePickerStarting.getValue(),
+                    datePickerEnding.getValue(),
+                    LocalDate.now()));
+            if(isSaved){
+                lblSearchButton.setDisable(true);
+
+                Navigation.switchPaging(tableLoadPane,"transactionForm.fxml");
+            }
+            else{
+                new Alert(Alert.AlertType.ERROR,"Values not valid");
+            }
+        }
     }
+
+    private boolean validate(LocalDate sDate,LocalDate eDate) {
+        if(sDate==null){
+            return false;
+        }
+        if(eDate==null){
+            return false;
+        }
+        if(cmbPickupLocation.getValue()==null){
+            return false;
+        }
+        if(cmbDropOffLocation.getValue()==null){
+            return false;
+        }
+        return !eDate.isBefore(sDate);
+    }
+
     public void initialize() throws SQLException, ClassNotFoundException, IOException {
         rentId=rentBO.generateId();
         setLabelValues();
-        datePickerEnding.setOnAction(event ->lblSearchButton.fire());
         setComboboxValues();
 
         Navigation.switchPaging(paneWhyChosseUs,"whyChooseUsForm.fxml");

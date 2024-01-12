@@ -49,9 +49,8 @@ CREATE TABLE customer_contact (
 CREATE TABLE rent(
     rentId VARCHAR(20) PRIMARY KEY NOT NULL ,
     customerNIC VARCHAR(20),
-    rent_first_amount DOUBLE(10,2),
-    rent_second_amount DOUBLE(10,2) DEFAULT NULL,
-    total_amount DOUBLE(10,2) GENERATED ALWAYS AS (rent_first_amount + rent_second_amount) STORED,
+    pickup_location VARCHAR(200),
+    dropOff_location VARCHAR(200),
     rent_starting DATE,
     rent_ending DATE,
     order_date DATE,
@@ -74,40 +73,19 @@ CREATE TABLE rent_detail (
     rent_id VARCHAR(10) NOT NULL ,
     vehicle_id VARCHAR(10) NOT NULL ,
     rent_fee DOUBLE NOT NULL,
+    excess_Mileage_cost DOUBLE DEFAULT NULL,
     start_date DATE,
     end_date DATE,
     order_date DATE,
 
-    CONSTRAINT FOREIGN KEY (rent_id) REFERENCES rent(rentId) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (rent_id) REFERENCES rent(rentId) ,
     CONSTRAINT FOREIGN KEY (vehicle_id) REFERENCES vehicle(vehicle_id) ON DELETE CASCADE ON UPDATE CASCADE ,
     CONSTRAINT FOREIGN KEY (start_date) REFERENCES rent(rent_starting) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT FOREIGN KEY (end_date) REFERENCES rent(rent_ending) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT FOREIGN KEY (order_date) REFERENCES rent(order_date) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE sup_order (
-    order_id VARCHAR(10) PRIMARY KEY,
-    date DATE,
-    amount_1 DECIMAL(10,2),
-    amount_2 DECIMAL(10,2),
-    total_amount DECIMAL(10,2) GENERATED ALWAYS AS (amount_1 + amount_2) STORED
-);
 
-CREATE TABLE supplier (
-    sup_id VARCHAR(10) PRIMARY KEY,
-    sup_name VARCHAR(50) NOT NULL,
-    available_car VARCHAR(20) NOT NULL,
-    order_id VARCHAR(10),
-    CONSTRAINT FOREIGN KEY (order_id) REFERENCES sup_order(order_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE TABLE sup_order_detail (
-    order_id VARCHAR(10),
-    sup_id VARCHAR(10),
-    amount DECIMAL(10,2),
-    CONSTRAINT FOREIGN KEY (order_id) REFERENCES sup_order(order_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT FOREIGN KEY (sup_id) REFERENCES supplier(sup_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
 CREATE TABLE language(
     wordSetNb int AUTO_INCREMENT PRIMARY KEY ,
     russian VARCHAR(1000) DEFAULT NULL,
@@ -288,20 +266,20 @@ INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil
       (14,'Современный автопарк','නවීන බලඇණිය','Moderne Flotte','आधुनिक फ्लीट','Flotte moderne','Modern Fleet','புதிய வாகன கூடம்','现代车队','モダンフリート'),
       (15,'Неограниченный пробег','අසීමිත ගමන','Unbegrenzte Kilometer','सीमित किलोमीटर','Kilométrage illimité','Unlimited Mileage','கடந்துவிடத்தக்க காரணமும் எண்ணெயும்','无限里程','制限なしの走行距離');
 
-INSERT INTO rent(rentId, customerNIC, rent_first_amount, rent_second_amount, rent_starting, rent_ending, order_date) VALUES
-    ('R-00001','AB123456',61000.00,0,'2024-01-05','2024-02-12','2024-01-06'),
-    ('R-00002','FF901234',45000.00,0,'2024-01-12','2024-01-15','2024-01-07'),
-    ('R-00003','FF901234',45000.00,20000,'2024-01-18','2024-01-18','2024-01-07'),
-    ('R-00004','GG567890',32000.00,15000,'2024-02-18','2024-02-19','2024-01-07');
+INSERT INTO rent(rentId, customerNIC, rent_starting, rent_ending, order_date) VALUES
+    ('R-00001','AB123456','2024-01-05','2024-02-12','2024-01-06'),
+    ('R-00002','FF901234','2024-01-12','2024-01-15','2024-01-07'),
+    ('R-00003','FF901234','2024-01-18','2024-01-18','2024-01-07'),
+    ('R-00004','GG567890','2024-02-18','2024-02-19','2024-01-07');
 
-INSERT INTO rent_detail (rent_id, vehicle_id, rent_fee, start_date, end_date, order_date) VALUES
-    ('R-00001','ZAB-5678',26500,'2024-01-05','2024-02-12','2024-01-06'),
-    ('R-00001','QRS-5678',34500,'2024-01-05','2024-02-12','2024-01-06'),
-    ('R-00002','VWX-1234',34500,'2024-01-12','2024-01-15','2024-01-07'),
-    ('R-00002','IJK-5678',22500,'2024-01-12','2024-01-15','2024-01-07'),
-    ('R-00002','ABC-1234',13500,'2024-01-12','2024-01-15','2024-01-07'),
-    ('R-00003','ABC-1234',13500,'2024-01-18','2024-01-18','2024-01-07'),
-    ('R-00004','MNO-1234',34500,'2024-02-18','2024-02-19','2024-01-07'),
-    ('R-00004','PQR-5678',39500,'2024-02-18','2024-02-19','2024-01-07'),
-    ('R-00004','JKL-9876',34500,'2024-02-18','2024-02-19','2024-01-07'),
-    ('R-00004','ZAB-5678',26500,'2024-02-18','2024-02-19','2024-01-07');
+INSERT INTO rent_detail (rent_id, vehicle_id, rent_fee,excess_Mileage_cost, start_date, end_date, order_date) VALUES
+    ('R-00001','ZAB-5678',26500,0,'2024-01-05','2024-02-12','2024-01-06'),
+    ('R-00001','QRS-5678',34500,0,'2024-01-05','2024-02-12','2024-01-06'),
+    ('R-00002','VWX-1234',34500,0,'2024-01-12','2024-01-15','2024-01-07'),
+    ('R-00002','IJK-5678',22500,0,'2024-01-12','2024-01-15','2024-01-07'),
+    ('R-00002','ABC-1234',13500,0,'2024-01-12','2024-01-15','2024-01-07'),
+    ('R-00003','ABC-1234',13500,0,'2024-01-18','2024-01-18','2024-01-07'),
+    ('R-00004','MNO-1234',34500,0,'2024-02-18','2024-02-19','2024-01-07'),
+    ('R-00004','PQR-5678',39500,0,'2024-02-18','2024-02-19','2024-01-07'),
+    ('R-00004','JKL-9876',34500,0,'2024-02-18','2024-02-19','2024-01-07'),
+    ('R-00004','ZAB-5678',26500,0,'2024-02-18','2024-02-19','2024-01-07');
