@@ -3,6 +3,7 @@ package lk.penguin.OdysseyOnWheels.bo.custom.impl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lk.penguin.OdysseyOnWheels.bo.custom.RentBO;
+import lk.penguin.OdysseyOnWheels.dao.DAOFactory;
 import lk.penguin.OdysseyOnWheels.dao.custom.LanguageDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.LocationsDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.RentDAO;
@@ -12,15 +13,16 @@ import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDAOImpl;
 import lk.penguin.OdysseyOnWheels.dto.RentDTO;
 import lk.penguin.OdysseyOnWheels.entity.Locations;
 import lk.penguin.OdysseyOnWheels.entity.Rent;
+import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class RentBOImpl implements RentBO {
-    LanguageDAO languageDAO=new LanguageDAOImpl();
-    LocationsDAO locationsDAO=new LocationsDAOImpl();
+    LanguageDAO languageDAO=(LanguageDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.LANGUAGE);
+    LocationsDAO locationsDAO=(LocationsDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.LOCATIONS);
 
-    RentDAO rentDAO=new RentDAOImpl();
+    RentDAO rentDAO=(RentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.RENT);
 
     @Override
     public ObservableList<String> getLanguageList() throws SQLException, ClassNotFoundException {
@@ -56,7 +58,12 @@ public class RentBOImpl implements RentBO {
 
     @Override
     public boolean save(RentDTO rentDTO) throws SQLException, ClassNotFoundException {
-        System.out.println("bo cust id:" +rentDTO.getCustomerId());
-        return rentDAO.save(new Rent(rentDTO.getRentId(),rentDTO.getCustomerId(),rentDTO.getRentFirstAmount(),rentDTO.getRentSecondAmount(),0.00, rentDTO.getRentStarting(),rentDTO.getRentEnding(),rentDTO.getOrderDate()));
+        TransactionUtil.startTransaction();
+        boolean isSaved= rentDAO.save(new Rent(rentDTO.getRentId(),rentDTO.getCustomerId(),rentDTO.getPickupLocation(),rentDTO.getDropOffLocation(), rentDTO.getRentStarting(),rentDTO.getRentEnding(),rentDTO.getOrderDate()));
+        if(!isSaved){
+            TransactionUtil.rollBack();
+            TransactionUtil.endTransaction();
+        }
+        return true;
     }
 }

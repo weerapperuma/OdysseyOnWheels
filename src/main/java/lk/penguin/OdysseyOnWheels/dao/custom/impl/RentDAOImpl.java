@@ -11,12 +11,11 @@ import java.util.ArrayList;
 public class RentDAOImpl implements RentDAO {
     @Override
     public boolean save(Rent rent) throws SQLException, ClassNotFoundException {
-        System.out.println("save:"+rent.getCustomerId());
-        return SQLUtil.execute("INSERT INTO rent(rentId, customerNIC, rent_first_amount, rent_second_amount, rent_starting, rent_ending, order_date) VALUES(?,?,?,?,?,?,?)",
+        return SQLUtil.execute("INSERT INTO rent(rentId, customerNIC,pickup_location,dropOff_location, rent_starting, rent_ending, order_date) VALUES(?,?,?,?,?,?,?)",
                 rent.getRentId(),
                 rent.getCustomerId(),
-                rent.getRentFirstAmount(),
-                rent.getRentSecondAmount(),
+                rent.getPickupLocation(),
+                rent.getDropOffLocation(),
                 rent.getRentStarting(),
                 rent.getRentEnding(),
                 rent.getOrderDate()

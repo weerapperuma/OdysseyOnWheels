@@ -13,8 +13,8 @@ import java.time.LocalDate;
 public class RentDTO {
     private String rentId;
     private String customerId;
-    private Double rentFirstAmount;
-    private Double rentSecondAmount;
+    private String pickupLocation;
+    private String dropOffLocation;
     private LocalDate rentStarting;
     private LocalDate rentEnding;
     private LocalDate orderDate;
