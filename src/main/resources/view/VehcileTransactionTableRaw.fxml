@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="vehickeTransaxtionRaw" prefHeight="45.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.VehcileTransactionTableRawController">
+<AnchorPane fx:id="vehickeTransaxtionRaw" prefHeight="45.0" prefWidth="1189.0" styleClass="hover-pane" stylesheets="@../style/pane.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.VehcileTransactionTableRawController">
    <children>
       <Label fx:id="lblVehiId" layoutX="11.0" layoutY="6.0" prefHeight="34.0" prefWidth="112.0" text="XYZ-5678">
          <font>
@@ -27,7 +27,7 @@
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font></Label>
-      <JFXButton fx:id="btnAdd" layoutX="1066.0" layoutY="4.0" onAction="#btnAddOnAction" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: blue;" text="ADD" textFill="WHITE">
+      <JFXButton fx:id="btnAdd" layoutX="1066.0" layoutY="4.0" onAction="#btnAddOnAction" prefHeight="34.0" prefWidth="82.0" styleClass="btn" stylesheets="@../style/iconButton.css" text="&gt;&gt;&gt;" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font></JFXButton>

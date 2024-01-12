@@ -72,7 +72,7 @@ public class WelcomeFormController implements Initializable {
             });
         }
         else {
-            //Navigation.popupPaging(BackgroundFormController.getInstance().pagingPane,"customerSaveForm.fxml" );
+            //Navigation.popupPaging(weclcomeNicFxId,"customerSaveForm.fxml" );
         }
 
     }

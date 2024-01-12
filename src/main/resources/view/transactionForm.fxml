@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,16 +9,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="transactionLoadingPane" prefHeight="454.0" prefWidth="1424.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.TransactionFormController">
+<AnchorPane fx:id="transactionLoadingPane" prefHeight="454.0" prefWidth="1424.0" styleClass="hover-background" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.TransactionFormController">
    <children>
-      <Pane fx:id="placeOrderInterface" layoutX="1216.0" layoutY="3.0" prefHeight="442.0" prefWidth="203.0" style="-fx-border-color: black;">
+      <Pane fx:id="placeOrderInterface" layoutX="1209.0" layoutY="3.0" prefHeight="442.0" prefWidth="210.0" style="-fx-border-color: black;">
          <children>
-            <JFXButton fx:id="RentSaveButtonOnAction" layoutX="64.0" layoutY="392.0" onAction="#addToCartSaveRentOnAction" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: blue;" text="Save">
+            <JFXButton fx:id="RentSaveButtonOnAction" layoutX="64.0" layoutY="399.0" onAction="#addToCartSaveRentOnAction" prefHeight="35.0" prefWidth="100.0" styleClass="btn" text="ORDER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </JFXButton>
-            <Pane prefHeight="386.0" prefWidth="203.0">
+            <Pane layoutX="3.0" layoutY="4.0" prefHeight="386.0" prefWidth="203.0">
                <children>
                   <ScrollPane prefHeight="386.0" prefWidth="203.0">
                      <content>
@@ -27,7 +28,7 @@
                </children>
             </Pane>
          </children></Pane>
-      <Pane fx:id="tableLoadPaneInterface" layoutX="4.0" layoutY="40.0" prefHeight="406.0" prefWidth="1202.0" style="-fx-border-color: red;" />
+      <Pane fx:id="tableLoadPaneInterface" layoutX="4.0" layoutY="40.0" prefHeight="406.0" prefWidth="1202.0" />
       <Pane layoutX="11.0" layoutY="10.0" prefHeight="21.0" prefWidth="1185.0">
          <children>
             <Label fx:id="lblVehiId" layoutX="11.0" layoutY="1.0" prefHeight="20.0" prefWidth="112.0" text="ID">
@@ -53,4 +54,8 @@
          </children>
       </Pane>
    </children>
+   <stylesheets>
+      <URL value="@../style/iconButton.css" />
+      <URL value="@../style/pane.css" />
+   </stylesheets>
 </AnchorPane>
