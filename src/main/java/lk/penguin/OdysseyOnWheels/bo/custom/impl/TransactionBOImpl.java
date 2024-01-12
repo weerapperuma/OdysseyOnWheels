@@ -5,11 +5,13 @@ import javafx.scene.Parent;
 import lk.penguin.OdysseyOnWheels.bo.custom.TransactionBO;
 import lk.penguin.OdysseyOnWheels.controller.AddedCartFormController;
 import lk.penguin.OdysseyOnWheels.controller.TransactionFormController;
+import lk.penguin.OdysseyOnWheels.dao.DAOFactory;
 import lk.penguin.OdysseyOnWheels.dao.custom.RentDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.RentDetailDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDAOImpl;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDetailDAOImpl;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
+import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -18,8 +20,7 @@ import java.util.Iterator;
 
 public class TransactionBOImpl implements TransactionBO {
 
-    RentDAO rentDAO=new RentDAOImpl();
-    RentDetailDAO rentDetailDAO=new RentDetailDAOImpl();
+    RentDetailDAO rentDetailDAO=(RentDetailDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.RENT_DETAIL);
     public static ArrayList<VehicleDTO> addToCartVboxList;
     @Override
     public boolean addToCart(VehicleDTO dto){
@@ -72,12 +73,16 @@ public class TransactionBOImpl implements TransactionBO {
     }
     @Override
     public boolean saveRentDetails() throws SQLException, ClassNotFoundException {
+        TransactionUtil.startTransaction();
         boolean isSaved= rentDetailDAO.save(addToCartVboxList);
         if(isSaved){
-            //rentDAO.addTotal();
-            System.out.println("ok");
+            TransactionUtil.endTransaction();
+        }else{
+            TransactionUtil.rollBack();
+            TransactionUtil.endTransaction();
         }
-        return true;
+
+        return isSaved;
     }
 
 }

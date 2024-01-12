@@ -38,10 +38,10 @@ public class TransactionFormController {
 
     @FXML
     void addToCartSaveRentOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        //TransactionUtil.startTransaction();
         boolean allDone=transactionBO.saveRentDetails();
         if(allDone){
-            TransactionUtil.endTransaction();
+            System.out.println("all done in transaction form");
+            addToCartVboxInterface.getChildren().clear();
         }
     }
 

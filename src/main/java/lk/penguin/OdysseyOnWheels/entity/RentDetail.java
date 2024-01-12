@@ -15,6 +15,7 @@ public class RentDetail {
     private String rentId;
     private String vehicleId;
     private Double rentFee;
+    private Double excessMileageCost;
     private LocalDate startingDate;
     private LocalDate endingDate;
     private LocalDate orderDate;
