@@ -14,13 +14,10 @@ import java.sql.SQLException;
 
 public class WelcomeBoImpl implements WelcomeBO {
     CustomerDAO customerDAO=(CustomerDAO)DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.CUSTOMER);
-    LanguageDAO languageDAO=(LanguageDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.LANGUAGE);
+
 
     UserDAO userDAO=(UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.USER);
-    @Override
-    public String get(String language, int nb) throws SQLException, ClassNotFoundException {
-        return languageDAO.get(language,nb);
-    }
+
 
     @Override
     public boolean ifExistsCustomer(String text) throws SQLException, ClassNotFoundException {

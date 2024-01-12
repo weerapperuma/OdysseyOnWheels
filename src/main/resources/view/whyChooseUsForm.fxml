@@ -6,70 +6,64 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="198.0" prefWidth="1424.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.WhyChooseUsFormController">
    <children>
-      <Label fx:id="lblWhyChooseUs" alignment="CENTER" layoutX="600.0" layoutY="13.0" prefHeight="35.0" prefWidth="304.0" text="Why Choose Us?">
+      <Label fx:id="lblWhyChooseUs" alignment="CENTER" layoutX="600.0" layoutY="3.0" prefHeight="35.0" prefWidth="304.0" text="Why Choose Us?">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblReasonsWhy" layoutX="479.0" layoutY="51.0" prefHeight="20.0" prefWidth="582.0" text="REASONS WHY WE ARE THE BEST CAR RENTAL COMPANY IN SRI LANKA">
+      <Label fx:id="lblReasonsWhy" alignment="CENTER" layoutX="264.0" layoutY="38.0" prefHeight="20.0" prefWidth="898.0" text="REASONS WHY WE ARE THE BEST CAR RENTAL COMPANY IN SRI LANKA">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="72.0" fitWidth="88.0" layoutX="60.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="81.0" fitWidth="104.0" layoutX="77.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/img/img.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="79.0" fitWidth="88.0" layoutX="319.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="89.0" fitWidth="95.0" layoutX="332.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/img/img_1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="75.0" fitWidth="103.0" layoutX="569.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="81.0" fitWidth="123.0" layoutX="638.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/img/img_2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="73.0" fitWidth="112.0" layoutX="882.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="89.0" fitWidth="152.0" layoutX="932.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/img/img_3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="84.0" fitWidth="89.0" layoutX="1253.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="89.0" fitWidth="102.0" layoutX="1253.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assests/img/img_5.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblEasyAndSecure" alignment="CENTER" layoutX="16.0" layoutY="156.0" prefHeight="18.0" prefWidth="157.0" text="Easy and secure">
+      <Label fx:id="lblEasyAndSecure" alignment="CENTER" layoutX="16.0" layoutY="174.0" prefHeight="18.0" prefWidth="234.0" text="Easy and secure">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblFreeCancellationAnd" alignment="CENTER" layoutX="265.0" layoutY="151.0" prefHeight="18.0" prefWidth="184.0" text="Free cancellation and">
+      <Label fx:id="lblBookingAmendants" alignment="CENTER" layoutX="249.0" layoutY="175.0" prefHeight="18.0" prefWidth="304.0" text="Booking amendments">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblBookingAmendants" alignment="CENTER" layoutX="249.0" layoutY="175.0" prefHeight="18.0" prefWidth="217.0" text="Booking amendments">
+      <Label fx:id="lblcustomerSupport" alignment="CENTER" layoutX="576.0" layoutY="173.0" prefHeight="18.0" prefWidth="283.0" text="24/7 customer support">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblcustomerSupport" layoutX="546.0" layoutY="150.0" prefHeight="18.0" prefWidth="202.0" text="24/7 customer support">
+      <Label fx:id="lblModernFleet" alignment="CENTER" layoutX="871.0" layoutY="172.0" prefHeight="18.0" prefWidth="283.0" text="Modern fleet">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblModernFleet" alignment="CENTER" layoutX="839.0" layoutY="148.0" prefHeight="18.0" prefWidth="202.0" text="Modern fleet">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblUnlimitedMileage" alignment="CENTER" layoutX="1178.0" layoutY="155.0" prefHeight="18.0" prefWidth="202.0" text="Unlimited Mileage">
+      <Label fx:id="lblUnlimitedMileage" alignment="CENTER" layoutX="1185.0" layoutY="170.0" prefHeight="18.0" prefWidth="227.0" text="Unlimited Mileage">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
