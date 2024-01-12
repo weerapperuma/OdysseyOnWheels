@@ -256,13 +256,37 @@ INSERT INTO countries (country_name) VALUES
 
 
 INSERT INTO language(wordSetNb,russian,sinhala,german,hindi,french,english,tamil,chinese,japan) VALUES
-    (1,'номер паспорта','ජාතික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
+    (1,'номер паспорта','ජා තික හැඳුනුම්පත් අංකය','Nummer des Reisepasses','पासपोर्ट नंबर','numéro de passeport','ID / Passport','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
     (2,'Оформить аренду','කුලියට ගන්න','Miete machen','किराया लगाओ','Faire un loyer','Make a Rent','கடவுச்சீட்டு எண்','护照号','パスポート番号'),
     (3,'Начальный день','ආරම්භක දිනය','Starttag','शुरुआती दिन','Jour de départ','Starting day','தொடக்க நாள்','开始日','開始日'),
     (4,'дата окончания','අවසන් දිනය','Endtag','समाप्त होने की तारीख','Jour de fin','Ending day','கடைசி நாள்','结束日','結束日'),
     (5,'номер аренды','කුලී අංකය','Mietnummer','किराया संख्या','numéro de loyer','Rent number','வாடகை எண்','租金号码','家賃番号'),
-    (6,'выбрать место','ආරම්භක ස්ථානය','Treffpunkt','लेने की जगह','lieu de ramassage','pickup location','எடுக்கும் இடம்','接人的地方','乗車場所'),
-    (7,'Место сброса','අවසන් ස්ථානය','Endort','समापन स्थान','lieu de fin','Drop off location','முடிவடையும் இடம்','结束地点','終了場所');
+    (6,'выбрать место','ආරම්භක ස්ථා නය','Treffpunkt','लेने की जगह','lieu de ramassage','pickup location','எடுக்கும் இடம்','接人的地方','乗車場所'),
+    (7,'Место сброса','අවසන් ස්ථා නය','Endort','समापन स्थान','lieu de fin','Drop off location','முடிவடையும் இடம்','结束地点','終了場所'),
+    (8,'Добро пожаловать в OdysseyOnWheelz, с гордостью представленный Penguin Corporation, — ваш лучший выбор в сфере услуг по прокату автомобилей в Шри-Ланке. Созданный специально для взыскательных туристов, мы предлагаем незабываемое путешествие по красотам острова. Наслаждайтесь свободой путешествий с нашим разнообразным флотом, исключительным сервисом и стремлением сделать ваше приключение в Шри-Ланке незабываемым. Откройте для себя Шри-Ланку с OdysseyOnWheelz: где каждая поездка — это исследование.',
+     'Penguin Corporation විසින් සාඩම්බරයෙන් ඉදිරිපත් කරන OdysseyOnWheelz වෙත සා දරයෙන් පිළිගනිමු - ශ්‍රී ලංකා වේ මෝ ටර් රථ කුලියට දීමේ සේවා  සඳහා ඔබේ ප්‍රමුඛ තේරීම. විචක්ෂණශීලී සංචා රකයින් සඳහා  ගැ ලපෙන පරිදි, අපි දිවයිනේ සුන්දරත්වය හරහා  බා ධා වකින් තො රව ගමනක් පිරිනමන්නෙමු. අපගේ විවිධ යා ත්‍රා  සමූහය, සුවිශේෂී සේවා ව සහ ඔබගේ ශ්‍රී ලා ංකේය වික්‍රමය අමතක නො වන බවට පත් කිරීමට ඇති කැ පවීම සමඟ ගවේෂණය කිරීමේ නිදහස භුක්ති විඳින්න. OdysseyOnWheelz සමඟින් ශ්‍රී ලංකා ව සො යා ගන්න - සෑ ම ධා වකයක්ම ගවේෂණයකි',
+     'Willkommen bei OdysseyOnWheelz, stolz präsentiert von der Penguin Corporation – Ihrer ersten Wahl für Autovermietungen in Sri Lanka. Wir sind auf anspruchsvolle Touristen zugeschnitten und bieten eine nahtlose Reise durch die Schönheit der Insel. Genießen Sie die Freiheit, mit unserer vielfältigen Flotte, dem außergewöhnlichen Service und der Verpflichtung, Ihr Abenteuer in Sri Lanka unvergesslich zu machen, die Freiheit zu erkunden. Entdecken Sie Sri Lanka mit OdysseyOnWheelz – wo jede Fahrt eine Erkundung ist',
+     'पेंगुइन कॉर्पोरेशन द्वारा गर्व से प्रस्तुत ओडिसीऑनव्हील्ज़ में आपका स्वागत है - श्रीलंका में कार किराए पर लेने की सेवाओं के लिए आपकी प्रमुख पसंद। समझदार पर्यटकों के लिए तैयार, हम द्वीप की सुंदरता के माध्यम से एक निर्बाध यात्रा प्रदान करते हैं। हमारे विविध बेड़े, असाधारण सेवा और अपने श्रीलंकाई साहसिक कार्य को अविस्मरणीय बनाने की प्रतिबद्धता के साथ अन्वेषण करने की स्वतंत्रता का आनंद लें। OdysseyOnWheelz के साथ श्रीलंका की खोज करें - जहां हर ड्राइव एक अन्वेषण है',
+     'Bienvenue sur OdysseyOnWheelz, fièrement présenté par Penguin Corporation - votre premier choix pour les services de location de voitures au Sri Lanka. Conçus pour les touristes exigeants, nous proposons un voyage fluide à travers la beauté de l''île. Profitez de la liberté d''explorer avec notre flotte diversifiée, notre service exceptionnel et notre engagement à rendre votre aventure au Sri Lanka inoubliable. Découvrez le Sri Lanka avec OdysseyOnWheelz – où chaque trajet est une exploration',
+     'Welcome to OdysseyOnWheelz, proudly presented by Penguin Corporation - your premier choice for car rental services in Sri Lanka. Tailored for discerning tourists, we offer a seamless journey through the island''s beauty. Enjoy the freedom to explore with our diverse fleet, exceptional service, and a commitment to making your Sri Lankan adventure unforgettable. Discover Sri Lanka with OdysseyOnWheelz – where every drive is an exploration',
+     'OdysseyOnWheelz க்கு வரவேற்கிறோம், இது Penguin Corporation மூலம் பெருமையுடன் வழங்கப்படுகிறது - இலங்கையில் கார் வாடகை சேவைகளுக்கான உங்களின் முதன்மையான தேர்வாகும். புத்திசாலித்தனமான சுற்றுலாப் பயணிகளுக்கு ஏற்றவாறு, தீவின் அழகில் தடையற்ற பயணத்தை நாங்கள் வழங்குகிறோம். எங்களின் மாறுபட்ட கடற்படை, விதிவிலக்கான சேவை மற்றும் உங்கள் இலங்கை சாகசத்தை மறக்க முடியாததாக மாற்றுவதற்கான அர்ப்பணிப்பு ஆகியவற்றுடன் ஆராய்வதற்கான சுதந்திரத்தை அனுபவிக்கவும். OdysseyOnWheelz உடன் இலங்கையைக் கண்டறியவும் - ஒவ்வொரு ஓட்டமும் ஒரு ஆய்வு ஆகும்',
+     '欢迎来到 OdysseyOnWheelz，由企鹅公司自豪地推出 - 您在斯里兰卡汽车租赁服务的首选。 我们专为眼光独到的游客量身打造，为您提供畅游岛屿美景的无缝之旅。 我们多元化的机队、卓越的服务以及让您的斯里兰卡冒险难忘的承诺让您享受自由探索的乐趣。 与 OdysseyOnWheelz 一起探索斯里兰卡——每一次驾驶都是一次探索',
+     'ペンギン コーポレーションが自信を持って提供する OdysseyOnWheelz へようこそ。スリランカでのレンタカー サービスの第一選択です。 目の肥えた観光客向けに、島の美しさを巡るシームレスな旅をご提供します。 多様な船団、卓越したサービス、そしてスリランカの冒険を忘れられないものにするための取り組みで、自由な探検をお楽しみください。 OdysseyOnWheelz でスリランカを発見 – すべてのドライブが探検'),
+     (9,'почему выбрали нас?','අපව තෝ රා  ගන්නේ ඇයි?','Warum uns wählen?','हमें क्यों चुनें?','Pourquoi nous choisir?','why choose us?','ஏன் எங்களை தேர்வு செய்தாய்?','为什么选择我们？','なぜ私たちを選ぶのですか？'),
+     (10,'ПРИЧИНЫ, ПО КОТОРЫМУ МЫ ЛУЧШАЯ КОМПАНИЯ ПО АРЕНДЕ АВТОМОБИЛЕЙ В ШРИ-ЛАНКЕ',
+      'අපි ශ්‍රී ලංකා වේ හො ඳම මෝ ටර් රථ කුලියට දෙන සමා ගම වීමට හේතු',
+      'GRÜNDE, WARUM WIR DAS BESTE AUTOVERMIETUNGSUNTERNEHMEN IN SRI LANKA SIND',
+      'श्रीलंका में हम सबसे अच्छी कार रेंटल कंपनी क्यों हैं के कारण',
+      'RAISONS POUR LESQUELLES NOUS SOMMES LA MEILLEURE ENTREPRISE DE LOCATION DE VOITURES AU SRI LANKA',
+      'REASONS WHY WE ARE THE BEST CAR RENTAL COMPANY IN SRI LANKA',
+      'இலங்கையில் எங்கள் சிறந்த கார் கார் கம்பேனி என்றால் என்ன என்னும் காரணங்கள்',
+      '我们是斯里兰卡最好的租车公司的原因',
+      '日本で最高のレンタカー会社である理由'),
+      (11,'Легко и безопасно','පහසු සහ ආරක්ෂිත','Einfach und sicher','आसान और सुरक्षित','Facile et sécurisé','Easy and secure','எளிதும் பாதுகாப்பும்','轻松安全','簡単で安全'),
+      (12,'Изменения в бронировании','වෙන් කරවා  ගැ නීම','Buchungsänderungen','बुकिंग संशोधन','Modifications de réservation','Booking amendments','புக்கிங் மாற்றம்','预订修改','予約の修正'),
+      (13,'Круглосуточная поддержка клиентов','24/7 පාරිභෝගික සහාය','Kundensupport rund um die Uhr','24/7 ग्राहक समर्थन','Assistance client 24/7','24/7 customer support','24/7 வாடிக்கையாளர் ஆதரவு','全天候客户支持','24/7カスタマーサポート'),
+      (14,'Современный автопарк','නවීන බලඇණිය','Moderne Flotte','आधुनिक फ्लीट','Flotte moderne','Modern Fleet','புதிய வாகன கூடம்','现代车队','モダンフリート'),
+      (15,'Неограниченный пробег','අසීමිත ගමන','Unbegrenzte Kilometer','सीमित किलोमीटर','Kilométrage illimité','Unlimited Mileage','கடந்துவிடத்தக்க காரணமும் எண்ணெயும்','无限里程','制限なしの走行距離');
 
 INSERT INTO rent(rentId, customerNIC, rent_first_amount, rent_second_amount, rent_starting, rent_ending, order_date) VALUES
     ('R-00001','AB123456',61000.00,0,'2024-01-05','2024-02-12','2024-01-06'),

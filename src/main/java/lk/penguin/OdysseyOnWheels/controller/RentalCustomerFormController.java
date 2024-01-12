@@ -16,6 +16,7 @@ import javafx.scene.layout.Pane;
 import lk.penguin.OdysseyOnWheels.bo.custom.RentBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.RentBOImpl;
 import lk.penguin.OdysseyOnWheels.dto.RentDTO;
+import lk.penguin.OdysseyOnWheels.util.LanguageUtil;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
@@ -73,10 +74,14 @@ public class RentalCustomerFormController {
     @FXML
     private AnchorPane rentCustomerAnchorPane;
     @FXML
-    private JFXComboBox<?> cmbLanguageFXID;
+    private Pane paneBottomLeft;
 
     @FXML
-    private Pane transactionLoadPane;
+    private Pane paneBottomRight;
+
+    @FXML
+    private Pane paneTopRight;
+
     @FXML
     private Pane paneWhyChosseUs;
     @FXML
@@ -132,23 +137,17 @@ public class RentalCustomerFormController {
         }
 
     }
-    @FXML
-    void cmbLanguageChangeOnAction(ActionEvent event) throws IOException {
-        WelcomeFormController.language=(String) cmbLanguageFXID.getValue();
-        Navigation.switchPaging(BackgroundFormController.getInstance().pagingPane, "rentalCustomerForm.fxml");
-    }
     public void initialize() throws SQLException, ClassNotFoundException, IOException {
         rentId=rentBO.generateId();
         setLabelValues();
-        setComboboxValues();
         datePickerEnding.setOnAction(event ->lblSearchButton.fire());
+        setComboboxValues();
 
-        Navigation.switchPaging(RentalCustomerFormController.getInstance().paneWhyChosseUs,"whyChooseUsForm.fxml");
+        Navigation.switchPaging(paneWhyChosseUs,"whyChooseUsForm.fxml");
+        Navigation.switchPaging(paneBottomLeft,"termsAndConditionsForm.fxml");
+        //Navigation.switchPaging(paneBottomRight,);
     }
-
     private void setComboboxValues() throws SQLException, ClassNotFoundException {
-        ObservableList languageList= rentBO.getLanguageList();
-        cmbLanguageFXID.setItems(languageList);
 
         ObservableList locations=rentBO.getLocations();
         cmbPickupLocation.setItems(locations);
@@ -156,14 +155,13 @@ public class RentalCustomerFormController {
         lblCustIdSelected.setText(WelcomeFormController.passportId);
         lblRentIdAutoGenerate.setText(rentId);
     }
-
     public void setLabelValues() throws SQLException, ClassNotFoundException {
 
-        lblRentalId.setText(rentBO.get(WelcomeFormController.language,5));
-        lblCustId.setText(rentBO.get(WelcomeFormController.language,1));
-        lblPickUpLocation.setText(rentBO.get(WelcomeFormController.language,6));
-        lblDropOffLocation.setText(rentBO.get(WelcomeFormController.language,7));
-        lblStartingDate.setText(rentBO.get(WelcomeFormController.language,3));
-        lblEndingDate.setText(rentBO.get(WelcomeFormController.language,4));
+        lblRentalId.setText(rentBO.get(LanguageUtil.language,5));
+        lblCustId.setText(rentBO.get(LanguageUtil.language,1));
+        lblPickUpLocation.setText(rentBO.get(LanguageUtil.language,6));
+        lblDropOffLocation.setText(rentBO.get(LanguageUtil.language,7));
+        lblStartingDate.setText(rentBO.get(LanguageUtil.language,3));
+        lblEndingDate.setText(rentBO.get(LanguageUtil.language,4));
     }
 }

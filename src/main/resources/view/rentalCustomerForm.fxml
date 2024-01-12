@@ -46,7 +46,6 @@
                   <String fx:value="btnSave" />
                </styleClass>
             </JFXButton>
-            <JFXComboBox fx:id="cmbLanguageFXID" layoutX="1201.0" layoutY="38.0" onAction="#cmbLanguageChangeOnAction" prefHeight="25.0" prefWidth="83.0" promptText="Language" />
          </children>
       </Pane>
       <Pane fx:id="paneBokingfirstpane" layoutY="67.0" prefHeight="518.0" prefWidth="500.0" style="-fx-background-color: white; -fx-border-color: black;">
@@ -57,12 +56,12 @@
                </font>
             </Label>
             <JFXComboBox fx:id="cmbPickupLocation" layoutX="12.0" layoutY="257.0" prefHeight="31.0" prefWidth="440.0" style="-fx-border-color: black;" />
-            <Label fx:id="lblPickUpLocation" layoutX="13.0" layoutY="235.0" prefHeight="17.0" prefWidth="210.0" text="Pickup Location">
+            <Label fx:id="lblPickUpLocation" layoutX="13.0" layoutY="235.0" prefHeight="20.0" prefWidth="327.0" text="Pickup Location">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lblDropOffLocation" layoutX="12.0" layoutY="306.0" prefHeight="17.0" prefWidth="210.0" text="Drop off Location">
+            <Label fx:id="lblDropOffLocation" layoutX="12.0" layoutY="306.0" prefHeight="20.0" prefWidth="319.0" text="Drop off Location">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -100,12 +99,12 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lblRentalId" layoutX="15.0" layoutY="87.0" prefHeight="20.0" prefWidth="155.0" text="Rent ID">
+            <Label fx:id="lblRentalId" layoutX="15.0" layoutY="87.0" prefHeight="20.0" prefWidth="299.0" text="Rent ID">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lblCustId" layoutX="16.0" layoutY="155.0" prefHeight="20.0" prefWidth="155.0" text="Customer ID">
+            <Label fx:id="lblCustId" layoutX="16.0" layoutY="155.0" prefHeight="20.0" prefWidth="299.0" text="Customer ID">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

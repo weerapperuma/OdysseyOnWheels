@@ -4,12 +4,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.TermsAndConditionsFormController">
+<AnchorPane prefHeight="297.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.penguin.OdysseyOnWheels.controller.TermsAndConditionsFormController">
    <children>
-      <JFXTextArea fx:id="textAreaTermsAndConditions" layoutX="11.0" layoutY="14.0" prefHeight="287.0" prefWidth="705.0" text="EMBARK ON AN UNBEATABLE SELF-DRIVE JOURNEY IN SRI LANKA WITH KINGS RENT-A-CAR&#10;Experience the freedom of travelling across Sri Lanka with the most affordable self-drive car rental options in the island. Plan your trip with our flexible rental plans and hire vehicles either on a short-term or a long-term basis.&#10;&#10;With Kings Rent a Car’s comprehensively insured fleet of well-maintained vehicles you can enjoy a wide range of choices. Select from spacious luxury sedans to comfortable fuel-efficient compact cars, including crossovers, MPVs and 4WD SUVs that fit your budget neatly.&#10;&#10;For your convenience we offer vehicle pick-up and drop-off services in all the major cities across the island including Bandaranaike International Airport (BIA), Mattala Rajapaksa International Airport (MRIA), surrounding airport hotels, Arugambay, Negombo, Colombo, Jaffna, Kandy, Kalpitiya, Matara, Sigiriya, Polonnaruwa, Tangalle and Trincomalee.&#10;&#10;Make the most of your travel experience in Sri Lanka with our customer-friendly approach that meets service excellence with professionalism." unFocusColor="#3d3bf7">
+      <JFXTextArea fx:id="textAreaTermsAndConditions" layoutX="3.0" layoutY="2.0" prefHeight="290.0" prefWidth="700.0" text="Welcome to OdysseyOnWheelz, proudly presented by Penguin Corporation - your premier choice for car rental services in Sri Lanka. Tailored for discerning tourists, we offer a seamless journey through the island's beauty. Enjoy the freedom to explore with our diverse fleet, exceptional service, and a commitment to making your Sri Lankan adventure unforgettable. Discover Sri Lanka with OdysseyOnWheelz – where every drive is an exploration.." unFocusColor="#3d3bf7">
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Bold Italic" size="18.0" />
          </font>
       </JFXTextArea>
    </children>
