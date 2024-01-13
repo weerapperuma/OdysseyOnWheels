@@ -61,19 +61,10 @@ public class TransactionBOImpl implements TransactionBO {
             TransactionFormController.addCart.getChildren().add(root);
         }
     }
-
-    public void createRaw(VehicleDTO vehicleDTO) throws IOException {
-        FXMLLoader loader=new FXMLLoader(TransactionFormController.class.getResource("/view/addedCartForm.fxml"));
-        Parent root=loader.load();
-        AddedCartFormController addedCartFormController=loader.getController();
-
-
-        addedCartFormController.setData(vehicleDTO);
-        TransactionFormController.addCart.getChildren().add(root);
-    }
     @Override
     public boolean saveRentDetails() throws SQLException, ClassNotFoundException {
         TransactionUtil.startTransaction();
+        //System.out.println("addToCartVboxList.get(7)"+addToCartVboxList.get(7));
         boolean isSaved= rentDetailDAO.save(addToCartVboxList);
         if(isSaved){
             TransactionUtil.endTransaction();

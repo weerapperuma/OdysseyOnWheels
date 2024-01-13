@@ -40,7 +40,6 @@ public class TransactionFormController {
     void addToCartSaveRentOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
         boolean allDone=transactionBO.saveRentDetails();
         if(allDone){
-            System.out.println("all done in transaction form");
             addToCartVboxInterface.getChildren().clear();
         }
     }

@@ -97,8 +97,8 @@ public class RentalCustomerFormController {
     public static String endingDay;
     public static String rentId;
 
-    public static LocalDate rentStarting;
-    public static LocalDate rentEnding;
+    public static String rentStarting=null;
+    public static String rentEnding=null;
 
     RentBO rentBO=new RentBOImpl();
     public
@@ -112,6 +112,11 @@ public class RentalCustomerFormController {
         LocalDate sDate =datePickerStarting.getValue();
         LocalDate eDate=datePickerEnding.getValue();
         boolean isValidated=validate(sDate,eDate);
+        rentStarting= String.valueOf(datePickerStarting.getValue());
+        rentEnding= String.valueOf(datePickerEnding.getValue());
+
+//        System.out.println(datePickerStarting.getValue());
+//        System.out.println(rentStarting);
 
         if(isValidated){
             boolean isSaved=rentBO.save(new RentDTO(lblRentIdAutoGenerate.getText(),
@@ -152,6 +157,13 @@ public class RentalCustomerFormController {
         rentId=rentBO.generateId();
         setLabelValues();
         setComboboxValues();
+//        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        LocalDate rent=datePickerStarting.getValue();
+//        if(rent!=null){
+//            rentStarting=rent.format(formatter);
+//        }
+
+
 
         Navigation.switchPaging(paneWhyChosseUs,"whyChooseUsForm.fxml");
         Navigation.switchPaging(paneBottomLeft,"termsAndConditionsForm.fxml");

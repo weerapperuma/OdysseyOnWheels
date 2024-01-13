@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.TransactionBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.VehicleBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.TransactionBOImpl;
@@ -39,8 +40,8 @@ public class VehcileTransactionTableRawController {
     @FXML
     private AnchorPane vehickeTransaxtionRaw;
 
-    VehicleBO vehicleBo=new VehicleBOImpl();
-    TransactionBO transactionBO=new TransactionBOImpl();
+    VehicleBO vehicleBo=(VehicleBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.VEHICLE);
+    TransactionBO transactionBO=(TransactionBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.TRANSACTION);
 
     @FXML
     void btnAddOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {

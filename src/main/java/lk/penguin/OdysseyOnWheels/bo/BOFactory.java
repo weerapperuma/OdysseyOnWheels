@@ -29,6 +29,8 @@ public class BOFactory {
                 return new LocationsBOImpl();
             case FORGET:
                 return new ForgetPasswordBOImpl();
+            case TRANSACTION:
+                return new TransactionBOImpl();
             default:
                 return null;
         }
