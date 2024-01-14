@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @NoArgsConstructor
@@ -16,7 +15,7 @@ public class RentDetailDTO {
     private String vehicleId;
     private Double rentFee;
     private Double excessMileageCost;
-    private LocalDate startingDate;
-    private LocalDate endingDate;
+    private String startingDate;
+    private String endingDate;
     private LocalDate orderDate;
 }

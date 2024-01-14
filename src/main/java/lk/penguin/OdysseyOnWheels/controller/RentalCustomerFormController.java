@@ -126,6 +126,7 @@ public class RentalCustomerFormController {
                     datePickerStarting.getValue(),
                     datePickerEnding.getValue(),
                     LocalDate.now()));
+            System.out.println("Rent customer form rent saved: "+isSaved);
             if(isSaved){
                 lblSearchButton.setDisable(true);
 

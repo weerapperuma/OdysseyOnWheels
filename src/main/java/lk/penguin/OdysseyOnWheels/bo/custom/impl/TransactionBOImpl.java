@@ -10,7 +10,9 @@ import lk.penguin.OdysseyOnWheels.dao.custom.RentDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.RentDetailDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDAOImpl;
 import lk.penguin.OdysseyOnWheels.dao.custom.impl.RentDetailDAOImpl;
+import lk.penguin.OdysseyOnWheels.dto.RentDetailDTO;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
+import lk.penguin.OdysseyOnWheels.entity.RentDetail;
 import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
 import java.io.IOException;
@@ -62,10 +64,15 @@ public class TransactionBOImpl implements TransactionBO {
         }
     }
     @Override
-    public boolean saveRentDetails() throws SQLException, ClassNotFoundException {
+    public boolean saveRentDetails(RentDetailDTO rentDetailDTO) throws SQLException, ClassNotFoundException {
         TransactionUtil.startTransaction();
-        //System.out.println("addToCartVboxList.get(7)"+addToCartVboxList.get(7));
-        boolean isSaved= rentDetailDAO.save(addToCartVboxList);
+        //boolean isSaved= rentDetailDAO.save(addToCartVboxList);
+        boolean isSaved=false;
+        for(VehicleDTO vehicleDTO:addToCartVboxList){
+            RentDetail rentDetail=new RentDetail(rentDetailDTO.getPrimaryID(),rentDetailDTO.getRentId(),vehicleDTO.getVehicleId(),vehicleDTO.getPerDay80Km(),vehicleDTO.getExcessMileage(),rentDetailDTO.getStartingDate(),rentDetailDTO.getEndingDate(),rentDetailDTO.getOrderDate());
+            isSaved= rentDetailDAO.save(rentDetail);
+
+        }
         if(isSaved){
             TransactionUtil.endTransaction();
         }else{

@@ -21,9 +21,8 @@ public class RentDAOImpl implements RentDAO {
                 rent.getOrderDate()
         );
     }
-
     @Override
-    public boolean update(Object dto) throws SQLException, ClassNotFoundException {
+    public boolean update(Rent entity) throws SQLException, ClassNotFoundException {
         return false;
     }
 
@@ -32,13 +31,9 @@ public class RentDAOImpl implements RentDAO {
         return false;
     }
 
-    @Override
-    public boolean save(Object entity) throws SQLException, ClassNotFoundException {
-        return false;
-    }
 
     @Override
-    public Object get(String id) throws SQLException, ClassNotFoundException {
+    public Rent get(String id) throws SQLException, ClassNotFoundException {
         return null;
     }
 
@@ -48,12 +43,12 @@ public class RentDAOImpl implements RentDAO {
     }
 
     @Override
-    public ArrayList getAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<Rent> getAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public ArrayList search(String text) throws SQLException, ClassNotFoundException {
+    public ArrayList<Rent> search(String text) throws SQLException, ClassNotFoundException {
         return null;
     }
 

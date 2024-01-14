@@ -2,6 +2,7 @@ package lk.penguin.OdysseyOnWheels.bo.custom;
 
 import javafx.scene.control.Label;
 import lk.penguin.OdysseyOnWheels.bo.SuperBO;
+import lk.penguin.OdysseyOnWheels.dto.RentDetailDTO;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
 
 import java.io.IOException;
@@ -14,5 +15,5 @@ public interface TransactionBO extends SuperBO {
 
     void reloadVbox() throws IOException;
 
-    boolean saveRentDetails() throws SQLException, ClassNotFoundException;
+    public boolean saveRentDetails(RentDetailDTO rentDetailDTO) throws SQLException, ClassNotFoundException;
 }

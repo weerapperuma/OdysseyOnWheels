@@ -4,6 +4,7 @@ import lk.penguin.OdysseyOnWheels.controller.RentalCustomerFormController;
 import lk.penguin.OdysseyOnWheels.dao.custom.RentDAO;
 import lk.penguin.OdysseyOnWheels.dao.custom.RentDetailDAO;
 import lk.penguin.OdysseyOnWheels.dto.VehicleDTO;
+import lk.penguin.OdysseyOnWheels.entity.RentDetail;
 import lk.penguin.OdysseyOnWheels.util.SQLUtil;
 import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
@@ -13,28 +14,52 @@ import java.util.ArrayList;
 
 public class RentDetailDAOImpl implements RentDetailDAO {
     @Override
-    public boolean save(ArrayList<VehicleDTO> addToCartVboxList) throws SQLException, ClassNotFoundException {
-        double fullRentTotal=0;
-        System.out.println("Rent detail starting  :"+RentalCustomerFormController.rentStarting);
-        System.out.println("Rent detail ending : "+RentalCustomerFormController.rentEnding);
-        for(VehicleDTO dto:addToCartVboxList) {
-            boolean isSaved = SQLUtil.execute("INSERT INTO rent_detail (rent_id,vehicle_id,rent_fee,start_date,end_date,order_date) VALUES(?,?,?,?,?,?);",
-                    RentalCustomerFormController.rentId,
-                    dto.getVehicleId(),
-                    dto.getPerDay80Km(),
-                    RentalCustomerFormController.rentStarting,
-                    RentalCustomerFormController.rentEnding,
-                    LocalDate.now());
-            if (!isSaved) {
-                TransactionUtil.rollBack();
-                return false;
-            }
-            Double rentfee = Double.valueOf(dto.getPerDay80Km());
-            fullRentTotal += rentfee;
+    public boolean save(RentDetail rentDetail) throws SQLException, ClassNotFoundException {
+        System.out.println("vehicle_id: "+rentDetail.getVehicleId());
 
-            System.out.println(fullRentTotal);
+        boolean isSaved = SQLUtil.execute("INSERT INTO rent_detail (rent_id,vehicle_id,rent_fee,excess_Mileage_cost ,start_date,end_date,order_date) VALUES(?,?,?,?,?,?,?);",
+                rentDetail.getRentId(),
+                rentDetail.getVehicleId(),
+                rentDetail.getRentFee(),
+                rentDetail.getExcessMileageCost(),
+                rentDetail.getStartingDate(),
+                rentDetail.getEndingDate(),
+                rentDetail.getOrderDate());
+        if (!isSaved) {
+            TransactionUtil.rollBack();
+            return false;
         }
         return true;
 
+    }
+
+    @Override
+    public boolean update(RentDetail entity) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean ifExists(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public RentDetail get(String id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public ArrayList<RentDetail> getAll() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
+    public ArrayList<RentDetail> search(String text) throws SQLException, ClassNotFoundException {
+        return null;
     }
 }

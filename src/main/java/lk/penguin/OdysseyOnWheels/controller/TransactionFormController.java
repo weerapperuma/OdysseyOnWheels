@@ -8,13 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import lk.penguin.OdysseyOnWheels.bo.BOFactory;
 import lk.penguin.OdysseyOnWheels.bo.custom.TransactionBO;
 import lk.penguin.OdysseyOnWheels.bo.custom.impl.TransactionBOImpl;
+import lk.penguin.OdysseyOnWheels.dto.RentDetailDTO;
 import lk.penguin.OdysseyOnWheels.util.Navigation;
 import lk.penguin.OdysseyOnWheels.util.TransactionUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class TransactionFormController {
 
@@ -32,13 +35,18 @@ public class TransactionFormController {
 
     @FXML
     private AnchorPane transactionLoadingPane;
-    TransactionBO transactionBO=new TransactionBOImpl();
+    TransactionBO transactionBO=(TransactionBO) BOFactory.getBoFactory().getBO(BOFactory.BOType.TRANSACTION);
 
     public static VBox addCart;
 
     @FXML
     void addToCartSaveRentOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        boolean allDone=transactionBO.saveRentDetails();
+        boolean allDone=transactionBO.saveRentDetails(new RentDetailDTO(null,
+                RentalCustomerFormController.rentId,
+                null,
+                0.0, 0.0,RentalCustomerFormController.rentStarting,
+                RentalCustomerFormController.rentEnding,
+                LocalDate.now()));
         if(allDone){
             addToCartVboxInterface.getChildren().clear();
         }

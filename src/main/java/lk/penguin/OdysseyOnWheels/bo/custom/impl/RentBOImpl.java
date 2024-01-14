@@ -64,6 +64,6 @@ public class RentBOImpl implements RentBO {
             TransactionUtil.rollBack();
             TransactionUtil.endTransaction();
         }
-        return true;
+        return isSaved;
     }
 }
